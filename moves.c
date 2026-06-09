@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 17:22:31 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/09 17:38:11 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/09 18:09:01 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,3 +46,21 @@ t_cll	*ft_swap(t_cll *list)
 	return (list);
 }
 */
+
+
+void	ft_push(t_cll **list_from, t_cll **list_to)
+{
+	t_cll	*node1_from;
+	t_cll	*node2_from;
+	t_cll	*node1_to;
+	t_cll	*node2_to;
+
+	if (*list_from == NULL)
+		return ;
+	node1_from = *list_from;
+	node1_to = *list_to;
+	node1_from = node1_from->next;
+	node2_to = node1_to->next;
+	
+	//Continuar mañana
+}

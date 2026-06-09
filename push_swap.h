@@ -6,12 +6,12 @@
 /*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 09:43:09 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/09 10:05:35 by azahino-         ###   ########.fr       */
+/*   Updated: 2026/06/09 10:11:48 by azahino-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSHSWAP_H
- #define PUSHSWAP_H
+#ifndef PUSH_SWAP_H
+ #define PUSH_SWAP_H
  
  #include <unistd.h>
  #include <stdlib.h>

@@ -6,7 +6,7 @@
 /*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 13:45:49 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/08 14:01:51 by azahino-         ###   ########.fr       */
+/*   Updated: 2026/06/09 10:10:05 by azahino-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,38 +15,38 @@
 int main(int argc, char **argv)
 {
     int option;
-    
-    
+    int bench;
 
-    option = getopt(argc, argv, "basic:");
+    bench = 0;    
+    
+// Trabajar las diferentes casuistuicas
+    option = getopt(argc, argv, "macsb:");
     while (option != -1)
     {
         switch(option)
         {
             case 'b':
-            {
-                
-            }
+                bench = 1;
             case 'a':
             {
-                
+                ft_adaptive();
             }
             case 's':
             {
                 ft_simple(argv);
             }
-            case 'i':
+            case 'm':
             {
-                
+                ft_medium();
             }
             case 'c':
             {
-                
+                ft_complex();
             }
             case '?':
-              ft_printf("Unknown option:") ;
+              ft_printf("Unknown option:");
             default:
-                ft_adaptativ() 
+                ft_adaptive();
         }
     }
     return (0);

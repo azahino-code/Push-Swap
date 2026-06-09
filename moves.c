@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   moves.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/08 09:43:09 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/09 10:05:35 by azahino-         ###   ########.fr       */
+/*   Created: 2026/06/09 09:26:45 by azahino-          #+#    #+#             */
+/*   Updated: 2026/06/09 10:06:00 by azahino-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSHSWAP_H
- #define PUSHSWAP_H
- 
- #include <unistd.h>
- #include <stdlib.h>
+#include "push_swap.h"
 
- typedef struct s_node
- {
-    int             value;
-    int             index;
-    struct s_node   *prev;
-    struct s_node   *next;
- }                  t_dll;
+void    ft_sa(t_dll *a, int bench)
+{
+    int cpy;
+    
+    if (bench > 0)
+        ft_printf("sa");
+}
 
-#endif
+void    ft_sa(t_stack *a, int bench)
+{
+    int cpy;
+    
+    copy = a[0];
+    a[0] = a[1];
+    a[1] = copy;
+    if (bench > 0)
+        ft_printf("sa");
+}

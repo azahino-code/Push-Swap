@@ -6,11 +6,11 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 10:41:11 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/09 13:09:12 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/10 11:21:16 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 // Hay que comprobar que funciona
 
@@ -23,15 +23,15 @@ float	compute_disorder(t_cll **a)
 	void	*prev_content;
 
 	i = 0;
-	while (i < size(*a) - 1)
+	while (i < (int)sizeof(*a) - 1)
 	{
 		j = i + 1;
-		while (j < size(*a) - 1)
+		while (j < (int)sizeof(*a) - 1)
 		{
 			total_pairs += 1;
-			prev_content = (*a)->content;
+			prev_content = (*a)->value;
 			*a = (*a)->next;
-			if (prev_content > (*a)->content)
+			if (prev_content > (*a)->value)
 			{
 				mistakes += 1;
 			}

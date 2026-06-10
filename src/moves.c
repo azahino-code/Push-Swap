@@ -6,34 +6,45 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 17:22:31 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/09 18:09:01 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/10 13:08:27 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-t_cll	*ft_swap(t_cll **list)
+void	ftss(sdf, efwq)
 {
-	t_cll	*node1;
-	t_cll	*node2;
-	t_cll	*node3;
+	ft_swap(dsaf, wqefr, b);
+	ft_swap(wef, weqf, b);
+}
 
-	if (*list == NULL || (*list)->next == NULL)
-		return (*list);
-	node1 = *list;
-	node2 = node1->next;
+void	ft_swap(t_cll **head, t_cll **change)
+{
+	t_cll	*temp;
+
+	if (*list == NULL || (*list)->next == *list)
+		return ;
+
+	temp = *head;
+	*head = *change;
+	*change = temp;
+ 
+	/*head = *list;
+	last = head->prev;
+	node2 = head->next;
 	node3 = node2->next;
-	node2->next = node1;
-	node1->next = node3;
-	if (node3)
-		node3->prev = node1;
-	node1->prev = node2;
-	node2->prev = NULL;
-	return (node2);
+
+	node2->prev = head->prev;
+	node2->next = 
+	
+	node2->next = head;
+	head->next = node3;
+	node3->prev = head;
+	head->prev = node2;
+	*/
+	return ;
 }
 /*
-Otra forma de hacerlo:
-
 t_cll	*ft_swap(t_cll *list)
 {
 	void	*temp;
@@ -47,7 +58,7 @@ t_cll	*ft_swap(t_cll *list)
 }
 */
 
-
+/*
 void	ft_push(t_cll **list_from, t_cll **list_to)
 {
 	t_cll	*node1_from;
@@ -61,6 +72,40 @@ void	ft_push(t_cll **list_from, t_cll **list_to)
 	node1_to = *list_to;
 	node1_from = node1_from->next;
 	node2_to = node1_to->next;
+}
+*/
+
+t_cll	*ft_lstnew(int value)
+{
+	t_cll	*new;
+
+	new = (t_cll *)malloc(sizeof(t_cll));
+	if (!new)
+		return (NULL);
+	new->value = value;
+	new->next = new;
+	new->prev = new;
+	return (new);
+}
+
+void	ft_lstadd_back(t_cll **lst, t_cll *new)
+{
+	t_cll	*last;
+
+	if (lst == NULL || new == NULL)
+		return ;
+	else if (*lst == NULL)
+	{
+		*lst = new;
+		return ;
+	}
+	last = ft_lstlast(*lst);
+	last->next = new;
+}
+
+int main(void)
+{
+	t_cll	*list;
 	
-	//Continuar mañana
+	
 }

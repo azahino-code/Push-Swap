@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 13:45:49 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/10 15:48:20 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/10 17:17:31 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,35 +14,45 @@
 
 int main(int argc, char **argv)
 {
-	//int bench;
-	int i;
+	int bench;
+	int count;
 	t_cll	*stack_a;
 	t_cll	*stack_b;
+	mode	mode;
 
-	i = 0;
-	//bench = 0;
+	count = 1;
+	mode = ADAPTIVE;
 
-	// Trabajar las diferentes casuistuicas
-	if (argc < 2)
-		ft_printf("Faltan argurmentos");
-	else
+	if (ft_strncmp(argv[count], "--bench", 7))
 	{
-		ft_assignment(argc, **argv, stack_a);
-		while (argc > 1 && i < 3)
-		{
-			if (ft_strncmp(argv[i], "--simple", 8))
-				return (0); //simple_al();
-			else if (ft_strncmp(argv[i], "--medium", 8))
-				return (0); //medium_al();
-			else if (ft_strncmp(argv[i], "--complex", 9))
-				return (0); //complex_al();
-			else if (ft_strncmp(argv[i], "--adaptive", 10))
-				return (0); //adaptative_al();
-			else if (ft_strncmp(argv[i], "--bench", 7))
-				return (0); //bench = 1;
-			else
-				return (0); //adaptative_al();
-		}
-	}	
-	return (0);
+		count++;
+		bench = 1;
+	}
+	if (ft_strncmp(argv[count], "--simple", 8))
+	{
+		mode = SIMPLE;
+		count++;
+	}
+	else if (ft_strncmp(argv[count], "--medium", 8))
+	{
+		mode = MEDIUM;
+		count++;
+	}
+	else if (ft_strncmp(argv[count], "--complex", 9))
+	{
+		mode = COMPLEX;
+		count++;
+	}
+	else if (ft_strncmp(argv[count], "--adaptive", 10))
+	{
+		mode = ADAPTIVE;
+		count++;
+	}
+	ft_assignment(argc, argv + count, stack_a);
+	if (!stack_a)
+	{
+		ft_printf("Faltan argurmentos");
+		return (0);
+	}
+	ft_mode(mode, stack_a, stack_b, bench);
 }

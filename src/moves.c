@@ -6,23 +6,23 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 17:22:31 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/10 13:08:27 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/10 15:27:53 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ftss(sdf, efwq)
+void	ftss(t_cll *a, t_cll *b)
 {
-	ft_swap(dsaf, wqefr, b);
-	ft_swap(wef, weqf, b);
+	ft_swap(a, a->next);
+	ft_swap(b, b->next);
 }
 
 void	ft_swap(t_cll **head, t_cll **change)
 {
 	t_cll	*temp;
 
-	if (*list == NULL || (*list)->next == *list)
+	if (*head == NULL || (*head)->next == *head)
 		return ;
 
 	temp = *head;
@@ -101,11 +101,4 @@ void	ft_lstadd_back(t_cll **lst, t_cll *new)
 	}
 	last = ft_lstlast(*lst);
 	last->next = new;
-}
-
-int main(void)
-{
-	t_cll	*list;
-	
-	
 }

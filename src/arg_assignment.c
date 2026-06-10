@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   arg_assignment.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 13:18:59 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/10 12:54:05 by azahino-         ###   ########.fr       */
+/*   Updated: 2026/06/10 15:48:32 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-t_cll	*ft_assignment(int argc, char *argv, t_cll **stack_a)
+void	*ft_assignment(int argc, char **argv, t_cll **stack_a)
 {
 	int		index;
 	char	**str;
@@ -23,7 +23,7 @@ t_cll	*ft_assignment(int argc, char *argv, t_cll **stack_a)
 	while (index < argc)
 	{	
 		str = ft_split(argv[index], " ");
-		value = ft_atoi(str[index]); //12 13 54 26
+		value = ft_atoi(str[index]);
 		if (value)
 		{
 			num = ft_lstnew(value);
@@ -32,5 +32,4 @@ t_cll	*ft_assignment(int argc, char *argv, t_cll **stack_a)
 		free(str);
 		index++;
 	}
-	return ()
 }

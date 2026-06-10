@@ -6,7 +6,7 @@
 /*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 13:18:59 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/10 12:54:05 by azahino-         ###   ########.fr       */
+/*   Updated: 2026/06/10 13:47:32 by azahino-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,5 @@ t_cll	*ft_assignment(int argc, char *argv, t_cll **stack_a)
 		free(str);
 		index++;
 	}
-	return ()
+	return (stack_a);
 }

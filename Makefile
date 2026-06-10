@@ -6,21 +6,15 @@
 #   By: jrecio-t <jrecio-t@student.42urduliz.com>    +#+  +:+       +#+        #
 #                                                  +#+#+#+#+#+   +#+           #
 #   Created: 2026/06/08 09:31:55 by azahino-            #+#    #+#             #
-#   Updated: 2026/06/09 15:33:58 by jrecio-t           ###   ########.fr       #
+#   Updated: 2026/06/10 17:28:52 by jrecio-t           ###   ########.fr       #
 #                                                                              #
 # **************************************************************************** #
-
-# Cambios:
-# - NAME es el nombre del ejecutable generado tras compilar, por lo que no es un .a
-# - Sustituida la instruccion 'ar' por 'cc' para compilar en vez de generar una libreria estatica(.a)
-# - Añadido el path de printf
 
 NAME = push_swap
 
 CC = cc
 CFLAGS = -Wall -Werror -Wextra
 
-# Recomendable meter todos los .c en una carpeta /src
 SRC = src/main.c src/disorder.c src/moves.c
 OBJ = $(SRC:.c=.o)
 

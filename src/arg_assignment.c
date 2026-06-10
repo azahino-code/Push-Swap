@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 13:18:59 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/10 17:19:16 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/10 17:24:04 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	ft_assignment(int argc, char **argv, t_cll **stack_a)
 	return ;
 }
 
-void	ft_mode(mode mode, t_cll stack_a, t_cll stack_b, int bench)
+void	ft_mode(mode mode, t_cll **stack_a, int bench)
 {
 	
 }

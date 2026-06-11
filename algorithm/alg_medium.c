@@ -1,33 +1,11 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   alg_medium.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/08 13:45:49 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/11 09:46:53 by azahino-         ###   ########.fr       */
+/*   Created: 2026/06/11 10:04:16 by azahino-          #+#    #+#             */
+/*   Updated: 2026/06/11 10:04:17 by azahino-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "../push_swap.h"
-
-int main(int argc, char **argv)
-{
-	int bench;
-	int count;
-	t_cll	*stack_a;
-	mode	mode;
-
-	count = 1;
-	mode = ADAPTIVE;
-
-	ft_count_flags(argv, mode, count, bench);
-	ft_assignment(argc, argv + count, &stack_a);
-	if (!stack_a)
-	{
-		ft_printf("Faltan argurmentos");
-		return (0);
-	}
-	ft_mode(mode, &stack_a, bench);
-}

@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 09:43:09 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/10 17:05:47 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/11 10:38:21 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,6 @@ typedef enum mode
 }			mode;
 
 void	ft_assignment(int argc, char **argv, t_cll **stack_a);
+void	ft_count_flags(char **argv, mode mode, int count, int bench);
 
 #endif

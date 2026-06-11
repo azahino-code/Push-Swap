@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 13:18:59 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/10 17:24:04 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/11 10:38:15 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,32 @@ void	ft_assignment(int argc, char **argv, t_cll **stack_a)
 void	ft_mode(mode mode, t_cll **stack_a, int bench)
 {
 	
+}
+void	ft_count_flags(char **argv, mode mode, int count, int bench)
+{
+	if (ft_strncmp(argv[count], "--bench", ft_strlen("--bench")))
+	{
+		count++;
+		bench = 1;
+	}
+	if (ft_strncmp(argv[count], "--simple", ft_strlen("--simple")))
+	{
+		mode = SIMPLE;
+		count++;
+	}
+	else if (ft_strncmp(argv[count], "--medium", ft_strlen("--medium")))
+	{
+		mode = MEDIUM;
+		count++;
+	}
+	else if (ft_strncmp(argv[count], "--complex", ft_strlen("--complex")))
+	{
+		mode = COMPLEX;
+		count++;
+	}
+	else if (ft_strncmp(argv[count], "--adaptive", ft_strlen("--adaptive")))
+	{
+		mode = ADAPTIVE;
+		count++;
+	}
 }

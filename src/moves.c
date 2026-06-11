@@ -6,58 +6,48 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 17:22:31 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/10 15:27:53 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/11 15:23:30 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ftss(t_cll *a, t_cll *b)
+void	ft_ss(t_cll **a, t_cll **b)
 {
-	ft_swap(a, a->next);
-	ft_swap(b, b->next);
+	ft_sa(a);
+	ft_sb(b);
 }
 
-void	ft_swap(t_cll **head, t_cll **change)
+void	ft_sa(t_cll **a)
 {
-	t_cll	*temp;
+	ft_swap(a);
+}
 
-	if (*head == NULL || (*head)->next == *head)
+void	ft_sb(t_cll **b)
+{
+	ft_swap(b);
+}
+
+void	ft_swap(t_cll **list)
+{
+	t_cll	*first;
+	t_cll	*second;
+	t_cll	*third;
+	t_cll	*last;
+
+	if (first == NULL || first->next == first)
 		return ;
-
-	temp = *head;
-	*head = *change;
-	*change = temp;
- 
-	/*head = *list;
-	last = head->prev;
-	node2 = head->next;
-	node3 = node2->next;
-
-	node2->prev = head->prev;
-	node2->next = 
-	
-	node2->next = head;
-	head->next = node3;
-	node3->prev = head;
-	head->prev = node2;
-	*/
-	return ;
+	first = *list;
+	last = first->prev;
+	second = first->next;
+	third = second->next;
+	second->prev = last;
+	second->next = first;
+	first->prev = second;
+	first->next = third;
+	third->prev = first;
+	last->next = second;
 }
-/*
-t_cll	*ft_swap(t_cll *list)
-{
-	void	*temp;
-
-	if (list == NULL || list->next == NULL)
-		return (list);
-	temp = list->next->content;
-	list->next->content = list->content;
-	list->content = temp;
-	return (list);
-}
-*/
-
 /*
 void	ft_push(t_cll **list_from, t_cll **list_to)
 {

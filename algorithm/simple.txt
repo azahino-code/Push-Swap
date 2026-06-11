@@ -1,0 +1,14 @@
+Algoritmos que podemos usar.
+
+1) Ordenación por inserción
+
+Caracteristicas:
+    - Solo nos haria falta un stack
+    - La logica radica en introducior los valores de la terminal de uno en uno desde el final de la lista, pidiendole que "si el numero que entra es menor que el ultima, los cambiamos (swap(stack[i - 1], stack[i]))"
+    - Si la lista se encuentra en formato descendente, nos encotramos con la peor situación posible.
+    - Contiene dos bucles, uno externo que introduce el valor de la lista y otro interno que se encarga de analizar lo dicho dos lineas atrás.
+
+2) Ordenación por selección
+
+Caracteristicas:
+    - 

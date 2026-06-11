@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 13:45:49 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/10 15:48:20 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/10 14:11:35 by azahino-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int main(int argc, char **argv)
 		ft_printf("Faltan argurmentos");
 	else
 	{
-		ft_assignment(argc, **argv, stack_a);
+		ft_assignment(argc, argv, stack_a);
 		while (argc > 1 && i < 3)
 		{
 			if (ft_strncmp(argv[i], "--simple", 8))

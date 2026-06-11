@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 09:43:09 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/11 10:38:21 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/11 09:56:41 by azahino-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,6 @@ typedef enum mode
 
 void	ft_assignment(int argc, char **argv, t_cll **stack_a);
 void	ft_count_flags(char **argv, mode mode, int count, int bench);
+float	compute_disorder(t_cll **a);
 
 #endif

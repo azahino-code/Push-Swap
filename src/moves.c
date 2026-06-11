@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 17:22:31 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/11 15:23:30 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/11 17:28:10 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,15 @@ void	ft_swap(t_cll **list)
 	t_cll	*third;
 	t_cll	*last;
 
-	if (first == NULL || first->next == first)
-		return ;
 	first = *list;
-	last = first->prev;
+	if (first == NULL || first->next == first) // Para los casos de listas con cero o un nodos
+		return ;
+	if (first->next->next == first) // Para el caso de una lista con dos nodos
+	{
+		*list = first->next;
+		return;
+	}	
+	last = first->prev; // Para los casos de listas con tres o mas nodos
 	second = first->next;
 	third = second->next;
 	second->prev = last;
@@ -47,8 +52,9 @@ void	ft_swap(t_cll **list)
 	first->next = third;
 	third->prev = first;
 	last->next = second;
+	*list = second;
 }
-/*
+
 void	ft_push(t_cll **list_from, t_cll **list_to)
 {
 	t_cll	*node1_from;
@@ -60,10 +66,13 @@ void	ft_push(t_cll **list_from, t_cll **list_to)
 		return ;
 	node1_from = *list_from;
 	node1_to = *list_to;
-	node1_from = node1_from->next;
+	node2_from = node1_from->next;
 	node2_to = node1_to->next;
+
+	node2_from->prev = node1_from->prev;
+	node1_from->prev->next = node2_from;
+	*list_from = node2_from;
 }
-*/
 
 t_cll	*ft_lstnew(int value)
 {

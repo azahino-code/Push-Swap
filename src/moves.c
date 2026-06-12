@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   moves.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 17:22:31 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/12 11:44:18 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/12 11:47:42 by azahino-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_ss(t_cll **a, t_cll **b)
+void	ft_ss(t_cll *a, t_cll *b)
 {
-	ft_sa(a);
-	ft_sb(b);
+	ft_sa(a->head);
+	ft_sb(b->head);
 }
 
 void	ft_sa(t_cll **a)

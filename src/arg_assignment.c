@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   arg_assignment.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 13:18:59 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/12 11:16:47 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/12 10:03:50 by azahino-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_assignment(int argc, char **argv, t_cll **stack_a)
+void	ft_assignment(int argc, char **argv, t_cll *stack_a)
 {
 	int		index;
 	int		value;
-	t_cll	*num;
+	t_node	*num;
 
 	index = 1;
 	while (index < argc)
@@ -25,10 +25,12 @@ void	ft_assignment(int argc, char **argv, t_cll **stack_a)
 		if (value)
 		{
 			num = ft_lstnew(value);
-			ft_lstadd_back(*stack_a, num);
+			ft_lstadd_back(stack_a, num);
 		}
+		 
 		index++;
 	}
+	stack_a -> size = ft_listsize(stack_a);
 	return ;
 }
 

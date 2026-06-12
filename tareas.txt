@@ -1,15 +1,15 @@
 Que hacer:
 
 fuciones:
-- main.
-- Funcion que cuente el desorden.
+- main. ((HECHO - COMBO))
+- Funcion que cuente el desorden. ((HECHO - JULEN))
 - Logaritmo  (O(n2)).
 - logaritmo (O(n√n)).
 - Logaritmo (O(n log n));
 - logaritmo que seleccione el logaritmo necesario de ejecución.
 
 Archivos a entregar:
-- Make file // NAME, all, clean, fclean, re.
+- Make file // NAME, all, clean, fclean, re. ((HECHO - JULEN))
     (Medio hecho, falta introducir las variaciones para incluir libft)
 - *.h
 - *.c 

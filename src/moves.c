@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 17:22:31 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/11 17:28:10 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/12 10:38:17 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,11 @@ void	ft_push(t_cll **list_from, t_cll **list_to)
 	node2_from->prev = node1_from->prev;
 	node1_from->prev->next = node2_from;
 	*list_from = node2_from;
+
+	node1_from->next = node1_to;
+	node1_from->prev = node1_to->prev;
+	node1_to->prev = node1_from;
+	*list_to = node1_from;
 }
 
 t_cll	*ft_lstnew(int value)

@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 13:45:49 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/12 11:16:29 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/12 13:31:52 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int main(int argc, char **argv)
 	mode = ADAPTIVE;
 
 	ft_count_flags(argv, &mode, &count, bench);
-	ft_assignment(argc, argv + count, &stack_a);
+	ft_assignment(argc, argv + count, stack_a);
 	if (!stack_a)
 	{
 		ft_printf("Faltan argurmentos");

@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 09:43:09 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/12 11:27:24 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/12 13:40:02 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef struct s_cll
 typedef struct s_node
 {
 	int				value;
+	int				index;
 	struct s_node	*prev;
 	struct s_node	*next;
 }					t_node;

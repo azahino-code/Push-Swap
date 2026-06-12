@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   arg_assignment.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 13:18:59 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/11 10:03:27 by azahino-         ###   ########.fr       */
+/*   Updated: 2026/06/12 11:16:47 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,29 +49,29 @@ void	ft_mode(mode mode, t_cll **stack_a, int bench)
 		alg_adaptive(stack_a, stack_b, disorder);
 	}
 }
-void	ft_count_flags(char **argv, mode mode, int count, int bench)
+void	ft_count_flags(char **argv, mode *mode, int *count, int bench)
 {
-	if (ft_strncmp(argv[count], "--bench", ft_strlen("--bench")))
+	if (ft_strncmp(argv[*count], "--bench", ft_strlen("--bench")))
 	{
 		count++;
 		bench = 1;
 	}
-	if (ft_strncmp(argv[count], "--simple", ft_strlen("--simple")))
+	if (ft_strncmp(argv[*count], "--simple", ft_strlen("--simple")))
 	{
 		mode = SIMPLE;
 		count++;
 	}
-	else if (ft_strncmp(argv[count], "--medium", ft_strlen("--medium")))
+	else if (ft_strncmp(argv[*count], "--medium", ft_strlen("--medium")))
 	{
 		mode = MEDIUM;
 		count++;
 	}
-	else if (ft_strncmp(argv[count], "--complex", ft_strlen("--complex")))
+	else if (ft_strncmp(argv[*count], "--complex", ft_strlen("--complex")))
 	{
 		mode = COMPLEX;
 		count++;
 	}
-	else if (ft_strncmp(argv[count], "--adaptive", ft_strlen("--adaptive")))
+	else if (ft_strncmp(argv[*count], "--adaptive", ft_strlen("--adaptive")))
 	{
 		mode = ADAPTIVE;
 		count++;

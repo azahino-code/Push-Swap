@@ -11,4 +11,13 @@ Caracteristicas:
 2) Ordenación por selección
 
 Caracteristicas:
-    - 
+    - Detección temprana de listas ya ordenadas: antes de iniciar, verifica si el arreglo está ordenado; si lo está, retorna inmediatamente.
+    - Minimizar swaps: usa una variable temporal para intercambiar solo cuando el índice óptimo difiere del actual.
+    - Uso de tipos de datos mutables: evita copiar la lista si no es necesario; el algoritmo trabaja in‑place.
+    - Profiling: aprovecha cProfile o timeit para medir el impacto en entornos críticos.ç
+
+3) Ordenación burbuja
+
+CAracteristicas:
+    - analiza los elementos iterandolos y si están en el orden incorrecto los intercambia.
+    - una vez finalizado repite la iteración desde el inicio.

@@ -6,20 +6,21 @@
 /*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 10:04:12 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/12 14:23:47 by azahino-         ###   ########.fr       */
+/*   Updated: 2026/06/15 10:25:00 by azahino-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-//Hacemos algoritmo por inserción
-int cost(int index, int size)
+//Hacemos algoritmo por selección
+// ft_cost sirve para valorar si queremos rotar para arriba o hacia abajo
+int ft_cost(int index, int size)
 {
     if (index <= size / 2)
         return (index);
     else
-        return (index -size);
+        return (size - index);
 }
-
+//total_cost lo usaremos para devolver información
 int total_cost(int cost_a, int cost_b)
 {
     if ((cost_a >= 0 && cost_b >= 0) || (cost_a < 0 && cost_b < 0))
@@ -32,15 +33,15 @@ int total_cost(int cost_a, int cost_b)
     }
     return (abs(cost_a) + abs(cost_b));
 }
-
-int pos_index(t_cll *stack, int index)
+//pos_index lo usaremos para ubicar el indice del nodo que necesitemos
+int pos_index(t_cll *stack, int actual_index)
 {
     int     i;
     t_node   *tmp;
 
     i = 0;
     tmp = stack->head;
-    while (tmp->index != index)
+    while (tmp->index != actual_index)
     {
         tmp = tmp->next;
         i++;
@@ -48,33 +49,33 @@ int pos_index(t_cll *stack, int index)
     return (i);
 }
 
-int find_and_cost (t_cll *a, int i)
-{
-    int cost_a;
-    int pos_a;
-
-    pos_a = pos_index(a, i);
-    cost_a = cost (pos_a, a->size);
-    return (cost_a);
-}
-
-void    alg_insertion(t_cll *stack_a)
+void    alg_selection(t_cll *stack_a)
 {
     t_cll   aux;
-    int     index;
+    int     size;
+    int     cost;
     
     aux.head = NULL;
     aux.size = 0;
-    index = stack_a->size;
-
-    while (index-- >= 0)
+    size = stack_a->size;
+    cost = 0;
+    while (size-- > 0)
     {
-        if (find_and_cost(stack_a, index) == )
+        cost = ft_cost(pos_index(stack_a, size - 1), size);
+        if (cost <= size / 2)
         {
-            /* code */
+            while (cost-- > 0)
+            {
+                ft_ra();
+            }
         }
-        
-        ft_pa(stack_a, aux); 
+        else
+        {
+            while (cost-- < 0)
+            {
+                ft_rra();
+            }
+        }
+        ft_pa();
     }
-    
 }

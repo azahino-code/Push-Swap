@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 17:22:31 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/12 13:53:18 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/15 13:53:22 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,14 @@ void	ft_swap(t_cll *list)
 	t_node	*last;
 
 	first = list->head;
-	if (first == NULL || first->next == first) // Para los casos de listas con cero o un nodos
+	if (first == NULL || first->next == first)
 		return ;
-	if (first->next->next == first) // Para el caso de una lista con dos nodos
+	if (first->next->next == first)
 	{
 		list->head = first->next;
 		return;
 	}	
-	last = first->prev; // Para los casos de listas con tres o mas nodos
+	last = first->prev;
 	second = first->next;
 	third = second->next;
 	second->prev = last;
@@ -60,23 +60,36 @@ void	ft_push(t_cll *list_from, t_cll *list_to)
 	t_node	*node1_from;
 	t_node	*node2_from;
 	t_node	*node1_to;
-	t_node	*node2_to;
 
-	if (list_from->head == NULL)
-		return ;
 	node1_from = list_from->head;
-	node1_to = list_to;
-	node2_from = node1_from->next;
-	node2_to = node1_to->next;
-
-	node2_from->prev = node1_from->prev;
-	node1_from->prev->next = node2_from;
-	list_from->head = node2_from;
-
-	node1_from->next = node1_to;
-	node1_from->prev = node1_to->prev;
-	node1_to->prev = node1_from;
-	list_to->head = node1_from;
+	if (node1_from == NULL)
+		return ;
+	if (list_from->size == 1)
+		list_from->head = NULL;
+	else
+	{
+		node2_from = node1_from->next;
+		node2_from->prev = node1_from->prev;
+		node1_from->prev->next = node2_from;
+		list_from->head = node2_from;
+	}
+	node1_to = list_to->head;
+	if (node1_to == NULL)
+	{
+		list_to->head = node1_from;
+		node1_from->next = node1_from;
+		node1_from->prev = node1_from;
+	}
+	else
+	{
+		node1_from->next = node1_to;
+		node1_from->prev = node1_to->prev;
+		node1_to->prev->next = node1_from;
+		node1_to->prev = node1_from;
+		list_to->head = node1_from;
+	}
+	list_from->size--;
+	list_to->size++;
 }
 
 t_node	*ft_lstnew(int value, int index)
@@ -99,11 +112,17 @@ void	ft_lstadd_back(t_cll *lst, t_node *new)
 
 	if (lst == NULL || new == NULL)
 		return ;
-	else if (lst->head == NULL)
+	if (lst->head == NULL)
 	{
 		lst->head = new;
-		return ;
 	}
-	last = ft_lstlast(lst->head);
-	last->next = new;
+	else
+	{
+		last = lst->head->prev;
+		last->next = new;
+		new->prev = last;
+		lst->head->prev = new;
+		new->next = lst->head;
+	}
+	lst->size++;
 }

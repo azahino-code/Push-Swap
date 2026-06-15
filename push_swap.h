@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 09:43:09 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/12 13:40:02 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/15 09:52:16 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,8 @@ typedef enum mode
 	ADAPTIVE
 }			mode;
 
-void	ft_assignment(int argc, char **argv, t_cll **stack_a);
+void	ft_assignment(int argc, char **argv, t_cll *stack_a);
 void	ft_count_flags(char **argv, mode *mode, int *count, int bench);
-float	compute_disorder(t_cll **a);
+float	compute_disorder(t_cll *a);
 
 #endif

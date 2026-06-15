@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 17:22:31 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/15 13:45:41 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/15 13:53:22 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ void	ft_push(t_cll *list_from, t_cll *list_to)
 	t_node	*node1_from;
 	t_node	*node2_from;
 	t_node	*node1_to;
-	t_node	*node2_to;
 
 	node1_from = list_from->head;
 	if (node1_from == NULL)
@@ -83,7 +82,6 @@ void	ft_push(t_cll *list_from, t_cll *list_to)
 	}
 	else
 	{
-		node2_to = node1_to->next;
 		node1_from->next = node1_to;
 		node1_from->prev = node1_to->prev;
 		node1_to->prev->next = node1_from;

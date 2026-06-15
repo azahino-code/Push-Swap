@@ -6,7 +6,7 @@
 /*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 10:04:12 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/15 10:25:00 by azahino-         ###   ########.fr       */
+/*   Updated: 2026/06/15 13:14:25 by azahino-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int pos_index(t_cll *stack, int actual_index)
     return (i);
 }
 
-void    alg_selection(t_cll *stack_a)
+t_cll   alg_selection(t_cll *stack_a)
 {
     t_cll   aux;
     int     size;
@@ -78,4 +78,5 @@ void    alg_selection(t_cll *stack_a)
         }
         ft_pa();
     }
+	return (aux);
 }

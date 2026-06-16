@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   arg_assignment.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 13:18:59 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/12 13:53:08 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/16 10:41:39 by azahino-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,10 @@ void	ft_assignment(int argc, char **argv, t_cll *stack_a)
 	int		run;
 	int		value;
 	int		index;
-	t_cll	*num;
+	t_node	*num;
 
 	arg = 0;
+	index = 0;
 	while (arg < argc)
 	{
 		while (run < argc)
@@ -30,7 +31,7 @@ void	ft_assignment(int argc, char **argv, t_cll *stack_a)
 			run++;
 		}
 		value = ft_atoi(argv[arg]);
-		num = ft_lstnew(value);
+		num = ft_lstnew(value, index);
 		ft_lstadd_back(stack_a, num);
 		arg++;
 	}
@@ -38,7 +39,7 @@ void	ft_assignment(int argc, char **argv, t_cll *stack_a)
 	return ;
 }
 
-void	ft_mode(mode mode, t_cll **stack_a, int bench)
+/*void	ft_mode(mode mode, t_cll *stack_a, int bench)
 {
 	t_cll	*stack_b;
 	float	disorder;
@@ -46,7 +47,7 @@ void	ft_mode(mode mode, t_cll **stack_a, int bench)
 	if (mode == SIMPLE)
 		alg_simple(stack_a, stack_b);
 	else if (mode == MEDIUM)
-		alg_medium(stack_a, stack_b);
+		alg_medium(stack_a, stack_b, (int)sqrt(stack_a->size));
 	else if (mode == COMPLEX)
 		alg_complex(stack_a, stack_b);
 	else if (mode == ADAPTIVE)
@@ -82,4 +83,21 @@ void	ft_count_flags(char **argv, mode *mode, int *count, int bench)
 		mode = ADAPTIVE;
 		count++;
 	}
+}*/
+
+int	main(int argc, char **argv)
+{
+	t_cll	stack_a;
+	int		i;
+
+	stack_a.size = 0;
+	stack_a.head = NULL;
+	i = 0;
+	ft_assignment(argc, argv, &stack_a);
+	while (i++ < stack_a.size)
+	{
+		ft_printf("%s\n", stack_a.head->index);
+		stack_a.head = stack_a.head->next;
+	}
+	return (0);
 }

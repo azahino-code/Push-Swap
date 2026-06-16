@@ -40,14 +40,14 @@ int	total_cost(int cost_a, int cost_b)
 }
 
 //pos_index lo usaremos para ubicar el indice del nodo que necesitemos
-int	pos_index(t_cll *stack, int actual_index)
+int	pos_index(t_cll *stack, int min_index, int	max_index)
 {
 	int		i;
 	t_node	*tmp;
 
 	i = 0;
 	tmp = stack->head;
-	while (tmp->index != actual_index)
+	while (tmp->index < min_index && tmp->index > max_index)
 	{
 		tmp = tmp->next;
 		i++;
@@ -68,7 +68,7 @@ void	alg_selection(t_cll *stack_a)
 	cost = 0;
 	while (size-- > 0)
 	{
-		pos = pos_index(stack_a, size - 1);
+		pos = pos_index(stack_a, size - 1, size - 1);
 		cost = ft_cost(pos, size);
 		if (pos <= size / 2)
 			while (cost-- > 0)

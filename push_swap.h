@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 09:43:09 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/15 09:52:16 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/16 10:18:51 by azahino-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 
-# include "printf/ft_printf.h"
-# include "libft/libft.h"
-
-typedef struct s_cll
-{
-	int				size;
-	t_node			*head;
-}					t_cll;
+# include "printf/ft_printf.h"		
 
 typedef struct s_node
 {
@@ -32,6 +25,12 @@ typedef struct s_node
 	struct s_node	*prev;
 	struct s_node	*next;
 }					t_node;
+
+typedef struct s_cll
+{
+	int				size;
+	t_node			*head;
+}					t_cll;
 
 typedef enum mode
 {
@@ -43,6 +42,9 @@ typedef enum mode
 
 void	ft_assignment(int argc, char **argv, t_cll *stack_a);
 void	ft_count_flags(char **argv, mode *mode, int *count, int bench);
+t_node	*ft_lstnew(int val, int ind);
+void	ft_lstadd_back(t_cll *lst, t_node *new);
 float	compute_disorder(t_cll *a);
+int		ft_atoi(const char *nptr);
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   arg_assignment.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 13:18:59 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/16 11:03:30 by azahino-         ###   ########.fr       */
+/*   Updated: 2026/06/16 14:15:00 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,19 @@
 
 void	ft_assignment(int argc, char **argv, t_cll *stack_a)
 {
-	int		arg;
 	int		value;
 	int		index;
 	t_node	*num;
 
-	run = 0;
-	arg = 0;
 	index = 0;
-	while (arg < argc)
+	while (index < argc)
 	{
-		while (!ft_isnum(argv))
-			arg++;
-		value = ft_atoi(argv[arg]);
+		value = ft_atoi(*argv);
 		num = ft_lstnew(value, index);
 		ft_lstadd_back(stack_a, num);
-		arg++;
+		(*argv)++;
 		index++;
 	}
-	stack_a->size = arg;
-	return ;
 }
 
 /*void	ft_mode(mode mode, t_cll *stack_a, int bench)
@@ -90,10 +83,12 @@ int	main(int argc, char **argv)
 	stack_a.size = 0;
 	stack_a.head = NULL;
 	i = 0;
-	ft_assignment(argc, argv, &stack_a);
+	ft_assignment(argc - 1, argv + 1, &stack_a);
 	while (i++ < stack_a.size)
 	{
-		ft_printf("%s\n", stack_a.head->value);
+		ft_printf("Value %d\n", stack_a.head->value);
+		ft_printf("Index: %d\n", stack_a.head->index);
+		ft_printf("Size: %d\n", stack_a.size);
 		stack_a.head = stack_a.head->next;
 	}
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 13:18:59 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/16 16:44:37 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/16 18:34:19 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,15 +55,13 @@ void	ft_assignment(int argc, char **argv, t_cll *stack_a)
 	ft_index_sorted(stack_a->size, ptr, move);
 }
 
-void	ft_mode(mode mode, t_cll *stack_a)
+t_cll	ft_mode(mode mode, t_cll *stack_a, t_cll *stack_b)
 {
-	t_cll	*stack_b;
 	//float	disorder;
-	stack_b = NULL;
 	if (mode == SIMPLE)
-		alg_selection(stack_a, stack_b);
+		return(*alg_selection(stack_a, stack_b));
 	else if (mode == MEDIUM)
-		alg_medium(stack_a, stack_b, (int)sqrt(stack_a->size));
+		return(*alg_medium(stack_a, stack_b, (int)sqrt(stack_a->size)));
 	/*
 	else if (mode == COMPLEX)
 		alg_complex(stack_a, stack_b);
@@ -73,32 +71,34 @@ void	ft_mode(mode mode, t_cll *stack_a)
 		alg_adaptive(stack_a, stack_b, disorder);
 	}
 	*/
+	return(*stack_a);
 }
-void	ft_count_flags(char **argv, mode *mode, int *count, int *bench)
+mode	ft_count_flags(char **argv, mode mode, int *count, int *bench)
 {
-	if (ft_strncmp(argv[*count], "--bench", ft_strlen("--bench")))
+	if (ft_strncmp(argv[*count], "--bench", ft_strlen("--bench")) == 0)
 	{
-		count++;
+		(*count)++;
 		*bench = 1;
 	}
-	if (ft_strncmp(argv[*count], "--simple", ft_strlen("--simple")))
+	if (ft_strncmp(argv[*count], "--simple", ft_strlen("--simple")) == 0)
 	{
-		*mode = SIMPLE;
-		count++;
+		mode = SIMPLE;
+		(*count)++;
 	}
-	else if (ft_strncmp(argv[*count], "--medium", ft_strlen("--medium")))
+	else if (ft_strncmp(argv[*count], "--medium", ft_strlen("--medium") + 1) == 0)
 	{
-		*mode = MEDIUM;
-		count++;
+		mode = MEDIUM;
+		(*count)++;
 	}
-	else if (ft_strncmp(argv[*count], "--complex", ft_strlen("--complex")))
+	else if (ft_strncmp(argv[*count], "--complex", ft_strlen("--complex") + 1) == 0)
 	{
-		*mode = COMPLEX;
-		count++;
+		mode = COMPLEX;
+		(*count)++;
 	}
-	else if (ft_strncmp(argv[*count], "--adaptive", ft_strlen("--adaptive")))
+	else if (ft_strncmp(argv[*count], "--adaptive", ft_strlen("--adaptive") + 1) == 0)
 	{
-		*mode = ADAPTIVE;
-		count++;
+		mode = ADAPTIVE;
+		(*count)++;
 	}
+	return (mode);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   disorder.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 10:41:11 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/12 10:47:34 by azahino-         ###   ########.fr       */
+/*   Updated: 2026/06/16 16:25:31 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ float	compute_disorder(t_cll *a)
 	int		total_pairs;
 	int		i;
 	int		j;
-	void	*prev_content;
+	int		prev_content;
 
 	i = 0;
 	while (i < (int)sizeof(a->head) - 1)

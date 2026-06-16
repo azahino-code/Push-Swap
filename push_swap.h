@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 09:43:09 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/16 10:18:51 by azahino-         ###   ########.fr       */
+/*   Updated: 2026/06/16 16:42:21 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# include <math.h>
 
 # include "printf/ft_printf.h"		
 
@@ -41,10 +42,28 @@ typedef enum mode
 }			mode;
 
 void	ft_assignment(int argc, char **argv, t_cll *stack_a);
-void	ft_count_flags(char **argv, mode *mode, int *count, int bench);
-t_node	*ft_lstnew(int val, int ind);
+void	ft_count_flags(char **argv, mode *mode, int *count, int *bench);
+t_node	*ft_lstnew(int val);
 void	ft_lstadd_back(t_cll *lst, t_node *new);
 float	compute_disorder(t_cll *a);
 int		ft_atoi(const char *nptr);
+void	ft_mode(mode mode, t_cll *stack_a);
+t_cll	*alg_selection(t_cll *stack_a, t_cll *stack_b);
+t_cll	*alg_medium(t_cll *stack_a, t_cll *stack_b, int n_chunks);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
+size_t	ft_strlen(const char *s);
+int		pos_index(t_cll *stack, int min_index, int	max_index);
+int		ft_cost(int index, int size);
+void	ft_pa(t_cll *a, t_cll *b);
+void	ft_pb(t_cll *a, t_cll *b);
+void	ft_ss(t_cll *a, t_cll *b);
+void	ft_sa(t_cll *a);
+void	ft_sb(t_cll *b);
+void	ft_ra(t_cll *a);
+void	ft_rb(t_cll *b);
+void	ft_rr(t_cll *a, t_cll *b);
+void	ft_rra(t_cll *a);
+void	ft_rrb(t_cll *b);
+void	ft_rrr(t_cll *a, t_cll *b);
 
 #endif

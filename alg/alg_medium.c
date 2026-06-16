@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   alg_medium.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 10:04:16 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/16 09:53:02 by azahino-         ###   ########.fr       */
+/*   Updated: 2026/06/16 16:43:41 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ t_cll	*alg_medium(t_cll *stack_a, t_cll *stack_b, int n_chunks)
 			{
 				ft_pb(stack_a, stack_b);
 				if (stack_b->head && stack_b->head->index <= mid)
-					ft_rb (stack_b);
+					ft_rb(stack_b);
 				else if (stack_b->head && stack_b->head->index > mid)
 					ft_rrb(stack_b);
 				start++;
@@ -55,5 +55,5 @@ t_cll	*alg_medium(t_cll *stack_a, t_cll *stack_b, int n_chunks)
 		}
 		i++;
 	}
-	return (alg_selection(stack_b));
+	return (alg_selection(stack_b, stack_a));
 }

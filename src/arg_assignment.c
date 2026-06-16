@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   arg_assignment.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 13:18:59 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/16 13:31:45 by azahino-         ###   ########.fr       */
+/*   Updated: 2026/06/16 16:44:37 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
 static void	ft_index_sorted(int stack_size, t_node *ptr, t_node *move)
 {
 	int	nodos_restantes;
@@ -54,15 +55,16 @@ void	ft_assignment(int argc, char **argv, t_cll *stack_a)
 	ft_index_sorted(stack_a->size, ptr, move);
 }
 
-/*void	ft_mode(mode mode, t_cll *stack_a, int bench)
+void	ft_mode(mode mode, t_cll *stack_a)
 {
 	t_cll	*stack_b;
-	float	disorder;
-	
+	//float	disorder;
+	stack_b = NULL;
 	if (mode == SIMPLE)
-		alg_simple(stack_a, stack_b);
+		alg_selection(stack_a, stack_b);
 	else if (mode == MEDIUM)
 		alg_medium(stack_a, stack_b, (int)sqrt(stack_a->size));
+	/*
 	else if (mode == COMPLEX)
 		alg_complex(stack_a, stack_b);
 	else if (mode == ADAPTIVE)
@@ -70,53 +72,33 @@ void	ft_assignment(int argc, char **argv, t_cll *stack_a)
 		disorder = compute_disorder(stack_a);
 		alg_adaptive(stack_a, stack_b, disorder);
 	}
+	*/
 }
-void	ft_count_flags(char **argv, mode *mode, int *count, int bench)
+void	ft_count_flags(char **argv, mode *mode, int *count, int *bench)
 {
 	if (ft_strncmp(argv[*count], "--bench", ft_strlen("--bench")))
 	{
 		count++;
-		bench = 1;
+		*bench = 1;
 	}
 	if (ft_strncmp(argv[*count], "--simple", ft_strlen("--simple")))
 	{
-		mode = SIMPLE;
+		*mode = SIMPLE;
 		count++;
 	}
 	else if (ft_strncmp(argv[*count], "--medium", ft_strlen("--medium")))
 	{
-		mode = MEDIUM;
+		*mode = MEDIUM;
 		count++;
 	}
 	else if (ft_strncmp(argv[*count], "--complex", ft_strlen("--complex")))
 	{
-		mode = COMPLEX;
+		*mode = COMPLEX;
 		count++;
 	}
 	else if (ft_strncmp(argv[*count], "--adaptive", ft_strlen("--adaptive")))
 	{
-		mode = ADAPTIVE;
+		*mode = ADAPTIVE;
 		count++;
 	}
-}*/
-
-int	main(int argc, char **argv)
-{
-	t_cll	stack_a;
-	t_node	*cur;
-	int		i;
-
-	stack_a.size = 0;
-	stack_a.head = NULL;
-	i = 0;
-	ft_assignment(argc - 1, argv + 1, &stack_a);
-	cur = stack_a.head;
-	while (i++ < stack_a.size)
-	{
-		ft_printf("Value %d\n", cur->value);
-		ft_printf("Index: %d\n", cur->index);
-		cur = cur->next;
-	}
-	ft_printf("Size: %d\n", stack_a.size);
-	return (0);
 }

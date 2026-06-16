@@ -6,34 +6,52 @@
 /*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 13:18:59 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/16 11:05:33 by azahino-         ###   ########.fr       */
+/*   Updated: 2026/06/16 13:31:45 by azahino-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
+static void	ft_index_sorted(int stack_size, t_node *ptr, t_node *move)
+{
+	int	nodos_restantes;
+	int moves;
+	int	index;
+	
+	nodos_restantes = 0;
+	while (nodos_restantes++ < stack_size)
+	{
+		moves = 0;
+		index = 0;
+		while (moves++ < stack_size)
+		{
+			if (ptr->value > move->value )
+			{
+				index++;
+				move = move->next;
+			}
+			else
+				move = move->next;
+		}
+		ptr->index = index;
+		ptr = ptr->next;
+	}
+}
 void	ft_assignment(int argc, char **argv, t_cll *stack_a)
 {
-	int		arg;
 	int		value;
-	int		index;
-	t_node	*num;
+	t_node	*ptr;
+	t_node	*move;
 
-	run = 0;
-	arg = 0;
-	index = 0;
-	while (arg < argc)
+	while (argc-- > 0)
 	{
-		while (!ft_isnum(argv))
-			arg++;
-		value = ft_atoi(argv[arg]);
-		num = ft_lstnew(value, index);
-		ft_lstadd_back(stack_a, num);
-		arg++;
-		index++;
+		value = ft_atoi(*argv);
+		ptr = ft_lstnew(value);
+		ft_lstadd_back(stack_a, ptr);
+		argv++;
 	}
-	stack_a->size = arg;
-	return ;
+	ptr = stack_a->head;
+	move = stack_a->head->next;
+	ft_index_sorted(stack_a->size, ptr, move);
 }
 
 /*void	ft_mode(mode mode, t_cll *stack_a, int bench)
@@ -85,16 +103,20 @@ void	ft_count_flags(char **argv, mode *mode, int *count, int bench)
 int	main(int argc, char **argv)
 {
 	t_cll	stack_a;
+	t_node	*cur;
 	int		i;
 
 	stack_a.size = 0;
 	stack_a.head = NULL;
 	i = 0;
-	ft_assignment(argc, argv, &stack_a);
+	ft_assignment(argc - 1, argv + 1, &stack_a);
+	cur = stack_a.head;
 	while (i++ < stack_a.size)
 	{
-		ft_printf("%s\n", stack_a.head->value);
-		stack_a.head = stack_a.head->next;
+		ft_printf("Value %d\n", cur->value);
+		ft_printf("Index: %d\n", cur->index);
+		cur = cur->next;
 	}
+	ft_printf("Size: %d\n", stack_a.size);
 	return (0);
 }

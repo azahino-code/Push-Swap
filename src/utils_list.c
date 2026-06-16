@@ -6,20 +6,19 @@
 /*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 17:22:31 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/16 10:18:38 by azahino-         ###   ########.fr       */
+/*   Updated: 2026/06/16 12:42:52 by azahino-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-t_node	*ft_lstnew(int val, int ind)
+t_node	*ft_lstnew(int val)
 {
 	t_node	*new;
 
 	new = (t_node *)malloc(sizeof(t_node));
 	if (!new)
 		return (NULL);
-	new->index = ind;
 	new->value = val;
 	new->next = new;
 	new->prev = new;

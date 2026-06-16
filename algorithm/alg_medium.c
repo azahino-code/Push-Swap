@@ -6,7 +6,7 @@
 /*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 10:04:16 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/16 08:24:30 by azahino-         ###   ########.fr       */
+/*   Updated: 2026/06/16 09:53:02 by azahino-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,22 +34,26 @@ t_cll	*alg_medium(t_cll *stack_a, t_cll *stack_b, int n_chunks)
 			if (stack_a->head->index >= (i*c_size) && stack_a->head->index <= end)
 			{
 				ft_pb(stack_a, stack_b);
-				if (stack_b->head->index <= mid && stack_b->head)
+				if (stack_b->head && stack_b->head->index <= mid)
 					ft_rb (stack_b);
-				else if (stack_b->head->index > mid && stack_b->head)
+				else if (stack_b->head && stack_b->head->index > mid)
 					ft_rrb(stack_b);
 				start++;
 			}
 			else
 			{
-				pos_a = 
-				if (stack_b->head->index <= stack_b->size/2 && stack_b->size != 1)
+				pos_a = pos_index(stack_a, (i*c_size), end);
+				if ((stack_b->head && stack_b->head->index <= mid)
+				&& pos_a <= stack_a->size / 2)
 					ft_rr(stack_a, stack_b);
+				else if ((stack_b->head && stack_b->head->index > mid)
+				&& pos_a > stack_a->size / 2)
+					ft_rrr(stack_a, stack_b);
 				else
 					ft_ra(stack_a);
 			}
 		}
 		i++;
 	}
-	return (stack_b);
+	return (alg_selection(stack_b));
 }

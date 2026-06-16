@@ -6,7 +6,7 @@
 /*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 13:18:59 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/16 10:41:39 by azahino-         ###   ########.fr       */
+/*   Updated: 2026/06/16 11:03:30 by azahino-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,22 @@
 void	ft_assignment(int argc, char **argv, t_cll *stack_a)
 {
 	int		arg;
-	int		run;
 	int		value;
 	int		index;
 	t_node	*num;
 
+	run = 0;
 	arg = 0;
 	index = 0;
 	while (arg < argc)
 	{
-		while (run < argc)
-		{
-			if (argv[arg] > argv[run])
-				index++;
-			run++;
-		}
+		while (!ft_isnum(argv))
+			arg++;
 		value = ft_atoi(argv[arg]);
 		num = ft_lstnew(value, index);
 		ft_lstadd_back(stack_a, num);
 		arg++;
+		index++;
 	}
 	stack_a->size = arg;
 	return ;
@@ -96,7 +93,7 @@ int	main(int argc, char **argv)
 	ft_assignment(argc, argv, &stack_a);
 	while (i++ < stack_a.size)
 	{
-		ft_printf("%s\n", stack_a.head->index);
+		ft_printf("%s\n", stack_a.head->value);
 		stack_a.head = stack_a.head->next;
 	}
 	return (0);

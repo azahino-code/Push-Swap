@@ -1,59 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   moves.c                                            :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/09 17:22:31 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/15 13:53:22 by jrecio-t         ###   ########.fr       */
+/*   Created: 2026/06/16 10:17:04 by jrecio-t          #+#    #+#             */
+/*   Updated: 2026/06/16 10:20:21 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
-void	ft_ss(t_cll *a, t_cll *b)
-{
-	ft_sa(a->head);
-	ft_sb(b->head);
-}
-
-void	ft_sa(t_cll **a)
-{
-	ft_swap(a);
-}
-
-void	ft_sb(t_cll **b)
-{
-	ft_swap(b);
-}
-
-void	ft_swap(t_cll *list)
-{
-	t_node	*first;
-	t_node	*second;
-	t_node	*third;
-	t_node	*last;
-
-	first = list->head;
-	if (first == NULL || first->next == first)
-		return ;
-	if (first->next->next == first)
-	{
-		list->head = first->next;
-		return;
-	}	
-	last = first->prev;
-	second = first->next;
-	third = second->next;
-	second->prev = last;
-	second->next = first;
-	first->prev = second;
-	first->next = third;
-	third->prev = first;
-	last->next = second;
-	list->head = second;
-}
 
 void	ft_push(t_cll *list_from, t_cll *list_to)
 {
@@ -92,37 +49,12 @@ void	ft_push(t_cll *list_from, t_cll *list_to)
 	list_to->size++;
 }
 
-t_node	*ft_lstnew(int value, int index)
+void	ft_pa(t_cll *a, t_cll *b)
 {
-	t_node	*new;
-
-	new = (t_node *)malloc(sizeof(t_node));
-	if (!new)
-		return (NULL);
-	new->index = index;
-	new->value = value;
-	new->next = new;
-	new->prev = new;
-	return (new);
+	ft_push(b, a);
 }
 
-void	ft_lstadd_back(t_cll *lst, t_node *new)
+void	ft_pb(t_cll *a, t_cll *b)
 {
-	t_node	*last;
-
-	if (lst == NULL || new == NULL)
-		return ;
-	if (lst->head == NULL)
-	{
-		lst->head = new;
-	}
-	else
-	{
-		last = lst->head->prev;
-		last->next = new;
-		new->prev = last;
-		lst->head->prev = new;
-		new->next = lst->head;
-	}
-	lst->size++;
+	ft_push(a, b);
 }

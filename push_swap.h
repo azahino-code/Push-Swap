@@ -6,7 +6,7 @@
 /*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 09:43:09 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/16 10:18:51 by azahino-         ###   ########.fr       */
+/*   Updated: 2026/06/16 12:43:04 by azahino-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ typedef enum mode
 
 void	ft_assignment(int argc, char **argv, t_cll *stack_a);
 void	ft_count_flags(char **argv, mode *mode, int *count, int bench);
-t_node	*ft_lstnew(int val, int ind);
+t_node	*ft_lstnew(int val);
 void	ft_lstadd_back(t_cll *lst, t_node *new);
 float	compute_disorder(t_cll *a);
 int		ft_atoi(const char *nptr);

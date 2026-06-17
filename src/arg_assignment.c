@@ -6,19 +6,19 @@
 /*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 13:18:59 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/16 13:31:45 by azahino-         ###   ########.fr       */
+/*   Updated: 2026/06/16 13:40:26 by azahino-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 static void	ft_index_sorted(int stack_size, t_node *ptr, t_node *move)
 {
-	int	nodos_restantes;
+	int	node_rest;
 	int moves;
 	int	index;
 	
-	nodos_restantes = 0;
-	while (nodos_restantes++ < stack_size)
+	node_rest = 0;
+	while (node_rest++ < stack_size)
 	{
 		moves = 0;
 		index = 0;
@@ -54,7 +54,7 @@ void	ft_assignment(int argc, char **argv, t_cll *stack_a)
 	ft_index_sorted(stack_a->size, ptr, move);
 }
 
-/*void	ft_mode(mode mode, t_cll *stack_a, int bench)
+void	ft_mode(mode mode, t_cll *stack_a, int bench)
 {
 	t_cll	*stack_b;
 	float	disorder;
@@ -71,6 +71,7 @@ void	ft_assignment(int argc, char **argv, t_cll *stack_a)
 		alg_adaptive(stack_a, stack_b, disorder);
 	}
 }
+
 void	ft_count_flags(char **argv, mode *mode, int *count, int bench)
 {
 	if (ft_strncmp(argv[*count], "--bench", ft_strlen("--bench")))
@@ -98,25 +99,4 @@ void	ft_count_flags(char **argv, mode *mode, int *count, int bench)
 		mode = ADAPTIVE;
 		count++;
 	}
-}*/
-
-int	main(int argc, char **argv)
-{
-	t_cll	stack_a;
-	t_node	*cur;
-	int		i;
-
-	stack_a.size = 0;
-	stack_a.head = NULL;
-	i = 0;
-	ft_assignment(argc - 1, argv + 1, &stack_a);
-	cur = stack_a.head;
-	while (i++ < stack_a.size)
-	{
-		ft_printf("Value %d\n", cur->value);
-		ft_printf("Index: %d\n", cur->index);
-		cur = cur->next;
-	}
-	ft_printf("Size: %d\n", stack_a.size);
-	return (0);
 }

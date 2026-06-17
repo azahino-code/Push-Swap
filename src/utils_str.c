@@ -1,43 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   disorder.c                                         :+:      :+:    :+:   */
+/*   utils_str.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/09 10:41:11 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/16 16:25:31 by jrecio-t         ###   ########.fr       */
+/*   Created: 2026/06/16 16:10:59 by jrecio-t          #+#    #+#             */
+/*   Updated: 2026/06/16 16:11:32 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-// Hay que comprobar que funciona
-
-float	compute_disorder(t_cll *a)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int		mistakes;
-	int		total_pairs;
-	int		i;
-	int		j;
-	int		prev_content;
-
-	i = 0;
-	while (i < (int)sizeof(a->head) - 1)
+	while (n > 0)
 	{
-		j = i + 1;
-		while (j < (int)sizeof(a->head) - 1)
+		if ((unsigned char)*s1 == (unsigned char)*s2)
 		{
-			total_pairs += 1;
-			prev_content = a->head->value;
-			a->head = a->head->next;
-			if (prev_content > a->head->value)
-			{
-				mistakes += 1;
-			}
-			j++;
+			s1++;
+			s2++;
+			n--;
 		}
-		i++;
+		else if ((unsigned char)*s1 < (unsigned char)*s2)
+		{
+			return (-1);
+		}
+		else
+		{
+			return (1);
+		}
 	}
-	return ((float)(mistakes / total_pairs));
+	return (0);
+}
+
+size_t	ft_strlen(const char *s)
+{
+	size_t	size;
+
+	size = 0;
+	while (*s)
+	{
+		s++;
+		size++;
+	}
+	return (size);
 }

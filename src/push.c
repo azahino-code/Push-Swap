@@ -6,13 +6,13 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 10:17:04 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/16 10:20:21 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/16 16:35:06 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_push(t_cll *list_from, t_cll *list_to)
+static void	ft_push(t_cll *list_from, t_cll *list_to)
 {
 	t_node	*node1_from;
 	t_node	*node2_from;

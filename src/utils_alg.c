@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_alg.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 08:58:10 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/16 09:14:59 by azahino-         ###   ########.fr       */
+/*   Updated: 2026/06/16 18:14:59 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,12 +48,12 @@ int	pos_index(t_cll *stack, int min_index, int	max_index)
 	moves = 0;
 	tmp = stack->head;
 	ant = stack->head;
-	while ((tmp->index < min_index && tmp->index > max_index))
+	while ((tmp->index < min_index || tmp->index > max_index))
 	{
 		tmp = tmp->next;
 		i++;
 	}
-	while (ant->index < min_index && ant->index > max_index)
+	while (ant->index < min_index || ant->index > max_index)
 	{
 		ant = ant->prev;
 		moves++;
@@ -61,6 +61,6 @@ int	pos_index(t_cll *stack, int min_index, int	max_index)
 	if (i <= moves)
 		return (i);
 	else if (moves < i)
-		return (stack->size - 1 - moves);
+		return (stack->size - moves);
 	return (i);
 }

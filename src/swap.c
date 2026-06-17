@@ -6,13 +6,13 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 10:16:25 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/16 10:23:09 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/16 16:35:36 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_swap(t_cll *stack)
+static void	ft_swap(t_cll *stack)
 {
 	t_node	*first;
 	t_node	*second;

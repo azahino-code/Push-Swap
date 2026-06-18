@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   arg_assignment.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 13:18:59 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/17 08:29:29 by azahino-         ###   ########.fr       */
+/*   Updated: 2026/06/18 10:56:47 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ t_cll	ft_mode(mode mode, t_cll *stack_a, t_cll *stack_b)
 	if (mode == SIMPLE)
 		return(*alg_selection(stack_a, stack_b));
 	else if (mode == MEDIUM)
-		return(*alg_medium(stack_a, stack_b, (int)sqrt(stack_a->size)));
+		return(*alg_medium(stack_a, stack_b, (int)sqrt(stack_a->size), stack_a->size));
 	/*
 	else if (mode == COMPLEX)
 		alg_complex(stack_a, stack_b);

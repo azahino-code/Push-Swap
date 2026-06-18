@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 09:43:09 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/17 08:19:07 by azahino-         ###   ########.fr       */
+/*   Updated: 2026/06/18 10:57:00 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ float	compute_disorder(t_cll *a);
 int		ft_atoi(const char *nptr);
 t_cll	ft_mode(mode mode, t_cll *stack_a, t_cll *stack_b);
 t_cll	*alg_selection(t_cll *stack_a, t_cll *stack_b);
-t_cll	*alg_medium(t_cll *stack_a, t_cll *stack_b, int n_chunks);
+t_cll	*alg_medium(t_cll *stack_a, t_cll *stack_b, int n_chunks, int size);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 size_t	ft_strlen(const char *s);
 int		pos_index(t_cll *stack, int min_index, int	max_index);

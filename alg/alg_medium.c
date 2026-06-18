@@ -3,71 +3,77 @@
 /*                                                        :::      ::::::::   */
 /*   alg_medium.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 10:04:16 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/17 10:28:21 by azahino-         ###   ########.fr       */
+/*   Updated: 2026/06/18 11:54:16 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //chuncks
 #include "../push_swap.h"
 
-t_cll	*alg_medium(t_cll *stack_a, t_cll *stack_b, int n_chunks)
+static void	moves(t_cll *stack_a, t_cll *stack_b, int start, int end)
 {
-	int	i; //contador
-	int start;
-	int end;
-	int	mid;
-	int	c_size;
-	int	pos_a;
-	int	count = 0; 
-	t_node	*prueba;
+	ft_pb(stack_a, stack_b);
+	if (stack_b->head && stack_b->head->index <= (start + end) / 2)
+		ft_rb(stack_b);
+	else if (stack_b->head && stack_b->head->index > (start + end) / 2)
+		ft_rrb(stack_b);
+}
 
-	c_size = stack_a->size/n_chunks;
-	i = 0;
-	while (i < n_chunks)
-	{	
+static int	def_end(int i, int n_chunks, int size, int c_size)
+{
+	if (i == n_chunks - 1)
+		return (size - 1);
+	else
+		return ((i + 1) * c_size - 1);
+}
+
+static void	move_to_chunk(t_cll *a, t_cll *b, int start, int end)
+{
+	int	pos_a;
+	int	mid;
+
+	mid = (start + end) / 2;
+	pos_a = pos_index(a, start, end);
+	if (b->head && b->head->index <= mid
+		&& pos_a <= a->size / 2)
+		ft_rr(a, b);
+	else if (b->head && b->head->index > mid
+		&& pos_a > a->size / 2)
+		ft_rrr(a, b);
+	else if (pos_a <= a->size / 2)
+		ft_ra(a);
+	else
+		ft_rra(a);
+}
+
+t_cll	*alg_medium(t_cll *stk_a, t_cll *stack_b, int n_chunks, int size)
+{
+	int	i;
+	int	start;
+	int	end;
+	int	c_size;
+	int	count;
+
+	c_size = stk_a->size / n_chunks;
+	i = -1;
+	while (++i < n_chunks)
+	{
 		start = i * c_size;
-		if (i == n_chunks - 1)
-			end = stack_a->size - 1;
-		else
-			end = start + c_size - 1;
-		mid = (start + end) / 2;
-		while (start <= end)
+		count = start;
+		end = def_end(i, n_chunks, size, c_size);
+		while (count <= end)
 		{
-			if (stack_a->head->index >= (i*c_size) && stack_a->head->index <= end)
+			if (stk_a->head->index >= (i * c_size) && stk_a->head->index <= end)
 			{
-				ft_pb(stack_a, stack_b);
-				if (stack_b->head && stack_b->head->index <= mid)
-					ft_rb(stack_b);
-				else if (stack_b->head && stack_b->head->index > mid)
-					ft_rrb(stack_b);
-				start++;
+				moves(stk_a, stack_b, start, end);
+				count++;
 			}
 			else
-			{
-				pos_a = pos_index(stack_a, (i*c_size), end);
-				if ((stack_b->head && stack_b->head->index <= mid)
-				&& pos_a <= stack_a->size / 2)
-					ft_rr(stack_a, stack_b);
-				else if ((stack_b->head && stack_b->head->index > mid)
-				&& pos_a > stack_a->size / 2)
-					ft_rrr(stack_a, stack_b);
-				else if (pos_a <= stack_a->size / 2)
-					ft_ra(stack_a);
-				else
-					ft_rra(stack_a);
-			}
+				move_to_chunk(stk_a, stack_b, start, end);
 		}
-		i++;
 	}
-	prueba = stack_b->head;
-	while (count++ < stack_b->size)
-	{
-		ft_printf("%d\n", prueba->value);
-		prueba = prueba->next;
-	}
-	ft_printf("fin de stack_b");
-	return (alg_selection(stack_b, stack_a));
+	return (alg_selection(stack_b, stk_a));
 }

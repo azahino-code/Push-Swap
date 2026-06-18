@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 10:04:18 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/17 15:21:15 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/18 10:45:04 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,10 @@ void	indexer(t_cll *stack)
 	int		iterator;
 	int		current_size;
 	t_cll	aux;
+	t_cll	copy;
 	t_node	*node;
 	
+	copy = *stack;
 	(&aux)->head = NULL;
 	(&aux)->size = 0;
 	index = 0;
@@ -57,9 +59,11 @@ void	indexer(t_cll *stack)
 			iterator++;
 		}
 		while (stack->head->value != min)
-			ft_ra(stack);
+			ft_ra(&copy);
 		stack->head->index = index;
 		index++;
-		ft_pb(stack, &aux);
+		ft_pb(&copy, &aux);
 	}
+	while((&aux)->head)
+		ft_pa(&copy, &aux);
 }

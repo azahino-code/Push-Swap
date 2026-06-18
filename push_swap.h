@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 09:43:09 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/18 13:22:09 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/18 13:16:03 by azahino-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	ft_assignment(int argc, char **argv, t_cll *stack_a);
 void	ft_count_flags(char **argv, t_mode *mode, int *count, int *bench);
 t_node	*ft_lstnew(int val);
 void	ft_lstadd_back(t_cll *lst, t_node *new);
-float	compute_disorder(t_cll *a);
+float	compute_disorder(t_node *a, int size);
 int		ft_atoi(const char *nptr);
 t_cll	ft_mode(t_mode mode, t_cll *stack_a);
 t_cll	*alg_selection(t_cll *stack_a, t_cll *stack_b);

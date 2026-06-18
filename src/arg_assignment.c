@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   arg_assignment.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 13:18:59 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/18 13:32:04 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/18 13:15:42 by azahino-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ t_cll	ft_mode(t_mode mode, t_cll *stack_a)
 		return (*alg_complex(stack_a, &stack_b));
 	else
 	{
-		disorder = compute_disorder(stack_a);
+		disorder = compute_disorder(stack_a->head, stack_a->size);
 		return (*alg_adaptive(disorder, stack_a, &stack_b));
 	}
 }

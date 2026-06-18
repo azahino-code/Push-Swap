@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   arg_assignment.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 13:18:59 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/18 12:47:13 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/18 11:07:07 by azahino-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,16 +64,14 @@ t_cll	ft_mode(t_mode mode, t_cll *stack_a)
 	else if (mode == MEDIUM)
 		return (*alg_medium(stack_a, &stack_b,
 				(int)sqrt(stack_a->size), stack_a->size));
-	/*
-	else if (mode == COMPLEX)
-		alg_complex(stack_a, stack_b);
+	/*else if (mode == COMPLEX)
+		return (*alg_complex(stack_a, &stack_b));
 	else if (mode == ADAPTIVE)
 	{
 		disorder = compute_disorder(stack_a);
-		alg_adaptive(stack_a, stack_b, disorder);
+		return (*alg_adaptive(disorder, stack_a, &stack_b));
 	}
 	*/
-	return (*stack_a);
 }
 
 void	ft_count_flags(char **argv, t_mode *mode, int *count, int *bench)

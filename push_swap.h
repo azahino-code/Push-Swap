@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 09:43:09 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/18 12:44:04 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/18 13:22:09 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ int		ft_atoi(const char *nptr);
 t_cll	ft_mode(t_mode mode, t_cll *stack_a);
 t_cll	*alg_selection(t_cll *stack_a, t_cll *stack_b);
 t_cll	*alg_medium(t_cll *stack_a, t_cll *stack_b, int n_chunks, int size);
+t_cll	*alg_complex(t_cll *stack_a, t_cll *stack_b);
+t_cll	*alg_adaptive(float disorder, t_cll *stack_a, t_cll *stack_b);
 int		ft_strcmp(const char *s1, const char *s2);
 size_t	ft_strlen(const char *s);
 int		pos_index(t_cll *stack, int min_index, int max_index);

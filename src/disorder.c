@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   disorder.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 10:41:11 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/18 12:08:41 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/18 13:07:35 by azahino-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,30 +14,31 @@
 
 // Hay que comprobar que funciona
 
-float	compute_disorder(t_cll *a)
+float	compute_disorder(t_cll a)
 {
-	int		mistakes;
-	int		total_pairs;
+	float	mistakes;
+	float	total_pairs;
 	int		i;
 	int		j;
-	int		prev_content;
+	t_node	*ptr;
 
 	i = 0;
-	while (i < (int) sizeof(a->head) - 1)
+	total_pairs = 0;
+	mistakes = 0;
+	while (i < a.size - 1)
 	{
+		ptr = a.head->next;
 		j = i + 1;
-		while (j < (int) sizeof(a->head) - 1)
+		while (j < a.size)
 		{
 			total_pairs += 1;
-			prev_content = a->head->value;
-			a->head = a->head->next;
-			if (prev_content > a->head->value)
-			{
+			if (ptr->value < a.head->value)
 				mistakes += 1;
-			}
 			j++;
+			ptr = ptr->next;
 		}
 		i++;
+		a.head = a.head->next;
 	}
-	return ((float)(mistakes / total_pairs));
+	return (mistakes /total_pairs);
 }

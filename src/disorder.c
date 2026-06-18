@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 10:41:11 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/16 16:25:31 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/18 12:08:41 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ float	compute_disorder(t_cll *a)
 	int		prev_content;
 
 	i = 0;
-	while (i < (int)sizeof(a->head) - 1)
+	while (i < (int) sizeof(a->head) - 1)
 	{
 		j = i + 1;
-		while (j < (int)sizeof(a->head) - 1)
+		while (j < (int) sizeof(a->head) - 1)
 		{
 			total_pairs += 1;
 			prev_content = a->head->value;

@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 08:58:10 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/16 18:14:59 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/18 12:19:25 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	total_cost(int cost_a, int cost_b)
 }
 
 //pos_index lo usaremos para ubicar el indice del nodo que necesitemos
-int	pos_index(t_cll *stack, int min_index, int	max_index)
+int	pos_index(t_cll *stack, int min_index, int max_index)
 {
 	int		i;
 	int		moves;

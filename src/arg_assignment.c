@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 13:18:59 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/18 10:56:47 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/18 12:47:13 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 static void	ft_index_sorted(int stack_size, t_node *ptr, t_node *move)
 {
 	int	node_rest;
-	int moves;
+	int	moves;
 	int	index;
-	
+
 	node_rest = 0;
 	while (node_rest++ < stack_size)
 	{
@@ -25,18 +25,15 @@ static void	ft_index_sorted(int stack_size, t_node *ptr, t_node *move)
 		index = 0;
 		while (moves++ < stack_size)
 		{
-			if (ptr->value > move->value )
-			{
+			if (ptr->value > move->value)
 				index++;
-				move = move->next;
-			}
-			else
-				move = move->next;
+			move = move->next;
 		}
 		ptr->index = index;
 		ptr = ptr->next;
 	}
 }
+
 void	ft_assignment(int argc, char **argv, t_cll *stack_a)
 {
 	int		value;
@@ -55,13 +52,18 @@ void	ft_assignment(int argc, char **argv, t_cll *stack_a)
 	ft_index_sorted(stack_a->size, ptr, move);
 }
 
-t_cll	ft_mode(mode mode, t_cll *stack_a, t_cll *stack_b)
+t_cll	ft_mode(t_mode mode, t_cll *stack_a)
 {
 	//float	disorder;
+	t_cll	stack_b;
+
+	stack_b.head = NULL;
+	stack_b.size = 0;
 	if (mode == SIMPLE)
-		return(*alg_selection(stack_a, stack_b));
+		return (*alg_selection(stack_a, &stack_b));
 	else if (mode == MEDIUM)
-		return(*alg_medium(stack_a, stack_b, (int)sqrt(stack_a->size), stack_a->size));
+		return (*alg_medium(stack_a, &stack_b,
+				(int)sqrt(stack_a->size), stack_a->size));
 	/*
 	else if (mode == COMPLEX)
 		alg_complex(stack_a, stack_b);
@@ -71,34 +73,34 @@ t_cll	ft_mode(mode mode, t_cll *stack_a, t_cll *stack_b)
 		alg_adaptive(stack_a, stack_b, disorder);
 	}
 	*/
-	return(*stack_a);
+	return (*stack_a);
 }
-mode	ft_count_flags(char **argv, mode mode, int *count, int *bench)
+
+void	ft_count_flags(char **argv, t_mode *mode, int *count, int *bench)
 {
-	if (ft_strncmp(argv[*count], "--bench", ft_strlen("--bench")) == 0)
+	if (ft_strcmp(argv[*count], "--bench") == 0)
 	{
 		(*count)++;
 		*bench = 1;
 	}
-	if (ft_strncmp(argv[*count], "--simple", ft_strlen("--simple")) == 0)
+	if (ft_strcmp(argv[*count], "--simple") == 0)
 	{
-		mode = SIMPLE;
+		*mode = SIMPLE;
 		(*count)++;
 	}
-	else if (ft_strncmp(argv[*count], "--medium", ft_strlen("--medium")) == 0)
+	else if (ft_strcmp(argv[*count], "--medium") == 0)
 	{
-		mode = MEDIUM;
+		*mode = MEDIUM;
 		(*count)++;
 	}
-	else if (ft_strncmp(argv[*count], "--complex", ft_strlen("--complex")) == 0)
+	else if (ft_strcmp(argv[*count], "--complex") == 0)
 	{
-		mode = COMPLEX;
+		*mode = COMPLEX;
 		(*count)++;
 	}
-	else if (ft_strncmp(argv[*count], "--adaptive", ft_strlen("--adaptive")) == 0)
+	else if (ft_strcmp(argv[*count], "--adaptive") == 0)
 	{
-		mode = ADAPTIVE;
+		*mode = ADAPTIVE;
 		(*count)++;
 	}
-	return (mode);
 }

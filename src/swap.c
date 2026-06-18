@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 10:16:25 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/16 16:35:36 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/18 12:18:40 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ static void	ft_swap(t_cll *stack)
 	if (first->next->next == first)
 	{
 		stack->head = first->next;
-		return;
-	}	
+		return ;
+	}
 	last = first->prev;
 	second = first->next;
 	third = second->next;

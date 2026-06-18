@@ -6,11 +6,28 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 10:17:04 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/16 16:35:06 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/18 12:48:49 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+static void	extract_node_fr(t_node *node2, t_node *node1, t_cll *list_from)
+{
+	node2 = node1->next;
+	node2->prev = node1->prev;
+	node1->prev->next = node2;
+	list_from->head = node2;
+}
+
+static void	insert_node(t_node *node1_fr, t_node *node1_to, t_cll *list_to)
+{
+	node1_fr->next = node1_to;
+	node1_fr->prev = node1_to->prev;
+	node1_to->prev->next = node1_fr;
+	node1_to->prev = node1_fr;
+	list_to->head = node1_fr;
+}
 
 static void	ft_push(t_cll *list_from, t_cll *list_to)
 {
@@ -19,17 +36,13 @@ static void	ft_push(t_cll *list_from, t_cll *list_to)
 	t_node	*node1_to;
 
 	node1_from = list_from->head;
+	node2_from = NULL;
 	if (node1_from == NULL)
 		return ;
 	if (list_from->size == 1)
 		list_from->head = NULL;
 	else
-	{
-		node2_from = node1_from->next;
-		node2_from->prev = node1_from->prev;
-		node1_from->prev->next = node2_from;
-		list_from->head = node2_from;
-	}
+		extract_node_fr(node2_from, node1_from, list_from);
 	node1_to = list_to->head;
 	if (node1_to == NULL)
 	{
@@ -38,13 +51,7 @@ static void	ft_push(t_cll *list_from, t_cll *list_to)
 		node1_from->prev = node1_from;
 	}
 	else
-	{
-		node1_from->next = node1_to;
-		node1_from->prev = node1_to->prev;
-		node1_to->prev->next = node1_from;
-		node1_to->prev = node1_from;
-		list_to->head = node1_from;
-	}
+		insert_node(node1_from, node1_to, list_to);
 	list_from->size--;
 	list_to->size++;
 }

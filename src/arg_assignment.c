@@ -6,7 +6,7 @@
 /*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 13:18:59 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/18 13:15:42 by azahino-         ###   ########.fr       */
+/*   Updated: 2026/06/18 21:04:11 by azahino-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,8 @@ void	ft_assignment(int argc, char **argv, t_cll *stack_a)
 	ft_index_sorted(stack_a->size, ptr, move);
 }
 
-t_cll	ft_mode(t_mode mode, t_cll *stack_a)
+t_cll	ft_mode(t_mode mode, t_cll *stack_a, float disorder)
 {
-	float	disorder;
 	t_cll	stack_b;
 
 	stack_b.head = NULL;
@@ -67,10 +66,7 @@ t_cll	ft_mode(t_mode mode, t_cll *stack_a)
 	else if (mode == COMPLEX)
 		return (*alg_complex(stack_a, &stack_b));
 	else
-	{
-		disorder = compute_disorder(stack_a->head, stack_a->size);
 		return (*alg_adaptive(disorder, stack_a, &stack_b));
-	}
 }
 
 void	ft_count_flags(char **argv, t_mode *mode, int *count, int *bench)

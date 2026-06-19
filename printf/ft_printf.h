@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 17:33:17 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/05/21 16:55:03 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/19 09:16:16 by azahino-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@
 # include <stdarg.h>
 # include <unistd.h>
 
-int	ft_printf(char const *format, ...);
-int	ft_printf_decimal(int n);
-int	ft_printf_unsigned_decimal(unsigned int n);
-int	ft_printf_hex(unsigned int i, int mayus);
-int	ft_printf_pointer(size_t p);
+int	ft_printf(FILE *stream, const char *format, ...);
+int	ft_printf_decimal(int fd, int n);
+int	ft_printf_unsigned_decimal(int fd, unsigned int n);
+int	ft_printf_hex(int fd, unsigned int i, int mayus);
+int	ft_printf_pointer(int fd, size_t p);
 
 #endif

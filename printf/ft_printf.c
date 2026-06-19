@@ -3,58 +3,58 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 11:18:41 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/05/21 16:54:49 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/19 09:15:54 by azahino-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	ft_printf_character(char c)
+static int	ft_printf_character(int fd, char c)
 {
-	return (write(1, &c, 1));
+	return (write(fd, &c, 1));
 }
 
-static int	ft_printf_string(char *str)
+static int	ft_printf_string(int fd, char *str)
 {
 	int	count;
 
 	count = 0;
 	if (str == NULL)
-		return (write(1, "(null)", 6));
+		return (write(fd, "(null)", 6)); //fd o 1?
 	while (*str)
 	{
-		count += write(1, str, 1);
+		count += write(fd, str, 1);
 		str++;
 	}
 	return (count);
 }
 
-static int	ft_check_especifier(char const *format, va_list args)
+static int	ft_check_especifier(int fd, char const *format, va_list args)
 {
 	if (*format == 'c')
-		return (ft_printf_character(va_arg(args, int)));
+		return (ft_printf_character(fd, va_arg(args, int)));
 	else if (*format == 'd' || *format == 'i')
-		return (ft_printf_decimal(va_arg(args, int)));
+		return (ft_printf_decimal(fd, va_arg(args, int)));
 	else if (*format == 'x')
-		return (ft_printf_hex(va_arg(args, unsigned int), 0));
+		return (ft_printf_hex(fd, va_arg(args, unsigned int), 0));
 	else if (*format == 'X')
-		return (ft_printf_hex(va_arg(args, unsigned int), 1));
+		return (ft_printf_hex(fd, va_arg(args, unsigned int), 1));
 	else if (*format == 'p')
-		return (ft_printf_pointer((long int)va_arg(args, void *)));
+		return (ft_printf_pointer(fd, (long int)va_arg(args, void *)));
 	else if (*format == 'u')
-		return (ft_printf_unsigned_decimal(va_arg(args, unsigned int)));
+		return (ft_printf_unsigned_decimal(fd, va_arg(args, unsigned int)));
 	else if (*format == 's')
-		return (ft_printf_string(va_arg(args, char *)));
+		return (ft_printf_string(fd, va_arg(args, char *)));
 	else if (*format == '%')
-		return (write(1, "%", 1));
+		return (write(fd, "%", 1));
 	else
 		return (0);
 }
 
-int	ft_printf(char const *format, ...)
+int	ft_printf(FILE *stream, const char *format, ...)
 {
 	va_list	args;
 	int		count;
@@ -66,10 +66,10 @@ int	ft_printf(char const *format, ...)
 		if (*format == '%')
 		{
 			format++;
-			count += ft_check_especifier(format, args);
+			count += ft_check_especifier(fd, format, args);
 		}
 		else
-			count += write(1, format, 1);
+			count += write(fd, format, 1);
 		format++;
 	}
 	va_end(args);

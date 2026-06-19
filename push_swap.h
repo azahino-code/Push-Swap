@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 09:43:09 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/19 11:42:24 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/19 11:59:35 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,32 +27,13 @@ typedef struct s_node
 	struct s_node	*next;
 }					t_node;
 
-typedef struct s_rotate
-{
-	int	ra;
-	int rb;
-	int rr;
-	int	rra;
-	int rrb;
-	int	rrr;
-}				t_rotate;
-
-typedef struct s_sp
-{
-	int	sa;
-	int	sb;
-	int	ss;
-	int	pa;
-	int	pb;
-	int total;
-}				t_sp;
-
 typedef struct s_cll
 {
-	int				size;
-	t_rotate		r_num;
-	t_sp			s_r_num;
-	t_node			*head;
+	int		size;
+	int		moves[11]; //para sustituir 
+	//t_rotate		r_num;
+	//t_sp			s_r_num;
+	t_node	*head;
 }					t_cll;
 
 typedef enum mode
@@ -63,6 +44,24 @@ typedef enum mode
 	ADAPTIVE
 }			t_mode;
 
+/*typedef struct s_rotate
+{
+	int	ra; = moves[0]
+	int rb; = moves[1]
+	int rr; = moves[2]
+	int	rra; = moves[3]
+	int rrb; = moves[4]
+	int	rrr; = moves[5]
+}				t_rotate;
+
+typedef struct s_sp
+{
+	int	sa; = moves[6]
+	int	sb; = moves[7]
+	int	ss; = moves[8]
+	int	pa; = moves[9]
+	int	pb; = moves[10]
+}			t_sp;*/
 
 void	ft_assignment(int argc, char **argv, t_cll *stack_a);
 void	ft_bench(float disorder, t_mode mode, int moves_count, t_cll *a);

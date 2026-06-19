@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 13:45:49 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/19 11:42:44 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/19 13:13:43 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	main(int argc, char **argv)
 	ft_assignment(argc - count, argv + count, &stack_a);
 	if (!stack_a.head)
 	{
-		ft_printf("Faltan argurmentos");
+		ft_printf(1, "Faltan argurmentos");
 		return (0);
 	}
 	disorder = compute_disorder(&stack_a);
@@ -38,9 +38,9 @@ int	main(int argc, char **argv)
 	i = 0; //se irá fuera
 	while (i++ < stack_a.size) //esto se quitará y vamos bien de lineas
 	{
-		ft_printf("%d\n", stack_a.head->value);
+		ft_printf(1, "%d\n", stack_a.head->value);
 		stack_a.head = stack_a.head->next;
 	}
 	if (bench == 1)
-		ft_bench(disorder, mode, stack_a.s_r_num.total, &stack_a);
+		ft_bench(disorder, mode, stack_a.moves[11], &stack_a);
 }

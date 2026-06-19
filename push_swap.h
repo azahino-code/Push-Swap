@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 09:43:09 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/18 20:53:37 by azahino-         ###   ########.fr       */
+/*   Updated: 2026/06/19 11:42:24 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,22 +26,6 @@ typedef struct s_node
 	struct s_node	*prev;
 	struct s_node	*next;
 }					t_node;
-
-typedef struct s_cll
-{
-	int				size;
-	t_rotate		r_num;
-	t_sp			s_r_num;
-	t_node			*head;
-}					t_cll;
-
-typedef enum mode
-{
-	SIMPLE,
-	MEDIUM,
-	COMPLEX,
-	ADAPTIVE
-}			t_mode;
 
 typedef struct s_rotate
 {
@@ -63,13 +47,29 @@ typedef struct s_sp
 	int total;
 }				t_sp;
 
+typedef struct s_cll
+{
+	int				size;
+	t_rotate		r_num;
+	t_sp			s_r_num;
+	t_node			*head;
+}					t_cll;
+
+typedef enum mode
+{
+	SIMPLE,
+	MEDIUM,
+	COMPLEX,
+	ADAPTIVE
+}			t_mode;
+
 
 void	ft_assignment(int argc, char **argv, t_cll *stack_a);
 void	ft_bench(float disorder, t_mode mode, int moves_count, t_cll *a);
 void	ft_count_flags(char **argv, t_mode *mode, int *count, int *bench);
 t_node	*ft_lstnew(int val);
 void	ft_lstadd_back(t_cll *lst, t_node *new);
-float	compute_disorder(t_node *a, int size);
+float	compute_disorder(t_cll *stack_a);
 int		ft_atoi(const char *nptr);
 t_cll	ft_mode(t_mode mode, t_cll *stack_a, float disorder);
 t_cll	*alg_selection(t_cll *stack_a, t_cll *stack_b);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 09:43:09 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/19 12:59:05 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/20 15:07:50 by azahino-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,8 +79,8 @@ int		ft_strcmp(const char *s1, const char *s2);
 size_t	ft_strlen(const char *s);
 int		pos_index(t_cll *stack, int min_index, int max_index);
 int		ft_cost(int index, int size);
-void	ft_pa(t_cll *a, t_cll *b);
-void	ft_pb(t_cll *a, t_cll *b);
+void	ft_pa(t_cll *a, t_cll *b, int bench);
+void	ft_pb(t_cll *a, t_cll *b, int bench);
 void	ft_ss(t_cll *a, t_cll *b);
 void	ft_sa(t_cll *a);
 void	ft_sb(t_cll *b);

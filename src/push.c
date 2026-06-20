@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 10:17:04 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/19 13:00:54 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/20 15:15:13 by azahino-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,16 +56,18 @@ static void	ft_push(t_cll *list_from, t_cll *list_to)
 	list_to->size++;
 }
 
-void	ft_pa(t_cll *a, t_cll *b)
+void	ft_pa(t_cll *a, t_cll *b, int bench)
 {
 	ft_push(b, a);
-	//if (bench == 1)
-		//ft_printf(1, "%s", "pa");
+	if (bench == 1)
+		ft_printf(1, "pa\n");
 }
 
-void	ft_pb(t_cll *a, t_cll *b)
+void	ft_pb(t_cll *a, t_cll *b, int bench)
 {
 	ft_push(a, b);
+	if (bench == 1)
+		ft_printf(1, "pb\n");
 }
 /*
 int main (void)
@@ -74,11 +76,17 @@ int main (void)
 	t_cll	stack_b;
 	t_node 	*bir;
 
+	bir = malloc(sizeof(t_node));
+	if	(!bir)
+		return (0);
+	bir->value = 10;
+	bir->index = 0;
 	stack_b.head = NULL;
 	stack_b.size = 0;
 	stack_a.head = bir;
-	stack_a.size = 0;
+	stack_a.size = 1;
 	
-	ft_pa(&stack_a, &stack_b, 1);
-}
-*/
+	ft_pb(&stack_a, &stack_b, 1);
+	
+	free(bir);
+}*/

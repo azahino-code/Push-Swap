@@ -6,7 +6,7 @@
 /*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 09:43:09 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/20 15:07:50 by azahino-         ###   ########.fr       */
+/*   Updated: 2026/06/20 18:24:39 by azahino-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,14 +81,14 @@ int		pos_index(t_cll *stack, int min_index, int max_index);
 int		ft_cost(int index, int size);
 void	ft_pa(t_cll *a, t_cll *b, int bench);
 void	ft_pb(t_cll *a, t_cll *b, int bench);
-void	ft_ss(t_cll *a, t_cll *b);
-void	ft_sa(t_cll *a);
-void	ft_sb(t_cll *b);
-void	ft_ra(t_cll *a);
-void	ft_rb(t_cll *b);
-void	ft_rr(t_cll *a, t_cll *b);
-void	ft_rra(t_cll *a);
-void	ft_rrb(t_cll *b);
-void	ft_rrr(t_cll *a, t_cll *b);
+void	ft_ss(t_cll *a, t_cll *b, int bench);
+void	ft_sa(t_cll *a, int bench);
+void	ft_sb(t_cll *b, int bench);
+void	ft_ra(t_cll *a, int bench);
+void	ft_rb(t_cll *b, int bench);
+void	ft_rr(t_cll *a, t_cll *b, int bench);
+void	ft_rra(t_cll *a, int bench);
+void	ft_rrb(t_cll *b, int bench);
+void	ft_rrr(t_cll *a, t_cll *b, int bench);
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 10:16:25 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/18 12:18:40 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/20 18:30:27 by azahino-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,18 +39,24 @@ static void	ft_swap(t_cll *stack)
 	stack->head = second;
 }
 
-void	ft_ss(t_cll *a, t_cll *b)
+void	ft_ss(t_cll *a, t_cll *b, int bench)
 {
-	ft_sa(a);
-	ft_sb(b);
+	ft_sa(a, 0);
+	ft_sb(b, 0);
+	if (bench == 1)
+		ft_printf(1, "ss");
 }
 
-void	ft_sa(t_cll *a)
+void	ft_sa(t_cll *a, int bench)
 {
 	ft_swap(a);
+	if (bench == 1)
+		ft_printf(1, "sa");
 }
 
-void	ft_sb(t_cll *b)
+void	ft_sb(t_cll *b, int bench)
 {
 	ft_swap(b);
+	if (bench == 1)
+		ft_printf(1, "sb");
 }

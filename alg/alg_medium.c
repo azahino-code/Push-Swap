@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   alg_medium.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 10:04:16 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/18 11:54:16 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/21 20:36:30 by azahino-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //chuncks
 #include "../push_swap.h"
 
-static void	moves(t_cll *stack_a, t_cll *stack_b, int start, int end)
+static void	moves(t_cll *stack_a, t_cll *stack_b, int start, int end, int bench) //modificar las variables para que sean 4 
 {
-	ft_pb(stack_a, stack_b);
+	ft_pb(stack_a, stack_b, bench);
 	if (stack_b->head && stack_b->head->index <= (start + end) / 2)
-		ft_rb(stack_b);
+		ft_rb(stack_b, bench);
 	else if (stack_b->head && stack_b->head->index > (start + end) / 2)
-		ft_rrb(stack_b);
+		ft_rrb(stack_b, bench);
 }
 
 static int	def_end(int i, int n_chunks, int size, int c_size)
@@ -30,7 +30,7 @@ static int	def_end(int i, int n_chunks, int size, int c_size)
 		return ((i + 1) * c_size - 1);
 }
 
-static void	move_to_chunk(t_cll *a, t_cll *b, int start, int end)
+static void	move_to_chunk(t_cll *a, t_cll *b, int start, int end, int bench) //modificar las variables para que sean 4
 {
 	int	pos_a;
 	int	mid;
@@ -39,14 +39,14 @@ static void	move_to_chunk(t_cll *a, t_cll *b, int start, int end)
 	pos_a = pos_index(a, start, end);
 	if (b->head && b->head->index <= mid
 		&& pos_a <= a->size / 2)
-		ft_rr(a, b);
+		ft_rr(a, b, bench);
 	else if (b->head && b->head->index > mid
 		&& pos_a > a->size / 2)
-		ft_rrr(a, b);
+		ft_rrr(a, b, bench);
 	else if (pos_a <= a->size / 2)
-		ft_ra(a);
+		ft_ra(a, bench);
 	else
-		ft_rra(a);
+		ft_rra(a, bench);
 }
 
 t_cll	*alg_medium(t_cll *stk_a, t_cll *stack_b, int n_chunks, int size)

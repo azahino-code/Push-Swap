@@ -6,7 +6,7 @@
 /*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 09:43:09 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/20 18:24:39 by azahino-         ###   ########.fr       */
+/*   Updated: 2026/06/21 21:17:36 by azahino-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ typedef struct s_node
 typedef struct s_cll
 {
 	int		size;
-	int		moves[11]; //para sustituir 
+	int		moves[11]; //para sustituir
 	//t_rotate		r_num;
 	//t_sp			s_r_num;
 	t_node	*head;

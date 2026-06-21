@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 13:45:49 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/19 13:13:43 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/21 21:01:58 by azahino-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,7 @@ int	main(int argc, char **argv)
 	count = 1;
 	bench = 0;
 	mode = ADAPTIVE;
-	stack_a.head = NULL;
-	stack_a.size = 0;
+	ft_memset(&stack_a, 0, sizeof(t_cll));
 	ft_count_flags(argv, &mode, &count, &bench);
 	ft_assignment(argc - count, argv + count, &stack_a);
 	if (!stack_a.head)

@@ -6,7 +6,7 @@
 /*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 10:16:25 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/20 18:30:27 by azahino-         ###   ########.fr       */
+/*   Updated: 2026/06/21 20:59:34 by azahino-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ void	ft_ss(t_cll *a, t_cll *b, int bench)
 	ft_sb(b, 0);
 	if (bench == 1)
 		ft_printf(1, "ss");
+	a->moves[8]++;
 }
 
 void	ft_sa(t_cll *a, int bench)
@@ -52,6 +53,7 @@ void	ft_sa(t_cll *a, int bench)
 	ft_swap(a);
 	if (bench == 1)
 		ft_printf(1, "sa");
+	a->moves[6]++;
 }
 
 void	ft_sb(t_cll *b, int bench)
@@ -59,4 +61,5 @@ void	ft_sb(t_cll *b, int bench)
 	ft_swap(b);
 	if (bench == 1)
 		ft_printf(1, "sb");
+	b->moves[7]++;
 }

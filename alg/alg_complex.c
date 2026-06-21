@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   alg_complex.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 10:04:18 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/18 13:54:33 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/21 20:35:33 by azahino-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static int	max_bits(int max_num)
 	return (bits);
 }
 
-t_cll	*alg_complex(t_cll *stack_a, t_cll *stack_b)
+t_cll	*alg_complex(t_cll *stack_a, t_cll *stack_b, int bench)
 {
 	int	bits;
 	int current_bit;
@@ -39,12 +39,12 @@ t_cll	*alg_complex(t_cll *stack_a, t_cll *stack_b)
 		while (size-- > 0)
 		{
 			if (((stack_a->head->index >> current_bit) & 1) == 0)
-				ft_pb(stack_a, stack_b);
+				ft_pb(stack_a, stack_b, bench);
 			else
-				ft_ra(stack_a);
+				ft_ra(stack_a, bench);
 		}
 		while (stack_b->head)
-			ft_pa(stack_a, stack_b);
+			ft_pa(stack_a, stack_b, bench);
 		current_bit++;
 	}
 	return (stack_a);

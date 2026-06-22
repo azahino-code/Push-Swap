@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 09:43:09 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/22 17:44:26 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/22 16:52:46 by azahino-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,6 @@ void	ft_rra(t_cll *a);
 void	ft_rrb(t_cll *b);
 void	ft_rrr(t_cll *a, t_cll *b);
 void	suma(t_cll *a, t_cll *b);
+int		how_many_chunks(t_cll *a);
 
 #endif

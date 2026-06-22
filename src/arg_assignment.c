@@ -6,7 +6,7 @@
 /*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 13:18:59 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/22 14:25:09 by azahino-         ###   ########.fr       */
+/*   Updated: 2026/06/22 14:36:26 by azahino-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,13 +52,12 @@ void	ft_assignment(int argc, char **argv, t_cll *stack_a)
 	ft_index_sorted(stack_a->size, ptr, move);
 }
 
-t_cll	ft_mode(t_mode mode, t_cll *stack_a, float disorder, int *bench)
+t_cll	ft_mode(t_mode mode, t_cll *stack_a, float disorder)
 {
 	t_cll	stack_b;
 
 	ft_memset(&stack_b, 0, sizeof(t_cll));
-	stack_a->bench = bench;
-	stack_a->bench = bench;
+	stack_b.bench = stack_a->bench;
 	if (mode == SIMPLE)
 		return (*alg_simple(stack_a, &stack_b));
 	else if (mode == MEDIUM)

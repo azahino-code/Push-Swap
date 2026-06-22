@@ -6,7 +6,7 @@
 /*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 09:43:09 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/22 14:25:37 by azahino-         ###   ########.fr       */
+/*   Updated: 2026/06/22 14:36:33 by azahino-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,12 @@ typedef enum mode
 
 void	ft_assignment(int argc, char **argv, t_cll *stack_a);
 void	ft_bench(double disorder, t_mode mode, int moves_count, t_cll *a);
-void	ft_count_flags(char **argv, t_mode *mode, int *count, int *bench);
+void	ft_count_flags(char **argv, t_mode *mode, int *count);
 t_node	*ft_lstnew(int val);
 void	ft_lstadd_back(t_cll *lst, t_node *new);
 double	compute_disorder(t_cll *stack_a);
 int		ft_atoi(const char *nptr);
-t_cll	ft_mode(t_mode mode, t_cll *stack_a, float disorde, int *bench);
+t_cll	ft_mode(t_mode mode, t_cll *stack_a, float disorde);
 t_cll	*alg_simple(t_cll *stack_a, t_cll *stack_b);
 t_cll	*alg_medium(t_cll *stack_a, t_cll *stack_b, int n_chunks, int size);
 t_cll	*alg_complex(t_cll *stack_a, t_cll *stack_b);

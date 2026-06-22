@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 10:16:25 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/22 16:46:07 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/22 15:42:46 by azahino-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,8 @@ static void	ft_swap(t_cll *stack)
 
 void	ft_ss(t_cll *a, t_cll *b)
 {
-	ft_sa(a);
-	ft_sb(b);
+	ft_swap(a);
+	ft_swap(b);
 	ft_printf(1, "ss\n");
 	a->moves[8]++;
 	a->moves[11]++;

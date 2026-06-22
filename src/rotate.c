@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 10:22:24 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/22 16:45:57 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/22 15:42:33 by azahino-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ void	ft_rb(t_cll *b)
 
 void	ft_rr(t_cll *a, t_cll *b)
 {
-	ft_ra(a);
-	ft_rb(b);
+	ft_rotate(a);
+	ft_rotate(b);
 	ft_printf(1, "rr\n");
 	a->moves[2]++;
 	a->moves[11]++;

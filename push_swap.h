@@ -6,7 +6,7 @@
 /*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 09:43:09 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/22 15:02:14 by azahino-         ###   ########.fr       */
+/*   Updated: 2026/06/22 15:39:33 by azahino-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,6 @@ void	ft_rr(t_cll *a, t_cll *b);
 void	ft_rra(t_cll *a);
 void	ft_rrb(t_cll *b);
 void	ft_rrr(t_cll *a, t_cll *b);
+void	Suma(t_cll *a, t_cll *b);
 
 #endif

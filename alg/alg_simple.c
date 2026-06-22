@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   alg_simple.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 10:04:12 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/22 16:44:20 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/22 15:40:06 by azahino-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,6 @@ t_cll	*alg_simple(t_cll *stack_a, t_cll *stack_b)
 		ft_pb(stack_a, stack_b);
 		size--;
 	}
-	stack_b->moves[11] = stack_b->moves[11] + stack_a->moves[11];
+	suma(stack_b, stack_a);
 	return (stack_b);
 }

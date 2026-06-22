@@ -6,7 +6,7 @@
 /*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 10:04:18 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/22 14:27:52 by azahino-         ###   ########.fr       */
+/*   Updated: 2026/06/22 14:31:45 by azahino-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,6 @@ t_cll	*alg_complex(t_cll *stack_a, t_cll *stack_b)
 			ft_pa(stack_a, stack_b);
 		current_bit++;
 	}
+	stack_a->moves[11] = stack_b->moves[11] + stack_a->moves[11];
 	return (stack_a);
 }

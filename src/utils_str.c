@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 16:10:59 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/18 12:40:30 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/22 09:28:45 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,18 @@ size_t	ft_strlen(const char *s)
 		size++;
 	}
 	return (size);
+}
+
+void	*ft_memset(void *s, int c, size_t n)
+{
+	unsigned char	*p;
+
+	p = s;
+	while (n > 0)
+	{
+		*p = c;
+		p++;
+		n--;
+	}
+	return (s);
 }

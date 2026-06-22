@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   alg_simple.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 10:04:12 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/21 20:32:25 by azahino-         ###   ########.fr       */
+/*   Updated: 2026/06/22 09:46:58 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-t_cll	*alg_selection(t_cll *stack_a, t_cll *stack_b, int bench)
+t_cll	*alg_simple(t_cll *stack_a, t_cll *stack_b, int *bench)
 {
 	int		size;
 	int		cost;
@@ -26,11 +26,11 @@ t_cll	*alg_selection(t_cll *stack_a, t_cll *stack_b, int bench)
 		cost = ft_cost(pos, size);
 		if (pos <= size / 2)
 			while (cost-- > 0)
-				ft_ra(stack_a, bench);
+				ft_ra(stack_a, *bench);
 		else
 			while (cost-- > 0)
-				ft_rra(stack_a, bench);
-		ft_pb(stack_a, stack_b, bench);
+				ft_rra(stack_a, *bench);
+		ft_pb(stack_a, stack_b, *bench);
 		size--;
 	}
 	return (stack_b);

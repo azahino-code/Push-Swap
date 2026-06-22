@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 13:18:59 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/22 15:54:44 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/22 16:32:57 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,20 +52,20 @@ void	ft_assignment(int argc, char **argv, t_cll *stack_a)
 	ft_index_sorted(stack_a->size, ptr, move);
 }
 
-t_cll	ft_mode(t_mode mode, t_cll *stack_a, float disorder, int *bench)
+t_cll	ft_mode(t_mode mode, t_cll *stack_a, float disorder)
 {
 	t_cll	stack_b;
 
 	ft_memset(&stack_b, 0, sizeof(t_cll));
 	if (mode == SIMPLE)
-		return (*alg_simple(stack_a, &stack_b, bench));
+		return (*alg_simple(stack_a, &stack_b));
 	else if (mode == MEDIUM)
 		return (*alg_medium(stack_a, &stack_b,
-				(int)sqrt(stack_a->size), stack_a->size, bench));
+				(int)sqrt(stack_a->size), stack_a->size));
 	else if (mode == COMPLEX)
-		return (*alg_complex(stack_a, &stack_b, bench));
+		return (*alg_complex(stack_a, &stack_b));
 	else
-		return (*alg_adaptive(disorder, stack_a, &stack_b, bench));
+		return (*alg_adaptive(disorder, stack_a, &stack_b));
 }
 
 void	ft_count_flags(char **argv, t_mode *mode, int *count, int *bench)

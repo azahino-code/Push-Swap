@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 13:45:49 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/22 10:18:54 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/22 16:33:40 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	main(int argc, char **argv)
 {
-	int			i; //este lo quitaremos mas adelante ya que la función no imprime los numeros ordenados
+	//int			i; //este lo quitaremos mas adelante ya que la función no imprime los numeros ordenados
 	int			bench;
 	int			count;
 	float		disorder;
@@ -33,13 +33,14 @@ int	main(int argc, char **argv)
 		return (0);
 	}
 	disorder = compute_disorder(&stack_a);
-	stack_a = ft_mode(mode, &stack_a, disorder, &bench);
-	i = 0; //se irá fuera
+	stack_a = ft_mode(mode, &stack_a, disorder);
+	/*i = 0; //se irá fuera
 	while (i++ < stack_a.size) //esto se quitará y vamos bien de lineas
 	{
 		ft_printf(1, "%d\n", stack_a.head->value);
 		stack_a.head = stack_a.head->next;
 	}
+	*/
 	if (bench == 1)
 		ft_bench(disorder, mode, stack_a.moves[11], &stack_a);
 }

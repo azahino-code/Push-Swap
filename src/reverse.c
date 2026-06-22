@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   reverse.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 10:45:23 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/22 10:28:21 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/22 14:19:49 by azahino-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,29 +17,29 @@ static void	ft_reverse(t_cll *stack)
 	stack->head = stack->head->prev;
 }
 
-void	ft_rra(t_cll *a, int bench)
+void	ft_rra(t_cll *a)
 {
 	ft_reverse(a);
-	if (bench == 1)
+	if (a->bench == 1)
 		ft_printf(1, "rra\n");
 	a->moves[3]++;
 	a->moves[11]++;
 }
 
-void	ft_rrb(t_cll *b, int bench)
+void	ft_rrb(t_cll *b)
 {
 	ft_reverse(b);
-	if (bench == 1)
+	if (b->bench == 1)
 		ft_printf(1, "rrb\n");
 	b->moves[4]++;
 	b->moves[11]++;
 }
 
-void	ft_rrr(t_cll *a, t_cll *b, int bench)
+void	ft_rrr(t_cll *a, t_cll *b)
 {
-	ft_rra(a, 0);
-	ft_rrb(b, 0);
-	if (bench == 1)
+	ft_reverse(a);
+	ft_reverse(b);
+	if (a->bench == 1)
 		ft_printf(1, "rrr\n");
 	a->moves[5]++;
 	a->moves[11]++;

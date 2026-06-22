@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 09:43:09 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/22 15:56:44 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/22 14:25:37 by azahino-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct s_cll
 {
 	int		size;
 	int		moves[12];
+	int		bench;
 	t_node	*head;
 }					t_cll;
 
@@ -50,25 +51,25 @@ void	ft_lstadd_back(t_cll *lst, t_node *new);
 double	compute_disorder(t_cll *stack_a);
 int		ft_atoi(const char *nptr);
 t_cll	ft_mode(t_mode mode, t_cll *stack_a, float disorde, int *bench);
-t_cll	*alg_simple(t_cll *stack_a, t_cll *stack_b, int *bench);
-t_cll	*alg_medium(t_cll *stack_a, t_cll *stack_b, int n_chunks, int size, int *bench);
-t_cll	*alg_complex(t_cll *stack_a, t_cll *stack_b, int *bench);
-t_cll	*alg_adaptive(double disorder, t_cll *stack_a, t_cll *stack_b, int *bench);
+t_cll	*alg_simple(t_cll *stack_a, t_cll *stack_b);
+t_cll	*alg_medium(t_cll *stack_a, t_cll *stack_b, int n_chunks, int size);
+t_cll	*alg_complex(t_cll *stack_a, t_cll *stack_b);
+t_cll	*alg_adaptive(double disorder, t_cll *stack_a, t_cll *stack_b);
 int		ft_strcmp(const char *s1, const char *s2);
 size_t	ft_strlen(const char *s);
 int		pos_index(t_cll *stack, int min_index, int max_index);
 int		ft_cost(int index, int size);
 void	*ft_memset(void *s, int c, size_t n);
-void	ft_pa(t_cll *a, t_cll *b, int bench);
-void	ft_pb(t_cll *a, t_cll *b, int bench);
-void	ft_ss(t_cll *a, t_cll *b, int bench);
-void	ft_sa(t_cll *a, int bench);
-void	ft_sb(t_cll *b, int bench);
-void	ft_ra(t_cll *a, int bench);
-void	ft_rb(t_cll *b, int bench);
-void	ft_rr(t_cll *a, t_cll *b, int bench);
-void	ft_rra(t_cll *a, int bench);
-void	ft_rrb(t_cll *b, int bench);
-void	ft_rrr(t_cll *a, t_cll *b, int bench);
+void	ft_pa(t_cll *a, t_cll *b);
+void	ft_pb(t_cll *a, t_cll *b);
+void	ft_ss(t_cll *a, t_cll *b);
+void	ft_sa(t_cll *a);
+void	ft_sb(t_cll *b);
+void	ft_ra(t_cll *a);
+void	ft_rb(t_cll *b);
+void	ft_rr(t_cll *a, t_cll *b);
+void	ft_rra(t_cll *a);
+void	ft_rrb(t_cll *b);
+void	ft_rrr(t_cll *a, t_cll *b);
 
 #endif

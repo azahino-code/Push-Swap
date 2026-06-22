@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 10:16:25 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/22 10:29:21 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/22 14:21:35 by azahino-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,29 +39,29 @@ static void	ft_swap(t_cll *stack)
 	stack->head = second;
 }
 
-void	ft_ss(t_cll *a, t_cll *b, int bench)
+void	ft_ss(t_cll *a, t_cll *b)
 {
-	ft_sa(a, 0);
-	ft_sb(b, 0);
-	if (bench == 1)
+	ft_swap(a);
+	ft_swap(b);
+	if (a->bench == 1)
 		ft_printf(1, "ss\n");
 	a->moves[8]++;
 	a->moves[11]++;
 }
 
-void	ft_sa(t_cll *a, int bench)
+void	ft_sa(t_cll *a)
 {
 	ft_swap(a);
-	if (bench == 1)
+	if (a->bench == 1)
 		ft_printf(1, "sa\n");
 	a->moves[6]++;
 	a->moves[11]++;
 }
 
-void	ft_sb(t_cll *b, int bench)
+void	ft_sb(t_cll *b)
 {
 	ft_swap(b);
-	if (bench == 1)
+	if (b->bench == 1)
 		ft_printf(1, "sb\n");
 	b->moves[7]++;
 	b->moves[11]++;

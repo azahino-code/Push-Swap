@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   alg_medium.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 10:04:16 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/22 09:45:22 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/22 14:27:01 by azahino-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //chuncks
 #include "../push_swap.h"
 
-static void	moves(t_cll *stack_a, t_cll *stack_b, int start, int end, int *bench) //modificar las variables para que sean 4 
+static void	moves(t_cll *stack_a, t_cll *stack_b, int start, int end) //modificar las variables para que sean 4 
 {
-	ft_pb(stack_a, stack_b, *bench);
+	ft_pb(stack_a, stack_b);
 	if (stack_b->head && stack_b->head->index <= (start + end) / 2)
-		ft_rb(stack_b, *bench);
+		ft_rb(stack_b);
 	else if (stack_b->head && stack_b->head->index > (start + end) / 2)
-		ft_rrb(stack_b, *bench);
+		ft_rrb(stack_b);
 }
 
 static int	def_end(int i, int n_chunks, int size, int c_size)
@@ -30,7 +30,7 @@ static int	def_end(int i, int n_chunks, int size, int c_size)
 		return ((i + 1) * c_size - 1);
 }
 
-static void	move_to_chunk(t_cll *a, t_cll *b, int start, int end, int *bench) //modificar las variables para que sean 4
+static void	move_to_chunk(t_cll *a, t_cll *b, int start, int end) //modificar las variables para que sean 4
 {
 	int	pos_a;
 	int	mid;
@@ -39,17 +39,17 @@ static void	move_to_chunk(t_cll *a, t_cll *b, int start, int end, int *bench) //
 	pos_a = pos_index(a, start, end);
 	if (b->head && b->head->index <= mid
 		&& pos_a <= a->size / 2)
-		ft_rr(a, b, *bench);
+		ft_rr(a, b);
 	else if (b->head && b->head->index > mid
 		&& pos_a > a->size / 2)
-		ft_rrr(a, b, *bench);
+		ft_rrr(a, b);
 	else if (pos_a <= a->size / 2)
-		ft_ra(a, *bench);
+		ft_ra(a);
 	else
-		ft_rra(a, *bench);
+		ft_rra(a);
 }
 
-t_cll	*alg_medium(t_cll *stk_a, t_cll *stack_b, int n_chunks, int size, int *bench)
+t_cll	*alg_medium(t_cll *stk_a, t_cll *stack_b, int n_chunks, int size)
 {
 	int	i;
 	int	start;
@@ -68,12 +68,12 @@ t_cll	*alg_medium(t_cll *stk_a, t_cll *stack_b, int n_chunks, int size, int *ben
 		{
 			if (stk_a->head->index >= (i * c_size) && stk_a->head->index <= end)
 			{
-				moves(stk_a, stack_b, start, end, bench);
+				moves(stk_a, stack_b, start, end);
 				count++;
 			}
 			else
-				move_to_chunk(stk_a, stack_b, start, end, bench);
+				move_to_chunk(stk_a, stack_b, start, end);
 		}
 	}
-	return (alg_simple(stack_b, stk_a, bench));
+	return (alg_simple(stack_b, stk_a));
 }

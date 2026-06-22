@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 10:17:04 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/22 14:16:18 by azahino-         ###   ########.fr       */
+/*   Updated: 2026/06/22 16:45:37 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,7 @@ static void	ft_push(t_cll *list_from, t_cll *list_to)
 void	ft_pa(t_cll *a, t_cll *b)
 {
 	ft_push(b, a);
-	if (a->bench == 1)
-		ft_printf(1, "pa\n");
+	ft_printf(1, "pa\n");
 	a->moves[9]++;
 	a->moves[11]++;
 }
@@ -68,8 +67,7 @@ void	ft_pa(t_cll *a, t_cll *b)
 void	ft_pb(t_cll *a, t_cll *b)
 {
 	ft_push(a, b);
-	if (a->bench == 1)
-		ft_printf(1, "pb\n");
+	ft_printf(1, "pb\n");
 	a->moves[10]++;
 	a->moves[11]++;
 }

@@ -6,7 +6,7 @@
 /*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 13:45:49 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/22 14:48:20 by azahino-         ###   ########.fr       */
+/*   Updated: 2026/06/22 15:01:33 by azahino-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,12 @@
 int	main(int argc, char **argv)
 {
 	int			i; //este lo quitaremos mas adelante ya que la función no imprime los numeros ordenados
-	int			bench;
 	int			count;
 	float		disorder;
 	t_cll		stack_a;
 	t_mode		mode;
 
 	count = 1;
-	bench = 0;
 	mode = ADAPTIVE;
 	ft_memset(&stack_a, 0, sizeof(t_cll));
 	ft_count_flags(argv, &mode, &count, &stack_a);
@@ -40,6 +38,6 @@ int	main(int argc, char **argv)
 		ft_printf(1, "%d\n", stack_a.head->value);
 		stack_a.head = stack_a.head->next;
 	}
-	if (bench == 1)
-		ft_bench(disorder, mode, stack_a.moves[11], &stack_a);
+	if (stack_a.bench == 1)
+		ft_bench(disorder, mode, &stack_a);
 }

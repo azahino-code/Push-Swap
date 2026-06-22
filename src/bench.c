@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bench.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/18 19:10:24 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/22 15:50:33 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/22 15:01:05 by azahino-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static void	print_adaptive_strat(double disorder)
 		ft_printf(2, "[bench] disorder not between 0 and 1\n");
 }
 
-void	ft_bench(double disorder, t_mode mode, int moves_count, t_cll *a)
+void	ft_bench(double disorder, t_mode mode, t_cll *a)
 {
 	ft_printf(2, "[bench] disorder: %f%%\n", disorder * 100);
 	if (mode == SIMPLE)
@@ -35,7 +35,7 @@ void	ft_bench(double disorder, t_mode mode, int moves_count, t_cll *a)
 		ft_printf(2, "[bench] strategy: complex / O(n log n)\n");
 	else
 		print_adaptive_strat(disorder);
-	ft_printf(2, "[bench] total-ops: %d\n", moves_count);
+	ft_printf(2, "[bench] total-ops: %d\n", a->moves[11]);
 	ft_printf(2, "[bench] sa: %d sb: %d ss: %d pa: %d pb: %d\n", a->moves[6],
 		a->moves[7], a->moves[8], a->moves[9], a->moves[10]);
 	ft_printf(2, "[bench] ra: %d rb: %d rr: %d rra: %d rrb: %d rrr: %d\n",

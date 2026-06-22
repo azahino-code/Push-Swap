@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   alg_medium.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 10:04:16 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/22 14:27:01 by azahino-         ###   ########.fr       */
+/*   Updated: 2026/06/22 16:44:08 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //chuncks
 #include "../push_swap.h"
 
-static void	moves(t_cll *stack_a, t_cll *stack_b, int start, int end) //modificar las variables para que sean 4 
+static void	moves(t_cll *stack_a, t_cll *stack_b, int start, int end)
 {
 	ft_pb(stack_a, stack_b);
 	if (stack_b->head && stack_b->head->index <= (start + end) / 2)
@@ -30,7 +30,7 @@ static int	def_end(int i, int n_chunks, int size, int c_size)
 		return ((i + 1) * c_size - 1);
 }
 
-static void	move_to_chunk(t_cll *a, t_cll *b, int start, int end) //modificar las variables para que sean 4
+static void	move_to_chunk(t_cll *a, t_cll *b, int start, int end)
 {
 	int	pos_a;
 	int	mid;

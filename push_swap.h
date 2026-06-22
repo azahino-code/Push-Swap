@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 09:43:09 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/22 16:33:16 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/22 16:43:25 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct s_cll
 {
 	int		size;
 	int		moves[12];
+	int		bench;
 	t_node	*head;
 }					t_cll;
 
@@ -44,7 +45,7 @@ typedef enum mode
 
 void	ft_assignment(int argc, char **argv, t_cll *stack_a);
 void	ft_bench(double disorder, t_mode mode, int moves_count, t_cll *a);
-void	ft_count_flags(char **argv, t_mode *mode, int *count, int *bench);
+void	ft_count_flags(char **argv, t_mode *mode, int *count);
 t_node	*ft_lstnew(int val);
 void	ft_lstadd_back(t_cll *lst, t_node *new);
 double	compute_disorder(t_cll *stack_a);

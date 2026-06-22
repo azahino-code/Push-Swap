@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_list.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 17:22:31 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/16 12:42:52 by azahino-         ###   ########.fr       */
+/*   Updated: 2026/06/22 17:50:57 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,4 +80,17 @@ int	ft_atoi(const char *nptr)
 	if (neg == 1)
 		nb = -nb;
 	return (nb);
+}
+
+void	suma(t_cll *a, t_cll *b)
+{
+	long unsigned int	i;
+
+	i = 0;
+	ft_printf(2, "%d", 12);
+	while (i < 12)
+	{
+		a->moves[i] += b->moves[i];
+		i++;
+	}
 }

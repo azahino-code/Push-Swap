@@ -6,7 +6,7 @@
 /*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 13:45:49 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/22 14:37:12 by azahino-         ###   ########.fr       */
+/*   Updated: 2026/06/22 14:48:20 by azahino-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	main(int argc, char **argv)
 	bench = 0;
 	mode = ADAPTIVE;
 	ft_memset(&stack_a, 0, sizeof(t_cll));
-	ft_count_flags(argv, &mode, &count);
+	ft_count_flags(argv, &mode, &count, &stack_a);
 	ft_assignment(argc - count, argv + count, &stack_a);
 	if (!stack_a.head)
 	{

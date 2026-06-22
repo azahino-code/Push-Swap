@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 10:41:11 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/22 11:37:33 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/22 13:47:22 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 // Hay que comprobar que funciona
 
-float	compute_disorder(t_cll *stack_a)
+double	compute_disorder(t_cll *stack_a)
 {
-	float	mistakes;
-	float	total_pairs;
+	double	mistakes;
+	double	total_pairs;
 	int		i;
 	int		j;
 	t_node	*ptr;

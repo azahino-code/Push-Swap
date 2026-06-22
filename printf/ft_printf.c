@@ -6,13 +6,13 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 11:18:41 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/19 12:55:21 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/22 15:51:40 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	ft_printf_character(int fd, char c)
+int	ft_printf_character(int fd, char c)
 {
 	return (write(fd, &c, 1));
 }
@@ -23,7 +23,7 @@ static int	ft_printf_string(int fd, char *str)
 
 	count = 0;
 	if (str == NULL)
-		return (write(fd, "(null)", 6)); //fd o 1?
+		return (write(fd, "(null)", 6));
 	while (*str)
 	{
 		count += write(fd, str, 1);
@@ -38,6 +38,8 @@ static int	ft_check_especifier(int fd, char const *format, va_list args)
 		return (ft_printf_character(fd, va_arg(args, int)));
 	else if (*format == 'd' || *format == 'i')
 		return (ft_printf_decimal(fd, va_arg(args, int)));
+	else if (*format == 'f')
+		return (ft_printf_float(fd, va_arg(args, double)));
 	else if (*format == 'x')
 		return (ft_printf_hex(fd, va_arg(args, unsigned int), 0));
 	else if (*format == 'X')

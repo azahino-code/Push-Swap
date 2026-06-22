@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 09:43:09 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/22 10:19:01 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/22 15:56:44 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,17 +43,17 @@ typedef enum mode
 }			t_mode;
 
 void	ft_assignment(int argc, char **argv, t_cll *stack_a);
-void	ft_bench(float disorder, t_mode mode, int moves_count, t_cll *a);
+void	ft_bench(double disorder, t_mode mode, int moves_count, t_cll *a);
 void	ft_count_flags(char **argv, t_mode *mode, int *count, int *bench);
 t_node	*ft_lstnew(int val);
 void	ft_lstadd_back(t_cll *lst, t_node *new);
-float	compute_disorder(t_cll *stack_a);
+double	compute_disorder(t_cll *stack_a);
 int		ft_atoi(const char *nptr);
 t_cll	ft_mode(t_mode mode, t_cll *stack_a, float disorde, int *bench);
 t_cll	*alg_simple(t_cll *stack_a, t_cll *stack_b, int *bench);
 t_cll	*alg_medium(t_cll *stack_a, t_cll *stack_b, int n_chunks, int size, int *bench);
 t_cll	*alg_complex(t_cll *stack_a, t_cll *stack_b, int *bench);
-t_cll	*alg_adaptive(float disorder, t_cll *stack_a, t_cll *stack_b, int *bench);
+t_cll	*alg_adaptive(double disorder, t_cll *stack_a, t_cll *stack_b, int *bench);
 int		ft_strcmp(const char *s1, const char *s2);
 size_t	ft_strlen(const char *s);
 int		pos_index(t_cll *stack, int min_index, int max_index);

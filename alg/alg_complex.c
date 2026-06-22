@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 10:04:18 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/22 09:46:44 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/22 15:49:23 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ static int	max_bits(int max_num)
 t_cll	*alg_complex(t_cll *stack_a, t_cll *stack_b, int *bench)
 {
 	int	bits;
-	int current_bit;
-	int size;
+	int	current_bit;
+	int	size;
 
 	current_bit = 0;
 	bits = max_bits(stack_a->size - 1);

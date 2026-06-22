@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 10:22:24 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/22 09:54:00 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/22 10:29:03 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	ft_ra(t_cll *a, int bench)
 	if (bench == 1)
 		ft_printf(1, "ra\n");
 	a->moves[0]++;
+	a->moves[11]++;
 }
 
 void	ft_rb(t_cll *b, int bench)
@@ -31,6 +32,7 @@ void	ft_rb(t_cll *b, int bench)
 	if (bench == 1)
 		ft_printf(1, "rb\n");
 	b->moves[1]++;
+	b->moves[11]++;
 }
 
 void	ft_rr(t_cll *a, t_cll *b, int bench)
@@ -40,4 +42,5 @@ void	ft_rr(t_cll *a, t_cll *b, int bench)
 	if (bench == 1)
 		ft_printf(1, "rr\n");
 	a->moves[2]++;
+	a->moves[11]++;
 }

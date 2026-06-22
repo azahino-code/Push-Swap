@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 10:17:04 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/21 20:56:13 by azahino-         ###   ########.fr       */
+/*   Updated: 2026/06/22 10:21:39 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ void	ft_pa(t_cll *a, t_cll *b, int bench)
 	if (bench == 1)
 		ft_printf(1, "pa\n");
 	a->moves[9]++;
+	a->moves[11]++;
 }
 
 void	ft_pb(t_cll *a, t_cll *b, int bench)
@@ -70,6 +71,7 @@ void	ft_pb(t_cll *a, t_cll *b, int bench)
 	if (bench == 1)
 		ft_printf(1, "pb\n");
 	a->moves[10]++;
+	a->moves[11]++;
 }
 /*
 int main (void)

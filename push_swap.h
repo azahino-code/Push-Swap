@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 09:43:09 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/22 09:42:58 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/22 10:19:01 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,7 @@ typedef struct s_node
 typedef struct s_cll
 {
 	int		size;
-	int		moves[11]; //para sustituir
-	//t_rotate		r_num;
-	//t_sp			s_r_num;
+	int		moves[12];
 	t_node	*head;
 }					t_cll;
 
@@ -43,25 +41,6 @@ typedef enum mode
 	COMPLEX,
 	ADAPTIVE
 }			t_mode;
-
-/*typedef struct s_rotate
-{
-	int	ra; = moves[0]
-	int rb; = moves[1]
-	int rr; = moves[2]
-	int	rra; = moves[3]
-	int rrb; = moves[4]
-	int	rrr; = moves[5]
-}				t_rotate;
-
-typedef struct s_sp
-{
-	int	sa; = moves[6]
-	int	sb; = moves[7]
-	int	ss; = moves[8]
-	int	pa; = moves[9]
-	int	pb; = moves[10]
-}			t_sp;*/
 
 void	ft_assignment(int argc, char **argv, t_cll *stack_a);
 void	ft_bench(float disorder, t_mode mode, int moves_count, t_cll *a);

@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/18 19:10:24 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/19 13:15:30 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/22 11:36:09 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,24 @@
 
 static void	print_adaptive_strat(float disorder)
 {
-	if (disorder < 0.2)
-		ft_printf(2, "[bench] startegy: simple / O(n2)\n");
+	if (disorder >= 0 && disorder < 0.2)
+		ft_printf(2, "[bench] strategy: simple / O(n2)\n");
 	else if (disorder >= 0.2 && disorder < 0.5)
-		ft_printf(2, "[bench] startegy: medium / O(n√n)\n");
+		ft_printf(2, "[bench] strategy: medium / O(n√n)\n");
+	else if (disorder >= 0.5 && disorder <= 1)
+		ft_printf(2, "[bench] strategy: complex / O(n log n)\n");
 	else
-		ft_printf(2, "[bench] startegy: complex / O(n log n)\n");
+		ft_printf(2, "[bench] disorder not between 0 and 1\n");
 }
 void	ft_bench(float disorder, t_mode mode, int moves_count, t_cll *a)
 {	
-	ft_printf(2, "[bench] disorder: %f\n", disorder);
-	if (mode == 1)
-		ft_printf(2, "[bench] startegy: simple / O(n2)\n");
-	else if (mode == 2)
-		ft_printf(2, "[bench] startegy: medium / O(n√n)\n");
-	else if (mode == 3)
-		ft_printf(2, "[bench] startegy: complex / O(n log n)\n");
+	printf("[bench] disorder: %f\n", disorder);
+	if (mode == SIMPLE)
+		ft_printf(2, "[bench] strategy: simple / O(n2)\n");
+	else if (mode == MEDIUM)
+		ft_printf(2, "[bench] strategy: medium / O(n√n)\n");
+	else if (mode == COMPLEX)
+		ft_printf(2, "[bench] strategy: complex / O(n log n)\n");
 	else
 		print_adaptive_strat(disorder);
 	ft_printf(2, "[bench] total-ops: %d\n", moves_count);

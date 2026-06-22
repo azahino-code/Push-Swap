@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 10:41:11 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/19 11:37:24 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/22 11:37:33 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,14 @@ float	compute_disorder(t_cll *stack_a)
 		j = i + 1;
 		while (j < stack_a->size)
 		{
-			total_pairs += 1;
+			total_pairs++;
 			if (ptr->value < stack_a->head->value)
-				mistakes += 1;
+				mistakes++;
 			j++;
 			ptr = ptr->next;
 		}
 		i++;
 		stack_a->head = stack_a->head->next;
 	}
-	return (mistakes /total_pairs);
+	return (mistakes / total_pairs);
 }

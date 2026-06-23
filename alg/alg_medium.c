@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   alg_medium.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 10:04:16 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/22 16:44:08 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/22 16:29:58 by azahino-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ static void	moves(t_cll *stack_a, t_cll *stack_b, int start, int end)
 	ft_pb(stack_a, stack_b);
 	if (stack_b->head && stack_b->head->index <= (start + end) / 2)
 		ft_rb(stack_b);
-	else if (stack_b->head && stack_b->head->index > (start + end) / 2)
-		ft_rrb(stack_b);
 }
 
 static int	def_end(int i, int n_chunks, int size, int c_size)
@@ -40,9 +38,9 @@ static void	move_to_chunk(t_cll *a, t_cll *b, int start, int end)
 	if (b->head && b->head->index <= mid
 		&& pos_a <= a->size / 2)
 		ft_rr(a, b);
-	else if (b->head && b->head->index > mid
-		&& pos_a > a->size / 2)
-		ft_rrr(a, b);
+	//else if (b->head && b->head->index > mid
+		//&& pos_a > a->size / 2)
+		//ft_rrr(a, b);
 	else if (pos_a <= a->size / 2)
 		ft_ra(a);
 	else

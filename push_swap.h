@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 09:43:09 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/23 10:54:26 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/23 10:59:48 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ int		pos_index(t_cll *stack, int min_index, int max_index);
 int		ft_cost(int index, int size);
 void	*ft_memset(void *s, int c, size_t n);
 void	suma(t_cll *a, t_cll *b);
+int		how_many_chunks(t_cll *a);
 void	ft_show_error(int code);
 void	ft_pa(t_cll *a, t_cll *b);
 void	ft_pb(t_cll *a, t_cll *b);

@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 17:22:31 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/23 13:50:41 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/23 17:03:04 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	ft_lstadd_back(t_cll *lst, t_node *new)
 	lst->size++;
 }
 
-static int	num_builder(const char *nptr, int nb)
+static int	ft_num_builder(const char *nptr, int nb)
 {
 	while ((*nptr >= '0' && *nptr <= '9'))
 	{
@@ -82,13 +82,13 @@ int	ft_atoi(const char *nptr)
 	}
 	else if (*nptr == '+')
 		nptr++;
-	nb = num_builder(nptr, nb);
+	nb = ft_num_builder(nptr, nb);
 	if (neg == 1)
 		nb = -nb;
 	return (nb);
 }
 
-void	suma(t_cll *a, t_cll *b)
+void	ft_addition(t_cll *a, t_cll *b)
 {
 	long unsigned int	i;
 

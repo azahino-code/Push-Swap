@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   alg_complex.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 10:04:18 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/22 15:40:22 by azahino-         ###   ########.fr       */
+/*   Updated: 2026/06/23 17:00:54 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,6 @@ t_cll	*alg_complex(t_cll *stack_a, t_cll *stack_b)
 			ft_pa(stack_a, stack_b);
 		current_bit++;
 	}
-	suma(stack_a, stack_b);
+	ft_addition(stack_a, stack_b);
 	return (stack_a);
 }

@@ -6,13 +6,13 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 10:04:20 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/23 13:21:52 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/23 17:01:00 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	how_many_chunks(t_cll *a)
+int	ft_how_many_chunks(t_cll *a)
 {
 	int	size;
 
@@ -31,7 +31,7 @@ t_cll	*alg_adaptive(double disorder, t_cll *stack_a, t_cll *stack_b)
 		return (alg_simple(stack_a, stack_b));
 	else if (disorder >= 0.2 && disorder < 0.5)
 		return (alg_medium(stack_a, stack_b,
-				how_many_chunks(stack_a), stack_a->size));
+				ft_how_many_chunks(stack_a), stack_a->size));
 	else if (disorder >= 0.5 && disorder <= 1)
 		return (alg_complex(stack_a, stack_b));
 	else

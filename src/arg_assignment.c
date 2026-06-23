@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 13:18:59 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/23 16:13:16 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/23 17:01:00 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ t_cll	ft_mode(t_mode mode, t_cll *stack_a, float disorder)
 		return (*alg_simple(stack_a, &stack_b));
 	else if (mode == MEDIUM)
 		return (*alg_medium(stack_a, &stack_b,
-				how_many_chunks(stack_a), stack_a->size));
+				ft_how_many_chunks(stack_a), stack_a->size));
 	else if (mode == COMPLEX)
 		return (*alg_complex(stack_a, &stack_b));
 	else

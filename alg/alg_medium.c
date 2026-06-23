@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 10:04:16 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/23 16:05:47 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/23 17:01:22 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static void	move_to_chunk(t_cll *a, t_cll *b, int start, int end)
 	int	mid;
 
 	mid = (start + end) / 2;
-	pos_a = pos_index(a, start, end);
+	pos_a = ft_pos_index(a, start, end);
 	if (b->head && b->head->index <= mid
 		&& pos_a <= a->size / 2)
 		ft_rr(a, b);

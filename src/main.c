@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 13:45:49 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/23 16:45:42 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/23 17:19:11 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,23 @@
 
 int	main(int argc, char **argv)
 {
-	int			i; //este lo quitaremos mas adelante ya que la función no imprime los numeros ordenados
 	int			count;
 	t_cll		stack_a;
 	t_mode		mode;
 
 	count = 1;
 	mode = ADAPTIVE;
+	if (argc == 1)
+		return(0);
 	ft_memset(&stack_a, 0, sizeof(t_cll));
 	ft_count_flags(argv, &mode, &count, &stack_a);
 	ft_assignment(argc - count, argv + count, &stack_a);
 	if (!stack_a.head)
-		ft_show_error(3);
+		return(0);
 	if (ft_repetition(&stack_a))
 		ft_show_error(2);
 	stack_a.disorder = ft_compute_disorder(&stack_a);
 	stack_a = ft_mode(mode, &stack_a, stack_a.disorder);
-	i = 0; //se irá fuera
-	while (i++ < stack_a.size) //esto se quitará y vamos bien de lineas
-	{
-		ft_printf(1, "%d\n", stack_a.head->value);
-		stack_a.head = stack_a.head->next;
-	}
 	if (stack_a.bench == 1)
 		ft_bench(stack_a.disorder, mode, &stack_a);
 }

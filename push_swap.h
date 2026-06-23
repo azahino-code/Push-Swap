@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 09:43:09 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/23 16:38:32 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/23 17:03:40 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,10 @@ typedef enum mode
 	ADAPTIVE
 }			t_mode;
 
+t_cll	*alg_simple(t_cll *stack_a, t_cll *stack_b);
+t_cll	*alg_medium(t_cll *stack_a, t_cll *stack_b, int n_chunks, int size);
+t_cll	*alg_complex(t_cll *stack_a, t_cll *stack_b);
+t_cll	*alg_adaptive(double disorder, t_cll *stack_a, t_cll *stack_b);
 void	ft_assignment(int argc, char **argv, t_cll *stack_a);
 void	ft_bench(double disorder, t_mode mode, t_cll *a);
 void	ft_count_flags(char **argv, t_mode *mode, int *count, t_cll *stack_a);
@@ -52,17 +56,13 @@ void	ft_lstadd_back(t_cll *lst, t_node *new);
 double	ft_compute_disorder(t_cll *stack_a);
 int		ft_atoi(const char *nptr);
 t_cll	ft_mode(t_mode mode, t_cll *stack_a, float disorde);
-t_cll	*alg_simple(t_cll *stack_a, t_cll *stack_b);
-t_cll	*alg_medium(t_cll *stack_a, t_cll *stack_b, int n_chunks, int size);
-t_cll	*alg_complex(t_cll *stack_a, t_cll *stack_b);
-t_cll	*alg_adaptive(double disorder, t_cll *stack_a, t_cll *stack_b);
 int		ft_strcmp(const char *s1, const char *s2);
 size_t	ft_strlen(const char *s);
-int		pos_index(t_cll *stack, int min_index, int max_index);
+int		ft_pos_index(t_cll *stack, int min_index, int max_index);
 int		ft_cost(int index, int size);
 void	*ft_memset(void *s, int c, size_t n);
-void	suma(t_cll *a, t_cll *b);
-int		how_many_chunks(t_cll *a);
+void	ft_addition(t_cll *a, t_cll *b);
+int		ft_how_many_chunks(t_cll *a);
 void	ft_show_error(int code);
 int		ft_repetition(t_cll *stack_a);
 void	ft_pa(t_cll *a, t_cll *b);

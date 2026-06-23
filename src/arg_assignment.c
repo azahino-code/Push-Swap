@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 13:18:59 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/23 13:47:59 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/23 16:13:16 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,9 @@ t_cll	ft_mode(t_mode mode, t_cll *stack_a, float disorder)
 
 	ft_memset(&stack_b, 0, sizeof(t_cll));
 	stack_b.bench = stack_a->bench;
+	stack_b.disorder = stack_a->disorder;
+	if (stack_a->disorder == 0.0)
+		return (*stack_a);
 	if (mode == SIMPLE)
 		return (*alg_simple(stack_a, &stack_b));
 	else if (mode == MEDIUM)

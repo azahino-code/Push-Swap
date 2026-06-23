@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   alg_medium.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 10:04:16 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/22 16:29:58 by azahino-         ###   ########.fr       */
+/*   Updated: 2026/06/23 16:05:47 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,6 @@ static void	move_to_chunk(t_cll *a, t_cll *b, int start, int end)
 	if (b->head && b->head->index <= mid
 		&& pos_a <= a->size / 2)
 		ft_rr(a, b);
-	//else if (b->head && b->head->index > mid
-		//&& pos_a > a->size / 2)
-		//ft_rrr(a, b);
 	else if (pos_a <= a->size / 2)
 		ft_ra(a);
 	else

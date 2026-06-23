@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 16:10:59 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/23 13:47:49 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/23 16:34:57 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,5 +66,9 @@ void	ft_show_error(int code)
 		ft_printf(2, "Flags parsing error");
 	else if (code == 1)
 		ft_printf(2, "Numbers parsing error");
+	else if (code == 2)
+		ft_printf(2, "Numbers are repeated");
+	else if (code == 3)
+		ft_printf(2, "To few arguments");
 	exit(2);
 }

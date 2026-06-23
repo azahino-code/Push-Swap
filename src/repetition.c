@@ -1,42 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   disorder.c                                         :+:      :+:    :+:   */
+/*   repetition.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/09 10:41:11 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/23 16:27:09 by jrecio-t         ###   ########.fr       */
+/*   Created: 2026/06/23 16:29:55 by jrecio-t          #+#    #+#             */
+/*   Updated: 2026/06/23 16:55:01 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-double	ft_compute_disorder(t_cll *stack_a)
+int	ft_repetition(t_cll *stack_a)
 {
-	double	mistakes;
-	double	total_pairs;
 	int		i;
 	int		j;
 	t_node	*ptr;
+	t_node	*head;
 
 	i = 0;
-	total_pairs = 0;
-	mistakes = 0;
+	head = stack_a->head;
 	while (i < stack_a->size - 1)
 	{
-		ptr = stack_a->head->next;
+		ptr = head->next;
 		j = i + 1;
 		while (j < stack_a->size)
 		{
-			total_pairs++;
-			if (ptr->value < stack_a->head->value)
-				mistakes++;
+			if (ptr->value == head->value)
+			{
+				ft_printf(2, "%d, %d", ptr->value, head->value);
+				return (1);
+			}
 			j++;
 			ptr = ptr->next;
 		}
 		i++;
-		stack_a->head = stack_a->head->next;
+		head = head->next;
 	}
-	return (mistakes / total_pairs);
+	return (0);
 }

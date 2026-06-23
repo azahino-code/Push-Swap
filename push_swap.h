@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 09:43:09 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/23 10:59:48 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/23 16:38:32 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ typedef struct s_cll
 	int		size;
 	int		moves[12];
 	int		bench;
+	double	disorder;
 	t_node	*head;
 }					t_cll;
 
@@ -48,7 +49,7 @@ void	ft_bench(double disorder, t_mode mode, t_cll *a);
 void	ft_count_flags(char **argv, t_mode *mode, int *count, t_cll *stack_a);
 t_node	*ft_lstnew(int val);
 void	ft_lstadd_back(t_cll *lst, t_node *new);
-double	compute_disorder(t_cll *stack_a);
+double	ft_compute_disorder(t_cll *stack_a);
 int		ft_atoi(const char *nptr);
 t_cll	ft_mode(t_mode mode, t_cll *stack_a, float disorde);
 t_cll	*alg_simple(t_cll *stack_a, t_cll *stack_b);
@@ -63,6 +64,7 @@ void	*ft_memset(void *s, int c, size_t n);
 void	suma(t_cll *a, t_cll *b);
 int		how_many_chunks(t_cll *a);
 void	ft_show_error(int code);
+int		ft_repetition(t_cll *stack_a);
 void	ft_pa(t_cll *a, t_cll *b);
 void	ft_pb(t_cll *a, t_cll *b);
 void	ft_ss(t_cll *a, t_cll *b);

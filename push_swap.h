@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 09:43:09 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/22 17:44:26 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/23 10:54:26 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ typedef enum mode
 
 void	ft_assignment(int argc, char **argv, t_cll *stack_a);
 void	ft_bench(double disorder, t_mode mode, t_cll *a);
-void	ft_count_flags(char **argv, t_mode *mode, int *count, t_cll *a);
+void	ft_count_flags(char **argv, t_mode *mode, int *count, t_cll *stack_a);
 t_node	*ft_lstnew(int val);
 void	ft_lstadd_back(t_cll *lst, t_node *new);
 double	compute_disorder(t_cll *stack_a);
@@ -60,6 +60,8 @@ size_t	ft_strlen(const char *s);
 int		pos_index(t_cll *stack, int min_index, int max_index);
 int		ft_cost(int index, int size);
 void	*ft_memset(void *s, int c, size_t n);
+void	suma(t_cll *a, t_cll *b);
+void	ft_show_error(int code);
 void	ft_pa(t_cll *a, t_cll *b);
 void	ft_pb(t_cll *a, t_cll *b);
 void	ft_ss(t_cll *a, t_cll *b);
@@ -71,6 +73,5 @@ void	ft_rr(t_cll *a, t_cll *b);
 void	ft_rra(t_cll *a);
 void	ft_rrb(t_cll *b);
 void	ft_rrr(t_cll *a, t_cll *b);
-void	suma(t_cll *a, t_cll *b);
 
 #endif

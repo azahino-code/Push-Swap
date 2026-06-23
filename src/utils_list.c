@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 17:22:31 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/22 17:50:57 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/23 09:31:46 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,6 @@ void	suma(t_cll *a, t_cll *b)
 	long unsigned int	i;
 
 	i = 0;
-	ft_printf(2, "%d", 12);
 	while (i < 12)
 	{
 		a->moves[i] += b->moves[i];

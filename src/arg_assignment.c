@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 13:18:59 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/22 16:44:25 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/23 10:56:28 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,31 +69,41 @@ t_cll	ft_mode(t_mode mode, t_cll *stack_a, float disorder)
 		return (*alg_adaptive(disorder, stack_a, &stack_b));
 }
 
-void	ft_count_flags(char **argv, t_mode *mode, int *count, t_cll *a)
+static void	ft_check_error(char *arg, t_mode *mode, int *count, size_t arg_len)
 {
-	if (ft_strcmp(argv[*count], "--bench") == 0)
-	{
-		(*count)++;
-		a->bench = 1;
-	}
-	if (ft_strcmp(argv[*count], "--simple") == 0)
-	{
-		*mode = SIMPLE;
-		(*count)++;
-	}
-	else if (ft_strcmp(argv[*count], "--medium") == 0)
-	{
-		*mode = MEDIUM;
-		(*count)++;
-	}
-	else if (ft_strcmp(argv[*count], "--complex") == 0)
-	{
-		*mode = COMPLEX;
-		(*count)++;
-	}
-	else if (ft_strcmp(argv[*count], "--adaptive") == 0)
+	if (ft_strlen(arg) == arg_len)
 	{
 		*mode = ADAPTIVE;
 		(*count)++;
 	}
+	else
+	{
+		ft_show_error(0);
+		exit(2);
+	}
+}
+
+void	ft_count_flags(char **argv, t_mode *mode, int *count, t_cll *stack_a)
+{
+	if (ft_strcmp(argv[*count], "--bench") == 0)
+	{
+		if (ft_strlen(argv[*count]) == 7)
+		{
+			(*count)++;
+			stack_a->bench = 1;
+		}
+		else
+		{
+			ft_show_error(0);
+			exit(2);
+		}
+	}
+	if (ft_strcmp(argv[*count], "--simple") == 0)
+		ft_check_error(argv[*count], mode, count, 8);
+	else if (ft_strcmp(argv[*count], "--medium") == 0)
+		ft_check_error(argv[*count], mode, count, 8);
+	else if (ft_strcmp(argv[*count], "--complex") == 0)
+		ft_check_error(argv[*count], mode, count, 9);
+	else if (ft_strcmp(argv[*count], "--adaptive") == 0)
+		ft_check_error(argv[*count], mode, count, 10);
 }

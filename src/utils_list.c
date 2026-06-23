@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 17:22:31 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/23 17:03:04 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/23 17:47:21 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,15 +87,19 @@ int	ft_atoi(const char *nptr)
 		nb = -nb;
 	return (nb);
 }
-
-void	ft_addition(t_cll *a, t_cll *b)
+void	ft_lstclear(t_cll *lst)
 {
-	long unsigned int	i;
+	t_node	*temp;
 
-	i = 0;
-	while (i < 12)
+	temp = NULL;
+	if (lst == NULL)
+		return ;
+	while (lst != NULL)
 	{
-		a->moves[i] += b->moves[i];
-		i++;
+		temp = lst->head;
+		free(lst->head);
+		free(lst);
+		lst->head->next = temp;
 	}
+	lst = NULL;
 }

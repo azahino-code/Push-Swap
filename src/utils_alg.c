@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 08:58:10 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/23 17:02:34 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/23 17:36:30 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,16 @@ int	ft_pos_index(t_cll *stack, int min_index, int max_index)
 	else if (moves < i)
 		return (stack->size - moves);
 	return (i);
+}
+
+void	ft_addition(t_cll *a, t_cll *b)
+{
+	long unsigned int	i;
+
+	i = 0;
+	while (i < 12)
+	{
+		a->moves[i] += b->moves[i];
+		i++;
+	}
 }

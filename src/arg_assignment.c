@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 13:18:59 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/23 17:01:00 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/23 17:47:25 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,14 +62,16 @@ t_cll	ft_mode(t_mode mode, t_cll *stack_a, float disorder)
 	if (stack_a->disorder == 0.0)
 		return (*stack_a);
 	if (mode == SIMPLE)
-		return (*alg_simple(stack_a, &stack_b));
+		*stack_a = *alg_simple(stack_a, &stack_b);
 	else if (mode == MEDIUM)
-		return (*alg_medium(stack_a, &stack_b,
-				ft_how_many_chunks(stack_a), stack_a->size));
+		*stack_a = *alg_medium(stack_a, &stack_b,
+				ft_how_many_chunks(stack_a), stack_a->size);
 	else if (mode == COMPLEX)
-		return (*alg_complex(stack_a, &stack_b));
+		*stack_a = *alg_complex(stack_a, &stack_b);
 	else
-		return (*alg_adaptive(disorder, stack_a, &stack_b));
+		*stack_a = *alg_adaptive(disorder, stack_a, &stack_b);
+	//ft_lstclear(&stack_b);
+	return (*stack_a);
 }
 
 static int	ft_check_error(char *arg, t_mode *mode_p, t_mode mode, size_t len)

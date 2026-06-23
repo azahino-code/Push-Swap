@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 17:22:31 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/23 09:31:46 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/23 13:50:41 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,13 @@ static int	num_builder(const char *nptr, int nb)
 		nb = nb * 10 + (*nptr - '0');
 		nptr++;
 	}
-	return (nb);
+	if (*nptr != '\0')
+	{
+		ft_show_error(1);
+		return (0);
+	}
+	else
+		return (nb);
 }
 
 int	ft_atoi(const char *nptr)

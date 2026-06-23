@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 13:18:59 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/23 13:21:09 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/23 13:47:59 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,10 +97,7 @@ void	ft_count_flags(char **argv, t_mode *mode, int *count, t_cll *stack_a)
 			stack_a->bench = 1;
 		}
 		else
-		{
 			ft_show_error(0);
-			exit(2);
-		}
 	}
 	if (ft_strcmp(argv[*count], "--simple") == 0)
 		*count += ft_check_error(argv[*count], mode, (t_mode)SIMPLE, 8);

@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 13:18:59 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/23 11:00:01 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/23 13:07:58 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,18 +69,22 @@ t_cll	ft_mode(t_mode mode, t_cll *stack_a, float disorder)
 		return (*alg_adaptive(disorder, stack_a, &stack_b));
 }
 
-static void	ft_check_error(char *arg, t_mode *mode, int *count, size_t arg_len)
+static int	ft_check_error(char *arg, t_mode *mode_p, t_mode mode, size_t arg_len)
 {
+	int count;
+
+	count = 0;
 	if (ft_strlen(arg) == arg_len)
 	{
-		*mode = ADAPTIVE;
-		(*count)++;
+		*mode_p = mode;
+		count++;
 	}
 	else
 	{
 		ft_show_error(0);
 		exit(2);
 	}
+	return (count);
 }
 
 void	ft_count_flags(char **argv, t_mode *mode, int *count, t_cll *stack_a)
@@ -99,11 +103,11 @@ void	ft_count_flags(char **argv, t_mode *mode, int *count, t_cll *stack_a)
 		}
 	}
 	if (ft_strcmp(argv[*count], "--simple") == 0)
-		ft_check_error(argv[*count], mode, count, 8);
+		*count += ft_check_error(argv[*count], mode, (t_mode)SIMPLE, 8);
 	else if (ft_strcmp(argv[*count], "--medium") == 0)
-		ft_check_error(argv[*count], mode, count, 8);
+		*count += ft_check_error(argv[*count], mode, (t_mode)MEDIUM, 8);
 	else if (ft_strcmp(argv[*count], "--complex") == 0)
-		ft_check_error(argv[*count], mode, count, 9);
+		*count += ft_check_error(argv[*count], mode, (t_mode)COMPLEX, 9);
 	else if (ft_strcmp(argv[*count], "--adaptive") == 0)
-		ft_check_error(argv[*count], mode, count, 10);
+		*count += ft_check_error(argv[*count], mode, (t_mode)ADAPTIVE, 10);
 }

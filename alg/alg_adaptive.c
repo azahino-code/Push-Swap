@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   alg_adaptive.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 10:04:20 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/22 16:54:09 by azahino-         ###   ########.fr       */
+/*   Updated: 2026/06/23 13:21:52 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,9 @@
 
 int	how_many_chunks(t_cll *a)
 {
-	int size;
+	int	size;
 
 	size = a->size;
-	
 	if (size >= 500)
 		return (10);
 	else if ((size >= 100) && (size < 500))

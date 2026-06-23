@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 13:18:59 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/23 13:07:58 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/23 13:21:09 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,12 +69,12 @@ t_cll	ft_mode(t_mode mode, t_cll *stack_a, float disorder)
 		return (*alg_adaptive(disorder, stack_a, &stack_b));
 }
 
-static int	ft_check_error(char *arg, t_mode *mode_p, t_mode mode, size_t arg_len)
+static int	ft_check_error(char *arg, t_mode *mode_p, t_mode mode, size_t len)
 {
-	int count;
+	int	count;
 
 	count = 0;
-	if (ft_strlen(arg) == arg_len)
+	if (ft_strlen(arg) == len)
 	{
 		*mode_p = mode;
 		count++;

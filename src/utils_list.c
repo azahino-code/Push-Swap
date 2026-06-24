@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 17:22:31 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/24 09:59:53 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/24 13:35:56 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,7 @@ int	ft_atoi(const char *nptr)
 		nb = -nb;
 	return (nb);
 }
+
 void	ft_lstclear(t_cll *lst)
 {
 	t_node	*temp;

@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/23 16:29:55 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/23 16:58:59 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/24 13:47:01 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,7 @@ int	ft_repetition(t_cll *stack_a)
 		while (j < stack_a->size)
 		{
 			if (ptr->value == head->value)
-			{
-				ft_printf(2, "%d, %d", ptr->value, head->value);
 				return (1);
-			}
 			j++;
 			ptr = ptr->next;
 		}

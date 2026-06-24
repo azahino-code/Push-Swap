@@ -6,11 +6,10 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 10:04:16 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/24 13:23:31 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/24 13:35:38 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//chuncks
 #include "../push_swap.h"
 
 static void	moves(t_cll *stack_a, t_cll *stack_b, int start, int end)
@@ -52,7 +51,6 @@ t_cll	*alg_medium(t_cll *stk_a, t_cll *stack_b, int n_chunks, int size)
 	int	c_size;
 	int	count;
 
-	ft_printf(2, "%d", n_chunks);
 	c_size = stk_a->size / n_chunks;
 	i = -1;
 	while (++i < n_chunks)

@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 08:58:10 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/23 17:36:30 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/24 13:28:37 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,4 +58,47 @@ void	ft_addition(t_cll *a, t_cll *b)
 		a->moves[i] += b->moves[i];
 		i++;
 	}
+}
+
+static float	fractional(float sqrt, float inc_val, int val)
+{
+	int	i;
+
+	i = 0;
+	while (i++ < 3)
+	{
+		while (sqrt * sqrt <= val)
+			sqrt += inc_val;
+		sqrt = sqrt - inc_val;
+		inc_val = inc_val / 10;
+	}
+	return (sqrt);
+}
+
+float	ft_square_root(int val)
+{
+	int		right;
+	int		left;
+	int		mid;
+	float	sqrt;
+
+	left = 0;
+	right = val;
+	while (left <= right)
+	{
+		mid = (left + right) / 2;
+		if (mid * mid == val)
+		{
+			sqrt = mid;
+			return (sqrt);
+		}
+		else if (mid * mid < val)
+		{
+			sqrt = left;
+			left = mid + 1;
+		}
+		else
+			right = mid - 1;
+	}
+	return (fractional(sqrt, 0.1, val));
 }

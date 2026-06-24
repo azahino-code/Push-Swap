@@ -6,16 +6,14 @@
 #   By: jrecio-t <jrecio-t@student.42urduliz.com>    +#+  +:+       +#+        #
 #                                                  +#+#+#+#+#+   +#+           #
 #   Created: 2026/06/08 09:31:55 by azahino-            #+#    #+#             #
-#   Updated: 2026/06/23 16:42:36 by jrecio-t           ###   ########.fr       #
+#   Updated: 2026/06/24 10:46:17 by jrecio-t           ###   ########.fr       #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
-LIBS = -lm
-
 CC = cc
-CFLAGS = -g -Wall -Werror -Wextra # -g temporal
+CFLAGS = -Wall -Werror -Wextra
 
 SRC = src/main.c src/disorder.c src/arg_assignment.c src/utils_alg.c src/utils_list.c \
 src/utils_str.c alg/alg_medium.c alg/alg_simple.c alg/alg_complex.c alg/alg_adaptive.c \
@@ -33,7 +31,7 @@ $(PRINTF_PATH):
 	make -C printf
 
 $(NAME): $(OBJ) $(PRINTF_PATH)
-	$(CC) $(CFLAGS) $(OBJ) $(PRINTF_PATH) $(LIBS) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJ) $(PRINTF_PATH) -o $(NAME)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@

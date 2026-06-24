@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 17:22:31 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/23 17:47:21 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/24 09:59:53 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,16 +90,17 @@ int	ft_atoi(const char *nptr)
 void	ft_lstclear(t_cll *lst)
 {
 	t_node	*temp;
+	int		i;
 
 	temp = NULL;
 	if (lst == NULL)
 		return ;
-	while (lst != NULL)
+	i = 0;
+	while (i++ < lst->size)
 	{
-		temp = lst->head;
+		temp = lst->head->next;
 		free(lst->head);
-		free(lst);
-		lst->head->next = temp;
+		lst->head = temp;
 	}
 	lst = NULL;
 }

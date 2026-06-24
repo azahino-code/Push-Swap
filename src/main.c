@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 13:45:49 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/23 17:19:11 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/24 10:07:26 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,6 @@ int	main(int argc, char **argv)
 	stack_a = ft_mode(mode, &stack_a, stack_a.disorder);
 	if (stack_a.bench == 1)
 		ft_bench(stack_a.disorder, mode, &stack_a);
+	ft_lstclear(&stack_a);
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 10:04:20 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/23 17:01:00 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/24 10:26:44 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_how_many_chunks(t_cll *a)
 	else if ((size >= 100) && (size < 500))
 		return (6);
 	else
-		return ((int)sqrt((int)sqrt(size)));
+		return (4);
 }
 
 t_cll	*alg_adaptive(double disorder, t_cll *stack_a, t_cll *stack_b)

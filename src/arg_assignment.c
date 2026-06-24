@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 13:18:59 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/23 17:47:25 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/24 10:05:41 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,6 @@ t_cll	ft_mode(t_mode mode, t_cll *stack_a, float disorder)
 		*stack_a = *alg_complex(stack_a, &stack_b);
 	else
 		*stack_a = *alg_adaptive(disorder, stack_a, &stack_b);
-	//ft_lstclear(&stack_b);
 	return (*stack_a);
 }
 

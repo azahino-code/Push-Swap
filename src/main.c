@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 13:45:49 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/24 13:35:28 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/24 17:09:42 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	main(int argc, char **argv)
 	if (ft_repetition(&stack_a))
 		ft_show_error(2);
 	stack_a.disorder = ft_compute_disorder(&stack_a);
-	stack_a = ft_mode(mode, &stack_a, stack_a.disorder);
+	ft_mode(mode, &stack_a, stack_a.disorder);
 	if (stack_a.bench == 1)
 		ft_bench(stack_a.disorder, mode, &stack_a);
 	ft_lstclear(&stack_a);

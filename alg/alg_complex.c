@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 10:04:18 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/23 17:00:54 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/24 17:06:35 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static int	max_bits(int max_num)
 	return (bits);
 }
 
-t_cll	*alg_complex(t_cll *stack_a, t_cll *stack_b)
+void	alg_complex(t_cll *stack_a, t_cll *stack_b)
 {
 	int	bits;
 	int	current_bit;
@@ -48,5 +48,4 @@ t_cll	*alg_complex(t_cll *stack_a, t_cll *stack_b)
 		current_bit++;
 	}
 	ft_addition(stack_a, stack_b);
-	return (stack_a);
 }

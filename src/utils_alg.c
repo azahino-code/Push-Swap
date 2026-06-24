@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 08:58:10 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/24 13:28:37 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/24 19:04:40 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,8 @@ int	ft_pos_index(t_cll *stack, int min_index, int max_index)
 		ant = ant->prev;
 		moves++;
 	}
-	if (i <= moves)
-		return (i);
-	else if (moves < i)
-		return (stack->size - moves);
+	if (moves < i)
+		i = stack->size - moves;
 	return (i);
 }
 

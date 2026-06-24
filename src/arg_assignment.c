@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 13:18:59 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/24 13:21:21 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/24 18:55:29 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	ft_assignment(int argc, char **argv, t_cll *stack_a)
 	ft_index_sorted(stack_a->size, ptr, move);
 }
 
-t_cll	ft_mode(t_mode mode, t_cll *stack_a, float disorder)
+void	ft_mode(t_mode mode, t_cll *stack_a, float disorder)
 {
 	t_cll	stack_b;
 
@@ -60,17 +60,24 @@ t_cll	ft_mode(t_mode mode, t_cll *stack_a, float disorder)
 	stack_b.bench = stack_a->bench;
 	stack_b.disorder = stack_a->disorder;
 	if (stack_a->disorder == 0.0)
-		return (*stack_a);
+		return ;
 	if (mode == SIMPLE)
-		*stack_a = *alg_simple(stack_a, &stack_b);
+		alg_simple(stack_a, &stack_b);
 	else if (mode == MEDIUM)
-		*stack_a = *alg_medium(stack_a, &stack_b,
+		alg_medium(stack_a, &stack_b,
 				ft_square_root(stack_a->size), stack_a->size);
 	else if (mode == COMPLEX)
-		*stack_a = *alg_complex(stack_a, &stack_b);
+		alg_complex(stack_a, &stack_b);
 	else
-		*stack_a = *alg_adaptive(disorder, stack_a, &stack_b);
-	return (*stack_a);
+		alg_adaptive(disorder, stack_a, &stack_b);
+	int j = 0;
+	while (j++ < stack_a->size)
+	{
+		ft_printf(2, "%d\n", stack_a->head->value);
+		ft_printf(2, "%d\n", stack_a->head->index);
+		stack_a->head = stack_a->head->next;
+	}
+	
 }
 
 static int	ft_check_error(char *arg, t_mode *mode_p, t_mode mode, size_t len)

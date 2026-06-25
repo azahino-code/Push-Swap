@@ -6,34 +6,21 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 10:04:16 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/24 17:06:21 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/25 18:08:31 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static t_cll	*alg_simple2(t_cll *stack_b, t_cll *stack_a)
+static void	move_all_and_call_simple(t_cll *stack_a, t_cll *stack_b, int size)
 {
-	int		size;
-	int		cost;
-	int		pos;
+	int	j;
 
+	j = 0;
 	size = stack_b->size;
-	cost = 0;
-	while (size > 0)
-	{
-		pos = ft_pos_index(stack_b, size - 1, size - 1);
-		cost = ft_cost(pos, size);
-		if (pos <= size / 2)
-			while (cost-- > 0)
-				ft_rb(stack_b);
-		else
-			while (cost-- > 0)
-				ft_rrb(stack_b);
+	while (j++ < size)
 		ft_pa(stack_a, stack_b);
-		size--;
-	}
-	return (stack_a);
+	alg_simple(stack_a, stack_b);
 }
 
 static void	moves(t_cll *stack_a, t_cll *stack_b, int start, int end)
@@ -93,5 +80,5 @@ void	alg_medium(t_cll *stk_a, t_cll *stack_b, int n_chunks, int size)
 				move_to_chunk(stk_a, stack_b, start, end);
 		}
 	}
-	alg_simple2(stack_b, stk_a);
+	move_all_and_call_simple(stk_a, stack_b, size);
 }

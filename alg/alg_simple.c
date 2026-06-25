@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 10:04:12 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/25 16:03:41 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/25 17:13:18 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,23 +27,16 @@ void	alg_simple(t_cll *stack_a, t_cll *stack_b)
 		pos = ft_pos_index(stack_a, index, index);
 		cost = ft_cost(pos, size);
 		if (pos <= size / 2)
-			while (cost > 0)
-			{
+			while (cost-- > 0)
 				ft_ra(stack_a);
-				cost--;
-			}
-		else if (pos > size/2)
-			while (cost > 0)
-			{
+		else if (pos > size / 2)
+			while (cost-- > 0)
 				ft_rra(stack_a);
-				cost--;
-			}
 		ft_pb(stack_a, stack_b);
 		size--;
 		index++;
 	}
 	size = stack_b->size;
-	while (cost++ < size)
+	while (cost++ < size - 1)
 		ft_pa(stack_a, stack_b);
-	ft_addition(stack_a, stack_b);
 }

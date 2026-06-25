@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 13:18:59 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/24 18:55:29 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/25 16:10:58 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,14 +70,6 @@ void	ft_mode(t_mode mode, t_cll *stack_a, float disorder)
 		alg_complex(stack_a, &stack_b);
 	else
 		alg_adaptive(disorder, stack_a, &stack_b);
-	int j = 0;
-	while (j++ < stack_a->size)
-	{
-		ft_printf(2, "%d\n", stack_a->head->value);
-		ft_printf(2, "%d\n", stack_a->head->index);
-		stack_a->head = stack_a->head->next;
-	}
-	
 }
 
 static int	ft_check_error(char *arg, t_mode *mode_p, t_mode mode, size_t len)

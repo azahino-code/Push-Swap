@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 10:04:12 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/24 19:08:02 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/25 16:03:41 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,8 @@ void	alg_simple(t_cll *stack_a, t_cll *stack_b)
 		size--;
 		index++;
 	}
-	while (cost++ < stack_b->size)
-		ft_pa(stack_b, stack_a);
-	ft_addition(stack_b, stack_a);
+	size = stack_b->size;
+	while (cost++ < size)
+		ft_pa(stack_a, stack_b);
+	ft_addition(stack_a, stack_b);
 }

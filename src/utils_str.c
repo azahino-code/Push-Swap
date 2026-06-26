@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 16:10:59 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/26 09:59:10 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/26 13:20:29 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	*ft_memset(void *s, int c, size_t n)
 	return (s);
 }
 
-void	ft_show_error()
+void	ft_show_error(void)
 {
 	ft_printf(2, "Error\n");
 	exit(2);

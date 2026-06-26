@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 13:45:49 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/26 09:54:52 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/26 13:22:38 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ int	main(int argc, char **argv)
 	count = 1;
 	mode = ADAPTIVE;
 	if (argc == 1)
-		return (0);
+		ft_show_error();
 	ft_memset(&stack_a, 0, sizeof(t_cll));
 	ft_count_flags(argv, &mode, &count, &stack_a);
 	ft_assignment(argc - count, argv + count, &stack_a);
 	if (!stack_a.head)
-		return (0);
+		ft_show_error();
 	if (ft_repetition(&stack_a))
 		ft_show_error();
 	stack_a.disorder = ft_compute_disorder(&stack_a);

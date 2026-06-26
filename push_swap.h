@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 09:43:09 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/24 17:10:07 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/26 09:55:02 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int		ft_pos_index(t_cll *stack, int min_index, int max_index);
 int		ft_cost(int index, int size);
 void	*ft_memset(void *s, int c, size_t n);
 void	ft_addition(t_cll *a, t_cll *b);
-void	ft_show_error(int code);
+void	ft_show_error();
 int		ft_repetition(t_cll *stack_a);
 void	ft_lstclear(t_cll *lst);
 float	ft_square_root(int val);

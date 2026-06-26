@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 17:22:31 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/24 13:35:56 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/26 09:58:02 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ static int	ft_num_builder(const char *nptr, int nb)
 	}
 	if (*nptr != '\0')
 	{
-		ft_show_error(1);
+		ft_show_error();
 		return (0);
 	}
 	else

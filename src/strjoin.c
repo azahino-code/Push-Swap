@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/04 15:35:02 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/27 17:09:16 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/27 18:26:46 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,4 +60,22 @@ char	*ft_strdup(const char *s)
 	}
 	*ptr = '\0';
 	return (ptr - (size - 1));
+}
+
+int	ft_check_error(char *arg, t_mode *mode_p, t_mode mode, size_t len)
+{
+	int	count;
+
+	count = 0;
+	if (ft_strlen(arg) == len)
+	{
+		*mode_p = mode;
+		count++;
+	}
+	else
+	{
+		ft_printf(2, "Error");
+		exit(2);
+	}
+	return (count);
 }

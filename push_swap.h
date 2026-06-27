@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 09:43:09 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/27 17:30:59 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/27 18:50:34 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,10 @@ float	ft_square_root(int val);
 char	**ft_split(char const *s, char c);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strdup(const char *s);
-void	freall(char **array, int count);
+void	ft_freeall(char **array, int count);
 int		ft_count_words(char const *s, char c);
+int		ft_check_error(char *arg, t_mode *mode_p, t_mode mode, size_t len);
+int		how_many_chunks(t_cll *a);
 void	ft_pa(t_cll *a, t_cll *b);
 void	ft_pb(t_cll *a, t_cll *b);
 void	ft_ss(t_cll *a, t_cll *b);

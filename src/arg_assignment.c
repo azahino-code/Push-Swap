@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 13:18:59 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/27 18:09:11 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/27 18:53:24 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,21 @@ static void	ft_index_sorted(int stack_size, t_cll *stack_a)
 	}
 }
 
+static char	*ft_loop(int *argc, char *args, char **argv)
+{
+	char	*tmp;
+
+	while (*argc > 0)
+	{
+		tmp = args;
+		args = ft_strjoin(args, *argv);
+		free(tmp);
+		argv++;
+		(*argc)--;
+	}
+	return (args);
+}
+
 void	ft_assignment(int argc, char **argv, t_cll *stack_a)
 {
 	long int	value;
@@ -45,17 +60,8 @@ void	ft_assignment(int argc, char **argv, t_cll *stack_a)
 	char		*args;
 	char		**tmp;
 
-	tmp = malloc(sizeof(char **));
 	args = ft_strdup("");
-	while (argc > 0)
-	{
-		*tmp = args;
-		args = ft_strjoin(args, *argv);
-		free(*tmp);
-		argv++;
-		argc--;
-	}
-	free(tmp);
+	args = ft_loop(&argc, args, argv);
 	tmp = ft_split(args, 32);
 	while (tmp[argc])
 	{
@@ -66,7 +72,7 @@ void	ft_assignment(int argc, char **argv, t_cll *stack_a)
 		ft_lstadd_back(stack_a, ptr);
 		argc++;
 	}
-	freall(tmp, ft_count_words(args, 32));
+	ft_freeall(tmp, ft_count_words(args, 32));
 	free(args);
 	ft_index_sorted(stack_a->size, stack_a);
 }
@@ -84,30 +90,12 @@ void	ft_mode(t_mode mode, t_cll *stack_a, float disorder)
 		alg_simple(stack_a, &stack_b);
 	else if (mode == MEDIUM)
 		alg_medium(stack_a, &stack_b,
-			ft_square_root(stack_a->size), stack_a->size);
+			how_many_chunks(stack_a), stack_a->size);
 	else if (mode == COMPLEX)
 		alg_complex(stack_a, &stack_b);
 	else
 		alg_adaptive(disorder, stack_a, &stack_b);
 	ft_addition(stack_a, &stack_b);
-}
-
-static int	ft_check_error(char *arg, t_mode *mode_p, t_mode mode, size_t len)
-{
-	int	count;
-
-	count = 0;
-	if (ft_strlen(arg) == len)
-	{
-		*mode_p = mode;
-		count++;
-	}
-	else
-	{
-		ft_printf(2, "Error");
-		exit(2);
-	}
-	return (count);
 }
 
 void	ft_count_flags(char **argv, t_mode *mode, int *count, t_cll *stack_a)

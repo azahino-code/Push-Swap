@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/06 11:26:26 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/27 17:50:46 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/27 18:14:38 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static int	ft_count_letters(char *word, char c)
 	return (count);
 }
 
-void	freall(char **array, int count)
+void	ft_freeall(char **array, int count)
 {
 	int	i;
 
@@ -69,7 +69,7 @@ static char	*save_word(char **array, char const *s, char c, int word_pos)
 	array[word_pos] = malloc((num_letters + 1) * sizeof(char));
 	if (!array[word_pos])
 	{
-		freall(array, word_pos);
+		ft_freeall(array, word_pos);
 		return (NULL);
 	}
 	i = 0;
@@ -101,7 +101,7 @@ char	**ft_split(char const *s, char c)
 	word_pos = 0;
 	if (!array)
 	{
-		freall(array, word_pos);
+		ft_freeall(array, word_pos);
 		return (NULL);
 	}
 	array[words] = NULL;

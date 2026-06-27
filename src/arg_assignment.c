@@ -3,21 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   arg_assignment.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 13:18:59 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/26 09:55:23 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/27 13:45:59 by azahino-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static void	ft_index_sorted(int stack_size, t_node *ptr, t_node *move)
+static void	ft_index_sorted(int stack_size, t_cll *stack_a)
 {
 	int	node_rest;
 	int	moves;
 	int	index;
+	t_node	*ptr;
+	t_node	*move;
 
+	ptr = stack_a->head;
+	move = stack_a->head->next;
 	node_rest = 0;
 	while (node_rest++ < stack_size)
 	{

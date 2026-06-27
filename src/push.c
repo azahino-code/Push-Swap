@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 10:17:04 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/24 16:48:32 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/27 19:21:34 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,24 +71,3 @@ void	ft_pb(t_cll *a, t_cll *b)
 	a->moves[10]++;
 	a->moves[11]++;
 }
-/*
-int main (void)
-{
-	t_cll 	stack_a;
-	t_cll	stack_b;
-	t_node 	*bir;
-
-	bir = malloc(sizeof(t_node));
-	if	(!bir)
-		return (0);
-	bir->value = 10;
-	bir->index = 0;
-	stack_b.head = NULL;
-	stack_b.size = 0;
-	stack_a.head = bir;
-	stack_a.size = 1;
-	
-	ft_pb(&stack_a, &stack_b, 1);
-	
-	free(bir);
-}*/

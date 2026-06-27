@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 13:18:59 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/27 18:53:24 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/27 19:19:04 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ static void	ft_index_sorted(int stack_size, t_cll *stack_a)
 	t_node	*ptr;
 	t_node	*move;
 
+	if (!stack_a->head)
+		ft_show_error();
 	ptr = stack_a->head;
 	move = stack_a->head->next;
 	node_rest = 0;

@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 10:04:20 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/27 18:52:08 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/27 19:27:10 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ int	how_many_chunks(t_cll *a)
 	int	size;
 
 	size = a->size;
-	
 	if (size >= 500)
 		return (9);
 	else if ((size >= 100) && (size < 500))

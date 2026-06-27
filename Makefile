@@ -3,14 +3,16 @@
 #                                                          :::      ::::::::   #
 #   Makefile                                             :+:      :+:    :+:   #
 #                                                      +:+ +:+         +:+     #
-#   By: jrecio-t <jrecio-t@student.42urduliz.com>    +#+  +:+       +#+        #
+#   By: azahino- <azahino-@student.42urduliz.com>    +#+  +:+       +#+        #
 #                                                  +#+#+#+#+#+   +#+           #
 #   Created: 2026/06/08 09:31:55 by azahino-            #+#    #+#             #
-#   Updated: 2026/06/27 19:26:39 by jrecio-t           ###   ########.fr       #
+#   Updated: 2026/06/27 20:45:48 by azahino-           ###   ########.fr       #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
+
+BONUS_NAME = checker
 
 CC = cc
 CFLAGS = -g -Wall -Werror -Wextra
@@ -20,7 +22,13 @@ src/utils_str.c alg/alg_medium.c alg/alg_simple.c alg/alg_complex.c alg/alg_adap
 src/push.c src/swap.c src/rotate.c src/reverse.c src/bench.c src/repetition.c src/split.c \
 src/errors.c
 
+BONUS_SRC = bonus/checker_main.c bonus/moves_read.c src/reverse.c src/rotate.c src/swap.c \
+src/push.c src/utils_main.c src/utils_str.c gnl/get_next_line.c gnl/get_next_line_utils.c \
+src/errors.c
+
 OBJ = $(SRC:.c=.o)
+
+BONUS_OBJ = $(BONUS_SRC:.c=.o)
 
 PRINTF_PATH = printf/libftprintf.a
 
@@ -33,16 +41,20 @@ $(PRINTF_PATH):
 
 $(NAME): $(OBJ) $(PRINTF_PATH)
 	$(CC) $(CFLAGS) $(OBJ) $(PRINTF_PATH) -o $(NAME)
+bonus: $(BONUS_NAME)
+
+$(BONUS_NAME): $(BONUS_OBJ) $(PRINTF_PATH)
+	$(CC) $(CFLAGS) $(BONUS_OBJ) $(PRINTF_PATH) -o $(BONUS_NAME)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJ)
+	rm -f $(OBJ) $(BONUS_OBJ)
 	make -C printf clean
 
 fclean: clean
-	rm -f $(NAME)
+	rm -f $(NAME) $(BONUS_NAME)
 	make -C printf fclean
 
 re: fclean all

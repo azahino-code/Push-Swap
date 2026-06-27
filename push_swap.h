@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 09:43:09 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/27 18:50:34 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/27 20:30:57 by azahino-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,5 +83,8 @@ void	ft_rr(t_cll *a, t_cll *b);
 void	ft_rra(t_cll *a);
 void	ft_rrb(t_cll *b);
 void	ft_rrr(t_cll *a, t_cll *b);
+//bonus
+void	ft_move_reads(t_cll *stack_a, t_cll *stack_b, char *move);
+int		ft_is_sorted(t_cll *stack_a);
 
 #endif

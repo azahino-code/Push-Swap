@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 09:43:09 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/26 13:20:52 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/27 15:38:52 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,9 @@ void	ft_show_error(void);
 int		ft_repetition(t_cll *stack_a);
 void	ft_lstclear(t_cll *lst);
 float	ft_square_root(int val);
+char	**ft_split(char const *s, char c);
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strdup(const char *s);
 void	ft_pa(t_cll *a, t_cll *b);
 void	ft_pb(t_cll *a, t_cll *b);
 void	ft_ss(t_cll *a, t_cll *b);

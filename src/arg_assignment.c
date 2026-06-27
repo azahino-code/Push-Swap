@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 13:18:59 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/26 09:55:23 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/27 16:03:21 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,18 +37,27 @@ static void	ft_index_sorted(int stack_size, t_node *ptr, t_node *move)
 void	ft_assignment(int argc, char **argv, t_cll *stack_a)
 {
 	int		value;
+	int		argcount;
 	t_node	*ptr;
-	t_node	*move;
-
+	char	*args;
+	char	**tmp;
+	
+	args = ft_strdup("");
 	while (argc-- > 0)
 	{
-		value = ft_atoi(*argv);
+		*tmp = args;
+		args = ft_strjoin(args, *argv);
+		free(*tmp);
+	}
+	tmp = ft_split(args, 32);
+	free(args);
+	while (*tmp)
+	{
+		value = ft_atoi(*tmp);
 		ptr = ft_lstnew(value);
 		ft_lstadd_back(stack_a, ptr);
-		argv++;
+		tmp++;
 	}
-	ptr = stack_a->head;
-	move = stack_a->head->next;
 	ft_index_sorted(stack_a->size, ptr, move);
 }
 

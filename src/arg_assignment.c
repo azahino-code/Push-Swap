@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 13:18:59 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/27 16:07:33 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/27 18:09:11 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 static void	ft_index_sorted(int stack_size, t_cll *stack_a)
 {
-	int	node_rest;
-	int	moves;
-	int	index;
+	int		node_rest;
+	int		moves;
+	int		index;
 	t_node	*ptr;
 	t_node	*move;
 
@@ -40,28 +40,34 @@ static void	ft_index_sorted(int stack_size, t_cll *stack_a)
 
 void	ft_assignment(int argc, char **argv, t_cll *stack_a)
 {
-	int		value;
-	int		argcount;
-	t_node	*ptr;
-	char	*args;
-	char	**tmp;
-	
+	long int	value;
+	t_node		*ptr;
+	char		*args;
+	char		**tmp;
+
+	tmp = malloc(sizeof(char **));
 	args = ft_strdup("");
-	while (argc-- > 0)
+	while (argc > 0)
 	{
 		*tmp = args;
 		args = ft_strjoin(args, *argv);
 		free(*tmp);
+		argv++;
+		argc--;
 	}
+	free(tmp);
 	tmp = ft_split(args, 32);
-	free(args);
-	while (*tmp)
+	while (tmp[argc])
 	{
-		value = ft_atoi(*tmp);
+		value = ft_atoi(tmp[argc]);
+		if (value > 2147483647 || value < -2147483648)
+			ft_show_error();
 		ptr = ft_lstnew(value);
 		ft_lstadd_back(stack_a, ptr);
-		tmp++;
+		argc++;
 	}
+	freall(tmp, ft_count_words(args, 32));
+	free(args);
 	ft_index_sorted(stack_a->size, stack_a);
 }
 

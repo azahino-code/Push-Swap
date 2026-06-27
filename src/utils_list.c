@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 17:22:31 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/26 09:58:02 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/27 17:05:26 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	ft_lstadd_back(t_cll *lst, t_node *new)
 	lst->size++;
 }
 
-static int	ft_num_builder(const char *nptr, int nb)
+static long int	ft_num_builder(const char *nptr, long int nb)
 {
 	while ((*nptr >= '0' && *nptr <= '9'))
 	{
@@ -62,10 +62,10 @@ static int	ft_num_builder(const char *nptr, int nb)
 		return (nb);
 }
 
-int	ft_atoi(const char *nptr)
+long int	ft_atoi(const char *nptr)
 {
-	int	nb;
-	int	neg;
+	long int	nb;
+	int			neg;
 
 	nb = 0;
 	neg = 0;

@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/04 15:35:02 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/27 15:55:39 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/27 17:09:16 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		s1++;
 		str++;
 	}
-	*str = " ";
+	*str = ' ';
 	str++;
 	while (*s2)
 	{

@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 09:43:09 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/27 15:38:52 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/27 17:30:59 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	ft_count_flags(char **argv, t_mode *mode, int *count, t_cll *stack_a);
 t_node	*ft_lstnew(int val);
 void	ft_lstadd_back(t_cll *lst, t_node *new);
 double	ft_compute_disorder(t_cll *stack_a);
-int		ft_atoi(const char *nptr);
+long	ft_atoi(const char *nptr);
 void	ft_mode(t_mode mode, t_cll *stack_a, float disorder);
 int		ft_strcmp(const char *s1, const char *s2);
 size_t	ft_strlen(const char *s);
@@ -68,6 +68,8 @@ float	ft_square_root(int val);
 char	**ft_split(char const *s, char c);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strdup(const char *s);
+void	freall(char **array, int count);
+int		ft_count_words(char const *s, char c);
 void	ft_pa(t_cll *a, t_cll *b);
 void	ft_pb(t_cll *a, t_cll *b);
 void	ft_ss(t_cll *a, t_cll *b);

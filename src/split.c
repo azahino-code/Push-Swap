@@ -6,13 +6,13 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/06 11:26:26 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/27 15:23:35 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/27 17:50:46 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static int	ft_count_words(char const *s, char c)
+int	ft_count_words(char const *s, char c)
 {
 	int	count;
 
@@ -47,7 +47,7 @@ static int	ft_count_letters(char *word, char c)
 	return (count);
 }
 
-static void	freall(char **array, int count)
+void	freall(char **array, int count)
 {
 	int	i;
 

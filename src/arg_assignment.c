@@ -6,18 +6,22 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 13:18:59 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/27 16:03:21 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/27 16:07:33 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static void	ft_index_sorted(int stack_size, t_node *ptr, t_node *move)
+static void	ft_index_sorted(int stack_size, t_cll *stack_a)
 {
 	int	node_rest;
 	int	moves;
 	int	index;
+	t_node	*ptr;
+	t_node	*move;
 
+	ptr = stack_a->head;
+	move = stack_a->head->next;
 	node_rest = 0;
 	while (node_rest++ < stack_size)
 	{
@@ -58,7 +62,7 @@ void	ft_assignment(int argc, char **argv, t_cll *stack_a)
 		ft_lstadd_back(stack_a, ptr);
 		tmp++;
 	}
-	ft_index_sorted(stack_a->size, ptr, move);
+	ft_index_sorted(stack_a->size, stack_a);
 }
 
 void	ft_mode(t_mode mode, t_cll *stack_a, float disorder)

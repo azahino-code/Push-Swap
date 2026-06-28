@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   reverse.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 10:45:23 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/22 15:42:21 by azahino-         ###   ########.fr       */
+/*   Updated: 2026/06/28 21:31:06 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static void	ft_reverse(t_cll *stack)
+void	ft_reverse(t_cll *stack)
 {
 	stack->head = stack->head->prev;
 }

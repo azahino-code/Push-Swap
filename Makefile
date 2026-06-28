@@ -6,7 +6,7 @@
 #   By: jrecio-t <jrecio-t@student.42urduliz.com>    +#+  +:+       +#+        #
 #                                                  +#+#+#+#+#+   +#+           #
 #   Created: 2026/06/08 09:31:55 by azahino-            #+#    #+#             #
-#   Updated: 2026/06/28 16:41:55 by jrecio-t           ###   ########.fr       #
+#   Updated: 2026/06/28 23:22:46 by jrecio-t           ###   ########.fr       #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ src/utils_str.c alg/alg_medium.c alg/alg_simple.c alg/alg_complex.c alg/alg_adap
 src/push.c src/swap.c src/rotate.c src/reverse.c src/bench.c src/repetition.c src/split.c \
 src/errors.c
 
-BONUS_SRC = bonus/checker_main.c bonus/moves_read.c gnl/get_next_line.c gnl/get_next_line_utils.c \
+BONUS_SRC = bonus/checker_main.c bonus/checker_utils.c gnl/get_next_line.c gnl/get_next_line_utils.c \
 src/disorder.c src/utils_main.c src/utils_alg.c src/utils_list.c \
 src/utils_str.c alg/alg_medium.c alg/alg_simple.c alg/alg_complex.c alg/alg_adaptive.c \
 src/push.c src/swap.c src/rotate.c src/reverse.c src/bench.c src/repetition.c src/split.c \

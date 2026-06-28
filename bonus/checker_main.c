@@ -6,10 +6,11 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/27 19:00:08 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/28 16:48:01 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/28 23:17:28 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "checker.h"
 #include "../push_swap.h"
 #include "../gnl/get_next_line.h"
 

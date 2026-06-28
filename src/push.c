@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 10:17:04 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/27 19:21:34 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/28 21:32:40 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static void	insert_node(t_node *node1_fr, t_node *node1_to, t_cll *list_to)
 	list_to->head = node1_fr;
 }
 
-static void	ft_push(t_cll *list_from, t_cll *list_to)
+void	ft_push(t_cll *list_from, t_cll *list_to)
 {
 	t_node	*node1_from;
 	t_node	*node2_from;

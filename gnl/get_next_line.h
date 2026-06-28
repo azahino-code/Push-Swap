@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 14:06:29 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/27 20:37:52 by azahino-         ###   ########.fr       */
+/*   Updated: 2026/06/28 21:54:49 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@
 # include <unistd.h>
 # include <fcntl.h>
 # include <limits.h>
+
+# include "../push_swap.h"
 
 char	*get_next_line(int fd);
 char	*f_strjoin(char *s1, char *s2);

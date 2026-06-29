@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 16:50:26 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/27 20:38:52 by azahino-         ###   ########.fr       */
+/*   Updated: 2026/06/29 11:52:38 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ static char	*ft_loop(char **stash)
 	{
 		if ((*stash)[i] == '\n')
 		{
-			line = f_substr(*stash, 0, i + 1);
-			new = f_substr(*stash, i + 1, f_strlen(*stash) - (i + 1));
+			line = ft_substr(*stash, 0, i + 1);
+			new = ft_substr(*stash, i + 1, ft_strlen(*stash) - (i + 1));
 			free(*stash);
 			*stash = new;
 			return (line);
@@ -60,7 +60,7 @@ static char	*ft_eof(char **stash)
 		*stash = NULL;
 		return (NULL);
 	}
-	line = f_strdup(*stash);
+	line = ft_strdup(*stash);
 	free(*stash);
 	*stash = NULL;
 	return (line);
@@ -102,7 +102,7 @@ char	*get_next_line(int fd)
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	if (stash && ft_isjump (stash))
+	if (stash && ft_isjump(stash))
 		return (ft_loop(&stash));
 	byte = 1;
 	while (byte > 0)

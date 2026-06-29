@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 14:06:29 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/28 21:54:49 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/29 11:55:49 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,6 @@
 
 char	*get_next_line(int fd);
 char	*f_strjoin(char *s1, char *s2);
-size_t	f_strlen(char *str);
-char	*f_substr(char *s, unsigned int start, size_t len);
-char	*f_strdup(char *s);
+char	*ft_substr(char *s, unsigned int start, size_t len);
 
 #endif

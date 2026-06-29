@@ -6,13 +6,11 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/27 19:00:08 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/28 23:17:28 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/29 11:54:44 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
-#include "../push_swap.h"
-#include "../gnl/get_next_line.h"
 
 int	main(int argc, char **argv)
 {
@@ -34,5 +32,6 @@ int	main(int argc, char **argv)
 		ft_printf(1, "OK\n");
 	else
 		ft_printf(1, "KO\n");
+	ft_lstclear(&stack_a);
 	return(0);
 }

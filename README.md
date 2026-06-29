@@ -16,7 +16,8 @@ The program receives a list of integers as input and outputs the sequence of ope
 
 - Input validation and error handling
 - Detection of already sorted stacks
-- Three specialized sorting algorithms depending on the input size
+- Three specialized sorting algorithms depending on the selected mode or according to the disorder level.
+- optional bench mode, to print fuctions usefull data
 - Circular doubly linked list implementation for efficient stack operations
 - Support for all mandatory push_swap operations
 
@@ -72,6 +73,7 @@ The following components were developed collaboratively:
 The project is organized into several modules responsible for:
 
 - Argument parsing and validation
+- algorithm and bench option selection
 - Stack initialization
 - Stack operations
 - Sorting algorithms
@@ -84,11 +86,18 @@ The project is organized into several modules responsible for:
 
 The project uses a **circular linked list** to represent both stacks. This structure allows efficient rotations, reverse rotations, pushes, and swaps without moving large amounts of data.
 
-Instead of relying on a single sorting algorithm, the program selects the most suitable strategy according to the input size:
+Instead of relying on a single sorting algorithm, the program let us selects the strategy we want ussing the next flags:
 
-- **Selection Sort** for very small inputs, producing an optimal or near-optimal number of operations.
-- **Chunk-Based Sort** for medium-sized inputs. Elements are divided into ranges (chunks), pushed to the auxiliary stack, and reassembled efficiently.
-- **Radix Sort** for large inputs. After assigning each value a normalized index, the algorithm sorts elements bit by bit, achieving predictable performance with a low operation count.
+- `--simple` to choose **Selection Sort**
+- `--medium` to choose **Chunk_Based Sort**
+- `--complex` to choose **Radix Sort**
+- `--adaptive` to choose according to `disorder`
+
+Like we said, **adative**, is default and selectable mode that selects the best strategy according to the disorder of input number list:
+
+- **Selection Sort** for a disorder level of `0 <= disorder < 0.2`, producing an optimal or near-optimal number of operations.
+- **Chunk-Based Sort** for for a disorder level of `0'2 <= disorder < 0.5`. Elements are divided into ranges (chunks), pushed to the auxiliary stack, and reassembled efficiently.
+- **Radix Sort** for a disorder level of `0'5 <= disorder <= 1`. After assigning each value a normalized index, the algorithm sorts elements bit by bit, achieving predictable performance with a low operation count.
 
 This hybrid approach provides better overall performance than using a single algorithm for every case.
 
@@ -134,6 +143,16 @@ checker
 
 ---
 
+### Available Flags
+
+| Flag | Description|
+|---|---|
+| `--bench` | Allow `push_swap` to print level of disorder,used strategy, total moves and each move count |
+| `--simple` | Use **Selection Sort** to sort the stack |
+| `--medium` | Use **Chunk-Based Sort** to sort the stack |
+| `--complex` | Use **Radix Sort** to sort the stack |
+| `--adaptive` | Use `disorder` to select the optimal algorithm |
+
 ## Usage
 
 Sort a stack:
@@ -141,6 +160,20 @@ Sort a stack:
 ```bash
 ./push_swap 4 67 3 87 23
 ```
+
+Select bench:
+
+```bash
+./push_swap --bench 4 67 3 87 23
+```
+
+Select sort mode:
+
+```bash
+./push_swap --simple 4 67 3 87 23
+```
+
+**Both flags can be used simultaneously**
 
 Validate the output with the checker:
 

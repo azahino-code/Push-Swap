@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 13:18:59 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/29 10:23:29 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/29 16:28:26 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,13 @@ void	ft_assignment(int argc, char **argv, t_cll *stack_a)
 	while (tmp[argc])
 	{
 		value = ft_atoi(tmp[argc]);
-		if (value > 2147483647 || value < -2147483648)
+		if (value > 2147483647 || value < -2147483648 || value == -1)
+		{
+			if(stack_a->head)
+				ft_lstclear(stack_a);
+			ft_freeall(tmp, ft_count_words(args, 32));
 			ft_show_error();
+		}
 		ptr = ft_lstnew(value);
 		ft_lstadd_back(stack_a, ptr);
 		argc++;

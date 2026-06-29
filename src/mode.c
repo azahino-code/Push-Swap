@@ -31,7 +31,11 @@ void	ft_count_flags(char **argv, t_mode *mode, int *count, t_cll *stack_a)
 			stack_a->bench = 1;
 		}
 		else
+		{
+			if (stack_a->head)
+				ft_lstclear(stack_a);
 			ft_show_error();
+		}
 	}
 	if (ft_strcmp(argv[*count], "--simple") == 0)
 		*count += ft_check_error(argv[*count], mode, (t_mode)SIMPLE, 8);

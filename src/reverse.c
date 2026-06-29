@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 10:45:23 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/28 21:31:06 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/29 15:52:03 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 void	ft_reverse(t_cll *stack)
 {
-	stack->head = stack->head->prev;
+	if(!(stack->head == NULL))
+		stack->head = stack->head->prev;
 }
 
 void	ft_rra(t_cll *a)

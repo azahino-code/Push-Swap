@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 17:22:31 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/27 17:05:26 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/29 16:27:06 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,8 @@ static long int	ft_num_builder(const char *nptr, long int nb)
 	}
 	if (*nptr != '\0')
 	{
-		ft_show_error();
-		return (0);
+		//ft_show_error();
+		return (-1);
 	}
 	else
 		return (nb);
@@ -83,6 +83,8 @@ long int	ft_atoi(const char *nptr)
 	else if (*nptr == '+')
 		nptr++;
 	nb = ft_num_builder(nptr, nb);
+	if (nb == -1)
+		return (-1);
 	if (neg == 1)
 		nb = -nb;
 	return (nb);

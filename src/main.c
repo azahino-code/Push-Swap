@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 13:45:49 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/27 19:18:34 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/29 16:09:07 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,11 @@ int	main(int argc, char **argv)
 	ft_count_flags(argv, &mode, &count, &stack_a);
 	ft_assignment(argc - count, argv + count, &stack_a);
 	if (ft_repetition(&stack_a))
+	{
+		if (stack_a.head)
+			ft_lstclear(&stack_a);
 		ft_show_error();
+	}
 	stack_a.disorder = ft_compute_disorder(&stack_a);
 	ft_mode(mode, &stack_a, stack_a.disorder);
 	if (stack_a.bench == 1)

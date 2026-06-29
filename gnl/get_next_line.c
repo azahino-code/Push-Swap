@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 16:50:26 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/29 11:52:38 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/29 12:02:17 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ static ssize_t	ft_asigment(int fd, char **stash)
 		return (-1);
 	}
 	buf[byte] = '\0';
-	copy = f_strjoin(*stash, buf);
+	copy = ft_gnl_strjoin(*stash, buf);
 	free(buf);
 	if (copy == NULL)
 	{

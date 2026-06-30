@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 10:22:24 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/29 15:51:56 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/30 09:57:05 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_rotate(t_cll *stack)
 {
-	if(!(stack->head == NULL))
+	if (!(stack->head == NULL))
 		stack->head = stack->head->next;
 }
 

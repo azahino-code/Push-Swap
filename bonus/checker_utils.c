@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/27 19:08:27 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/29 09:45:26 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/30 10:03:50 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static void	ft_swap_both(t_cll *stack_a, t_cll *stack_b)
 void	ft_move_reads(t_cll *stack_a, t_cll *stack_b, char *move)
 {
 	if (ft_strcmp(move, "ra\n") == 0 && ft_strlen(move) == 3)
-		ft_rotate(stack_a);	
+		ft_rotate(stack_a);
 	else if (ft_strcmp(move, "rb\n") == 0 && ft_strlen(move) == 3)
 		ft_rotate(stack_b);
 	else if (ft_strcmp(move, "rr\n") == 0 && ft_strlen(move) == 3)
@@ -60,10 +60,10 @@ void	ft_move_reads(t_cll *stack_a, t_cll *stack_b, char *move)
 
 int	ft_is_sorted(t_cll *stack_a)
 {
-	int	i;
+	int		i;
 	t_node	*ptr;
 	t_node	*ptr_next;
-	
+
 	ptr = stack_a->head;
 	ptr_next = stack_a->head->next;
 	i = 0;

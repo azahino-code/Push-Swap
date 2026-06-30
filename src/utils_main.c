@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 13:18:59 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/29 16:28:26 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/30 09:56:53 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,12 @@ static void	ft_index_sorted(int stack_size, t_cll *stack_a)
 	}
 }
 
-static char	*ft_loop(int *argc, char *args, char **argv)
+static char	*ft_loop(int *argc, char **argv)
 {
 	char	*tmp;
+	char	*args;
 
+	args = ft_strdup("");
 	while (*argc > 0)
 	{
 		tmp = args;
@@ -61,25 +63,25 @@ void	ft_assignment(int argc, char **argv, t_cll *stack_a)
 	t_node		*ptr;
 	char		*args;
 	char		**tmp;
+	int			count;
 
-	args = ft_strdup("");
-	args = ft_loop(&argc, args, argv);
+	args = ft_loop(&argc, argv);
+	count = ft_count_words(args, 32);
 	tmp = ft_split(args, 32);
+	free(args);
 	while (tmp[argc])
 	{
-		value = ft_atoi(tmp[argc]);
-		if (value > 2147483647 || value < -2147483648 || value == -1)
+		value = ft_atoi(tmp[argc++]);
+		if (value > 2147483647 || value < -2147483648)
 		{
-			if(stack_a->head)
+			if (stack_a->head)
 				ft_lstclear(stack_a);
-			ft_freeall(tmp, ft_count_words(args, 32));
+			ft_freeall(tmp, count);
 			ft_show_error();
 		}
 		ptr = ft_lstnew(value);
 		ft_lstadd_back(stack_a, ptr);
-		argc++;
 	}
-	ft_freeall(tmp, ft_count_words(args, 32));
-	free(args);
+	ft_freeall(tmp, count);
 	ft_index_sorted(stack_a->size, stack_a);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 09:43:09 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/28 21:42:33 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/30 14:42:40 by azahino-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,11 +65,11 @@ void	ft_show_error(void);
 int		ft_repetition(t_cll *stack_a);
 void	ft_lstclear(t_cll *lst);
 float	ft_square_root(int val);
-char	**ft_split(char const *s, char c);
+char	**ft_split(char const *s);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strdup(const char *s);
 void	ft_freeall(char **array, int count);
-int		ft_count_words(char const *s, char c);
+int		ft_count_words(char const *s);
 int		ft_check_error(char *arg, t_mode *mode_p, t_mode mode, size_t len);
 int		how_many_chunks(t_cll *a);
 void	ft_pa(t_cll *a, t_cll *b);

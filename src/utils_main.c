@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_main.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 13:18:59 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/30 09:56:53 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/06/30 14:42:24 by azahino-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,8 @@ void	ft_assignment(int argc, char **argv, t_cll *stack_a)
 	int			count;
 
 	args = ft_loop(&argc, argv);
-	count = ft_count_words(args, 32);
-	tmp = ft_split(args, 32);
+	count = ft_count_words(args);
+	tmp = ft_split(args);
 	free(args);
 	while (tmp[argc])
 	{
@@ -84,4 +84,17 @@ void	ft_assignment(int argc, char **argv, t_cll *stack_a)
 	}
 	ft_freeall(tmp, count);
 	ft_index_sorted(stack_a->size, stack_a);
+}
+
+void	ft_freeall(char **array, int count)
+{
+	int	i;
+
+	i = 0;
+	while (i < count)
+	{
+		free(array[i]);
+		i++;
+	}
+	free(array);
 }

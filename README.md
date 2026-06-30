@@ -189,6 +189,46 @@ OK
 
 ---
 
+## Bonus
+
+The bonus part of the project includes a program named `checker`, which verifies whether a sequence of operations correctly sorts a given stack.
+
+The `checker` program:
+- Receives the initial stack as command-line arguments.
+- Reads instructions from the standard input.
+- Executes each operation on the stacks.
+- Prints `OK` if the stack is correctly sorted and `KO` otherwise.
+- Handles invalid instructions by printing `Error`.
+
+### Compilation
+
+Compile the bonus program with:
+
+```bash
+make bonus
+```
+
+### Usage
+
+```bash
+./push_swap 3 2 1 | ./checker 3 2 1
+```
+
+You can also test instructions manually:
+
+```bash
+./checker 3 2 1
+```
+
+Then enter one instruction per line, for example:
+
+```text
+sa
+ra
+```
+
+Finish the input with **Ctrl+D** (EOF). The program will output either `OK` or `KO`.
+
 ## Resources
 
 ### Documentation and References

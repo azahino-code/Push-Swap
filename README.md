@@ -25,7 +25,7 @@ The program receives a list of integers as input and outputs the sequence of ope
 
 The project was developed collaboratively, with both authors participating in the design, implementation, testing, and optimization of the application.
 
-### azahino-t
+### azahino-
 
 - Designed and implemented the **Selection Sort** algorithm for small inputs.
 - Contributed to the development and optimization of the **Chunk-Based Sort** algorithm.

@@ -6,22 +6,11 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 10:04:16 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/25 18:08:31 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/07/01 13:58:49 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
-static void	move_all_and_call_simple(t_cll *stack_a, t_cll *stack_b, int size)
-{
-	int	j;
-
-	j = 0;
-	size = stack_b->size;
-	while (j++ < size)
-		ft_pa(stack_a, stack_b);
-	alg_simple(stack_a, stack_b);
-}
 
 static void	moves(t_cll *stack_a, t_cll *stack_b, int start, int end)
 {
@@ -80,5 +69,5 @@ void	alg_medium(t_cll *stk_a, t_cll *stack_b, int n_chunks, int size)
 				move_to_chunk(stk_a, stack_b, start, end);
 		}
 	}
-	move_all_and_call_simple(stk_a, stack_b, size);
+	alg_simple_medium(stk_a, stack_b);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: azahino- <azahino-@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 09:43:09 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/30 14:42:40 by azahino-         ###   ########.fr       */
+/*   Updated: 2026/07/01 13:36:47 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ typedef enum mode
 }			t_mode;
 
 void	alg_simple(t_cll *stack_a, t_cll *stack_b);
+void	alg_simple_medium(t_cll *stack_a, t_cll *stack_b);
 void	alg_medium(t_cll *stack_a, t_cll *stack_b, int n_chunks, int size);
 void	alg_complex(t_cll *stack_a, t_cll *stack_b);
 void	alg_adaptive(double disorder, t_cll *stack_a, t_cll *stack_b);

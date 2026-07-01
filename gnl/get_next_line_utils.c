@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 17:11:12 by azahino-          #+#    #+#             */
-/*   Updated: 2026/07/01 10:25:43 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/07/01 13:02:16 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ void	ft_gnl_loop(t_cll *stack_a, t_cll *stack_b)
 {
 	char	*movements;
 	char	*tmp;
-	
+
 	movements = get_next_line(0);
 	while (movements != NULL)
 	{

@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 17:11:12 by azahino-          #+#    #+#             */
-/*   Updated: 2026/06/30 10:03:32 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/07/01 10:25:43 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,4 +75,20 @@ char	*ft_substr(char *s, unsigned int start, size_t len)
 	}
 	sub[i] = '\0';
 	return (sub);
+}
+
+void	ft_gnl_loop(t_cll *stack_a, t_cll *stack_b)
+{
+	char	*movements;
+	char	*tmp;
+	
+	movements = get_next_line(0);
+	while (movements != NULL)
+	{
+		ft_move_reads(stack_a, stack_b, movements);
+		tmp = movements;
+		movements = get_next_line(0);
+		free(tmp);
+	}
+	free(movements);
 }

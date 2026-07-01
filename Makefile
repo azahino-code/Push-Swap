@@ -6,7 +6,7 @@
 #   By: jrecio-t <jrecio-t@student.42urduliz.com>    +#+  +:+       +#+        #
 #                                                  +#+#+#+#+#+   +#+           #
 #   Created: 2026/06/08 09:31:55 by azahino-            #+#    #+#             #
-#   Updated: 2026/06/29 10:30:10 by jrecio-t           ###   ########.fr       #
+#   Updated: 2026/07/01 10:14:06 by jrecio-t           ###   ########.fr       #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ src/errors.c src/mode.c
 
 BONUS_SRC = bonus/checker_main.c bonus/checker_utils.c gnl/get_next_line.c gnl/get_next_line_utils.c \
 src/utils_main.c src/utils_list.c src/utils_str.c src/push.c src/swap.c src/rotate.c \
-src/reverse.c src/split.c src/errors.c
+src/reverse.c src/split.c src/errors.c src/repetition.c
 
 OBJ = $(SRC:.c=.o)
 

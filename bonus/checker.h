@@ -6,7 +6,7 @@
 /*   By: jrecio-t <jrecio-t@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/30 09:58:04 by jrecio-t          #+#    #+#             */
-/*   Updated: 2026/06/30 09:58:06 by jrecio-t         ###   ########.fr       */
+/*   Updated: 2026/07/01 10:26:50 by jrecio-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_rotate(t_cll *stack);
 void	ft_reverse(t_cll *stack);
 void	ft_swap(t_cll *stack);
 void	ft_push(t_cll *list_from, t_cll *list_to);
-void	ft_move_reads(t_cll *stack_a, t_cll *stack_b, char *move);
 int		ft_is_sorted(t_cll *stack_a);
+void	ft_gnl_loop(t_cll *stack_a, t_cll *stack_b);
 
 #endif

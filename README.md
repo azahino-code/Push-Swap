@@ -173,7 +173,7 @@ Select sort mode:
 ./push_swap --simple 4 67 3 87 23
 ```
 
-**Both flags can be used simultaneously**
+**Both flags can be used simultaneously, but the benchmark flag must be used first**
 
 Validate the output with the checker:
 
